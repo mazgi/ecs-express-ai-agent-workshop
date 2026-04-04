@@ -1,0 +1,61 @@
+# Meta Prompts
+
+All user prompts from this session.
+
+1. could you memo my all prompts I say from now into meta-prompts.md?
+2. I'll create an example project for developing Next.js, NestJS, and Prisma app on ECS Express Mode using the AI agent. So, could you remove android, apple, and windows directories and related files?
+3. It uses only AWS. Could you remove Azure and Google Cloud related fiels such as *.tf?
+4. It prospects custom domain such as BASE_DOMAIN_NAME env var and others. Could you remove it?
+5. The app requires email verification on the sign-up flow. Could you change email verification to optional?
+6. If AUTH_REQUIRE_EMAIL_VERIFICATION is set false, could you bypass 'check you email' screen in the sign-up flow?
+7. Could you move all files and directories except .claude, .git, LICENSE, meta-promts.md into step-final dir?
+8. Could you copy step-final as step-1 dir?
+9. Could you remove all github actions, backend, and iac related files in step-1?
+10. Could you replace an empty Next.js App Router app with step-1/web/app?
+  - (correction) could you restore Dockerfiles.d/web and Dockerfiles.d/web-e2e-tests and run npx and pnpm commands via docker compose?
+11. Could you simplify compose.yaml in step-1 adjust the empty Next.js app?
+12. I think web-e2e-tests compose service is needed. isn't it?
+13. Could you adjust web e2e tests in step-1? It's an empty Next.js app.
+14. Could you run docker compose --profile=e2e-tests run --rm web-e2e-tests?
+15. Could you simplify other files such as .env in step-1 adjust the empty Next.js app?
+16. Could you copy step-final as step-2?
+17. Could you remove backend and related files in step-2?
+18. Could you replace an empty Next.js App Router app with step-2/web/app as same as step-1?
+19. Could you replace e2e tests in step-2 as same as step-1?
+20. Could you write prompts in step-1/prompts.md that need to you growth it from step-1 to step-2?
+21. Could you gather and summarize each step-* and write out it in README.md?
+22. Could you copy step-final as step-3?
+23. Could you remove all backend features except health check with GIT_SHA in step-3?
+24. Could keep and restore Swagger on backend?
+25. Could you adjust and simplify web/app and web/e2e-tests for backend that has only git sha feature?
+26. Why? error TS2688: Cannot find type definition file for 'jest'.
+27. Why? error TS5011: The common source directory of 'tsconfig.build.json' is './src'. The 'rootDir' setting must be explicitly set.
+28. The backend couldn't return git sha. Why? { "status": "ok", "gitSha": "undefined" }
+29. sure. it's ok. could you revert it?
+30. Could you write prompts in step-2 that need to you growth it to next step?
+31. Could you gather and summarize each step-* and write out it in README.md?
+32. Could you copy step-final as step-4?
+33. Could you remove all features except health check or items from step-4?
+34. Why? Property 'item' does not exist on type 'PrismaClient'.
+35. I ran prisma:generate but I've still occured the same error. why?
+36. Why? Failed to parse syntax of config file at "/work/backend/prisma.config.js"
+37. Why? dependency backend failed to start: container step-4-backend-1 is unhealthy
+38. Why? Cannot find module '/work/backend/dist/main'
+39. I still occured the same error. Why? Cannot find module '/work/backend/dist/main'
+40. Why? error TS5011: rootDir must be explicitly set (TypeScript 6)
+41. Could you import items feature for web/app into step-4 from step-final?
+42. You added items test into smoke spec. Is it proper?
+43. Could you show http://localhost:3000/?
+44. I've occured the error: items.map is not a function
+45. Could you run it? (prisma:push)
+46. Could you write prompts in step-3 that need to you growth it to next step?
+47. Could you gather and summarize each step-* and write out it in README.md?
+48. Could you copy step-final as step-5?
+49. Could you remove features related OAuth2, email, i18n, and TOTP from step-5?
+50. It needed some secret variables such as JWT secret. Is it no needed Secrets Manager?
+51. Could you import screens such as sign-in into step-5 web/app from step-final?
+52. Could you write prompts in step-4 that need to you growth it to next step?
+53. Could you gather and summarize each step-* and write out it in README.md?
+54. It's not exist Secrets Manger in step-4 IaC but step-4 uses RDS. Is it correct?
+55. could you update each promts.md and README in step-* if needed?
+56. Could you create step-0 dir and place prompts.md in it to grow to next step?
