@@ -70,3 +70,4 @@ All user prompts from this session.
 65. you say, "you can completely eliminate idle costs." is it correct?
 66. In /README.md, could you improve order each section more human friendly?
 67. Could you improve intro section in README like this?: (production-ready foundation, AI-driven workflow)
+68. could you insert suggestion and advice about LLM troubleshooting in the right position?
