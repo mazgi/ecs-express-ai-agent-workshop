@@ -33,6 +33,12 @@ docker compose --profile=e2e-tests run --rm web-e2e-tests
     └── e2e-tests/         # Playwright E2E tests
 ```
 
+## Implementation via AI Agent
+
+To prepare for the next step (step-2), you can have an AI agent (such as [Claude Code](https://claude.ai/claude-code), [Cursor](https://www.cursor.com/), [GitHub Copilot](https://github.com/features/copilot), or [ChatGPT](https://chatgpt.com/)) generate the code for you.
+
+Copy the contents of [prompts.md](prompts.md) in this directory and provide them to your AI agent. If executed correctly, you will have an environment equivalent to step-2 without manual intervention.
+
 ---
 
 [Prev: step-0 — Starting from Scratch](../step-0/README.md) | [Next: step-2 — Next.js on ECS Express Mode](../step-2/README.md)

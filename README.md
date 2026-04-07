@@ -1,8 +1,22 @@
 # ECS Express AI Agent Workshop
 
-A hands-on workshop for developing a Next.js, NestJS, and Prisma app on AWS ECS Express Mode using the AI agent (Claude Code).
+A hands-on workshop for developing a Next.js, NestJS, and Prisma application on AWS ECS using an AI agent (such as [Claude Code](https://claude.ai/claude-code)).
 
-Each `step-*` directory is a self-contained project snapshot. Use the `prompts.md` in each step to guide the AI agent to evolve the project to the next step.
+Beyond a simple tutorial, the final application you build serves as a production-ready foundation, fully capable of implementing robust user authentication and seamlessly linking with OAuth2 Identity Providers (IdPs).
+
+Each `step-*` directory is a self-contained project snapshot. Use the `prompts.md` in each step to guide the AI agent to write code, provision infrastructure, and evolve the project to the next level — allowing you to experience a modern, AI-driven development workflow firsthand.
+
+## Prerequisites
+
+- Docker Engine + Docker Compose (e.g. [Docker Desktop](https://www.docker.com/products/docker-desktop/), [Podman](https://podman.io/), [Colima](https://github.com/abiosoft/colima))
+- An AI coding agent (e.g. [Claude Code](https://claude.ai/claude-code))
+
+## How to Use
+
+1. Pick a step directory (start with `step-0/` or `step-1/`)
+2. Open it in your AI agent
+3. Follow the prompts in `prompts.md` to build toward the next step
+4. Compare your result with the next step directory
 
 ## Steps
 
@@ -92,17 +106,32 @@ The complete application with all features — OAuth2 authentication, email veri
 - Settings page (email, MFA, linked accounts, theme)
 - Full E2E test suites for backend and web
 
-## Prerequisites
+## Infrastructure Layer Design: Persistent vs. Ephemeral
 
-- Docker Engine + Docker Compose (e.g. [Docker Desktop](https://www.docker.com/products/docker-desktop/), [Podman](https://podman.io/), [Colima](https://github.com/abiosoft/colima))
-- An AI coding agent (e.g. [Claude Code](https://claude.ai/claude-code))
+In this workshop, the Terraform code is divided into two distinct layers: **Persistent (default)** and **Ephemeral**.
 
-## How to Use
+The primary goals of this architecture are to minimize cloud costs during learning and to maintain a clean, reproducible experimental environment that can be built and destroyed as many times as needed.
 
-1. Pick a step directory (start with `step-0/` or `step-1/`)
-2. Open it in your AI agent
-3. Follow the prompts in `prompts.md` to build toward the next step
-4. Compare your result with the next step directory
+### Persistent Layer
+
+**Key Resources:** VPC (network infrastructure), ECR (container registry), IAM Roles, Security Groups, etc.
+
+**Characteristics:** These resources rarely change once created and incur little to no ongoing holding costs. They serve as the "foundation" and are meant to be kept throughout the duration of the workshop.
+
+### Ephemeral Layer
+
+**Key Resources:** ECS (Fargate container execution environment), ALB (Load Balancer), RDS (`db.t4g.micro` PostgreSQL).
+
+**Characteristics:** This layer consolidates resources that incur continuous hourly billing while running. By using `terraform apply` only when you are actively working, and `terraform destroy` on this layer when you finish for the day, you can significantly reduce idle costs.
+
+### Why is the Database (RDS) also disposable?
+
+In a typical production environment, databases are placed in the persistent layer to protect data. However, for this workshop, we intentionally include the database in the Ephemeral layer.
+
+- **Absolute Cost Control:** Although we use a highly cost-effective `db.t4g.micro` instance, leaving it running 24/7 still incurs charges. Grouping it with compute resources ensures that you never forget to turn it off, preventing unexpected bills.
+- **Starting with a Clean Slate:** Developing AI agents often requires frequent schema changes and recreating test data as you tweak prompts and logic. By destroying and recreating the entire environment, you avoid bugs caused by leftover data or schema inconsistencies, allowing you to always resume development in a clean state dictated exactly by your Infrastructure as Code (IaC).
+
+> **Warning:** Destroying the ephemeral layer will permanently delete all data within the DB. This is an intentional design choice for this workshop to embrace the concept of a "Disposable Environment."
 
 ## License
 

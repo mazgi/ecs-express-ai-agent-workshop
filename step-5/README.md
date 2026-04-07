@@ -53,6 +53,35 @@ docker compose up
 └── docs/
 ```
 
+## Cloud Deployment (Terraform)
+
+See [docs/cloud-deployment-aws.md](docs/cloud-deployment-aws.md) for full details. Quick summary:
+
+```sh
+# 1. Configure variables
+cp iac/aws/terraform.tfvars.example iac/aws/terraform.tfvars
+cp iac/aws/ephemeral/terraform.tfvars.example iac/aws/ephemeral/terraform.tfvars
+
+# 2. Deploy persistent infrastructure (VPC, ECR, IAM, Secrets Manager)
+source .env
+docker compose --profile=iac run --rm iac terraform -chdir=aws init \
+  -backend-config="bucket=$AWS_TF_STATE_BUCKET" \
+  -backend-config="region=$AWS_TF_STATE_REGION"
+docker compose --profile=iac run --rm iac terraform -chdir=aws apply -var-file=terraform.tfvars
+
+# 3. Build and push Docker images to ECR, then deploy ephemeral infrastructure (ECS Express Gateway, RDS)
+docker compose --profile=iac run --rm iac terraform -chdir=aws/ephemeral init \
+  -backend-config="bucket=$AWS_TF_STATE_BUCKET" \
+  -backend-config="region=$AWS_TF_STATE_REGION"
+docker compose --profile=iac run --rm iac terraform -chdir=aws/ephemeral apply -var-file=terraform.tfvars
+```
+
+## Implementation via AI Agent
+
+To prepare for the next step (step-final), you can have an AI agent (such as [Claude Code](https://claude.ai/claude-code), [Cursor](https://www.cursor.com/), [GitHub Copilot](https://github.com/features/copilot), or [ChatGPT](https://chatgpt.com/)) generate the code for you.
+
+Copy the contents of [prompts.md](prompts.md) in this directory and provide them to your AI agent. If executed correctly, you will have an environment equivalent to step-final without manual intervention.
+
 ---
 
 [Prev: step-4 — Next.js + NestJS with Items CRUD](../step-4/README.md) | [Next: step-final — Full-Stack App](../step-final/README.md)

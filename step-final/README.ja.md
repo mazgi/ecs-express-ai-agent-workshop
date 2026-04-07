@@ -37,6 +37,29 @@ docker compose up
 3. **CI でのクラウドデプロイ** — OIDC 認証を設定し、GitHub Actions 変数を構成して IaC ワークフローを実行。[CI — クラウドデプロイのセットアップ](docs/ci.md#for-cloud-deployment-e2e-tests--production-builds--iac) を参照。
 4. **手動クラウドデプロイ** — Terraform で直接デプロイ。[Cloud Deployment](docs/cloud-deployment.md) を参照。
 
+## クラウドデプロイ（Terraform）
+
+詳細は [docs/cloud-deployment-aws.md](docs/cloud-deployment-aws.md) を参照してください。Secrets Manager のセットアップは [docs/secrets.md](docs/secrets.md) も参照してください。
+
+```sh
+# 1. 変数の設定
+cp iac/aws/terraform.tfvars.example iac/aws/terraform.tfvars
+cp iac/aws/ephemeral/terraform.tfvars.example iac/aws/ephemeral/terraform.tfvars
+
+# 2. 永続インフラのデプロイ（VPC、ECR、IAM、Secrets Manager）
+source .env
+docker compose --profile=iac run --rm iac terraform -chdir=aws init \
+  -backend-config="bucket=$AWS_TF_STATE_BUCKET" \
+  -backend-config="region=$AWS_TF_STATE_REGION"
+docker compose --profile=iac run --rm iac terraform -chdir=aws apply -var-file=terraform.tfvars
+
+# 3. Docker イメージをビルドして ECR にプッシュ後、エフェメラルインフラをデプロイ（ECS Express Gateway、RDS）
+docker compose --profile=iac run --rm iac terraform -chdir=aws/ephemeral init \
+  -backend-config="bucket=$AWS_TF_STATE_BUCKET" \
+  -backend-config="region=$AWS_TF_STATE_REGION"
+docker compose --profile=iac run --rm iac terraform -chdir=aws/ephemeral apply -var-file=terraform.tfvars
+```
+
 ## プロジェクト構成
 
 ```

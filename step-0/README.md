@@ -9,7 +9,7 @@ Empty directory. Use the prompts to create a Next.js project with Docker Compose
 
 ## Get Started
 
-Follow [prompts.md](prompts.md) to build step-1 from scratch.
+Copy the contents of [prompts.md](prompts.md) in this directory and provide them to your AI agent (such as [Claude Code](https://claude.ai/claude-code), [Cursor](https://www.cursor.com/), [GitHub Copilot](https://github.com/features/copilot), or [ChatGPT](https://chatgpt.com/)). If executed correctly, you will have an environment equivalent to step-1 without manual intervention.
 
 ---
 

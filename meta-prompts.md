@@ -63,3 +63,10 @@ All user prompts from this session.
 58. link the README.ja.md files in each step from the README.ja.md in top
 59. could you link each previous and next step from each step?
 60. let there be the same in english version
+61. Could you insert text like following in each README in steps: (AI Agent implementation hint)
+62. it seems duplicates 'Get Started' and 'Implementation via AI Agent' in step-0. could you resolve it?
+63. could you add how to run terraform in each step mentions IaC such as step-2?
+64. could you write about infrastructure and, persistent/default and ephemeral layers in right position?
+65. you say, "you can completely eliminate idle costs." is it correct?
+66. In /README.md, could you improve order each section more human friendly?
+67. Could you improve intro section in README like this?: (production-ready foundation, AI-driven workflow)

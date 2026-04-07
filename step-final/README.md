@@ -37,6 +37,29 @@ After creating a repository from this template, follow these steps. Only step 1 
 3. **Cloud deployment via CI** — Set up OIDC authentication, configure GitHub Actions variables, and run IaC workflows. See [CI — Setup for cloud deployment](docs/ci.md#for-cloud-deployment-e2e-tests--production-builds--iac).
 4. **Manual cloud deployment** — Deploy directly with Terraform. See [Cloud Deployment](docs/cloud-deployment.md).
 
+## Cloud Deployment (Terraform)
+
+See [docs/cloud-deployment-aws.md](docs/cloud-deployment-aws.md) for full details. See also [docs/secrets.md](docs/secrets.md) for Secrets Manager setup.
+
+```sh
+# 1. Configure variables
+cp iac/aws/terraform.tfvars.example iac/aws/terraform.tfvars
+cp iac/aws/ephemeral/terraform.tfvars.example iac/aws/ephemeral/terraform.tfvars
+
+# 2. Deploy persistent infrastructure (VPC, ECR, IAM, Secrets Manager)
+source .env
+docker compose --profile=iac run --rm iac terraform -chdir=aws init \
+  -backend-config="bucket=$AWS_TF_STATE_BUCKET" \
+  -backend-config="region=$AWS_TF_STATE_REGION"
+docker compose --profile=iac run --rm iac terraform -chdir=aws apply -var-file=terraform.tfvars
+
+# 3. Build and push Docker images to ECR, then deploy ephemeral infrastructure (ECS Express Gateway, RDS)
+docker compose --profile=iac run --rm iac terraform -chdir=aws/ephemeral init \
+  -backend-config="bucket=$AWS_TF_STATE_BUCKET" \
+  -backend-config="region=$AWS_TF_STATE_REGION"
+docker compose --profile=iac run --rm iac terraform -chdir=aws/ephemeral apply -var-file=terraform.tfvars
+```
+
 ## Project Structure
 
 ```
