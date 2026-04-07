@@ -59,3 +59,5 @@ All user prompts from this session.
 54. It's not exist Secrets Manger in step-4 IaC but step-4 uses RDS. Is it correct?
 55. could you update each promts.md and README in step-* if needed?
 56. Could you create step-0 dir and place prompts.md in it to grow to next step?
+57. translate README to Japanese and save it as README.ja.md in repository top and each step
+58. link the README.ja.md files in each step from the README.ja.md in top
