@@ -10,3 +10,7 @@
 ## はじめに
 
 [prompts.md](prompts.md) に従って、step-1 をゼロからビルドします。
+
+---
+
+[次へ: step-1 — 空の Next.js アプリ](../step-1/README.ja.md)

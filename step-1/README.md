@@ -32,3 +32,7 @@ docker compose --profile=e2e-tests run --rm web-e2e-tests
     ├── app/               # Next.js App Router
     └── e2e-tests/         # Playwright E2E tests
 ```
+
+---
+
+[Prev: step-0 — Starting from Scratch](../step-0/README.md) | [Next: step-2 — Next.js on ECS Express Mode](../step-2/README.md)

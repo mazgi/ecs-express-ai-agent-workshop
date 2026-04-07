@@ -52,3 +52,7 @@ docker compose up
 ├── .github/               # GitHub Actions workflows + custom actions
 └── docs/
 ```
+
+---
+
+[Prev: step-4 — Next.js + NestJS with Items CRUD](../step-4/README.md) | [Next: step-final — Full-Stack App](../step-final/README.md)

@@ -63,3 +63,7 @@ docker compose up
 - [Git SHA Display](docs/git-sha-display.md) — プラットフォームごとのビルド SHA 注入
 - [Environment Variables](.example.secrets.env) — バックエンドの設定とシークレット
 - [GitHub Actions Variables](.example.env) — CI/CD とクラウドデプロイの変数
+
+---
+
+[前へ: step-5 — Next.js + NestJS（認証 + Items CRUD）](../step-5/README.ja.md)

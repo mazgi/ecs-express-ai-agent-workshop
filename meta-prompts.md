@@ -61,3 +61,5 @@ All user prompts from this session.
 56. Could you create step-0 dir and place prompts.md in it to grow to next step?
 57. translate README to Japanese and save it as README.ja.md in repository top and each step
 58. link the README.ja.md files in each step from the README.ja.md in top
+59. could you link each previous and next step from each step?
+60. let there be the same in english version

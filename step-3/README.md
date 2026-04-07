@@ -44,3 +44,7 @@ docker compose --profile=e2e-tests run --rm web-e2e-tests
 ├── .github/               # GitHub Actions workflows + custom actions
 └── docs/
 ```
+
+---
+
+[Prev: step-2 — Next.js on ECS Express Mode](../step-2/README.md) | [Next: step-4 — Next.js + NestJS with Items CRUD](../step-4/README.md)

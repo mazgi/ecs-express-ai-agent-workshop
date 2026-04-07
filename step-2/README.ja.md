@@ -39,3 +39,7 @@ docker compose --profile=e2e-tests run --rm web-e2e-tests
 ├── .github/               # GitHub Actions ワークフロー + カスタムアクション
 └── docs/
 ```
+
+---
+
+[前へ: step-1 — 空の Next.js アプリ](../step-1/README.ja.md) | [次へ: step-3 — Next.js + NestJS（ヘルスチェック）](../step-3/README.ja.md)

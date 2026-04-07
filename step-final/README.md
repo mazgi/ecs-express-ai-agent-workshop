@@ -63,3 +63,7 @@ After creating a repository from this template, follow these steps. Only step 1 
 - [Git SHA Display](docs/git-sha-display.md) — per-platform build SHA injection
 - [Environment Variables](.example.secrets.env) — backend config and secrets
 - [GitHub Actions Variables](.example.env) — CI/CD and cloud deployment variables
+
+---
+
+[Prev: step-5 — Next.js + NestJS with Auth + Items CRUD](../step-5/README.md)

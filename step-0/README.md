@@ -10,3 +10,7 @@ Empty directory. Use the prompts to create a Next.js project with Docker Compose
 ## Get Started
 
 Follow [prompts.md](prompts.md) to build step-1 from scratch.
+
+---
+
+[Next: step-1 — Empty Next.js App](../step-1/README.md)
