@@ -45,6 +45,7 @@ graph TB
 ## Prerequisites
 
 - Docker Engine + Docker Compose (e.g. [Docker Desktop](https://www.docker.com/products/docker-desktop/), [Podman](https://podman.io/), [Colima](https://github.com/abiosoft/colima))
+- A GitHub repository (optional — needed only if you want to use the GitHub Actions CI/CD workflows in `.github/`)
 
 ## Quick Start
 
@@ -106,6 +107,8 @@ docker compose --profile=iac run --rm iac terraform -chdir=aws/ephemeral apply -
 To prepare for the next step (step-4), you can have an AI agent (such as [Claude Code](https://claude.ai/claude-code), [Cursor](https://www.cursor.com/), [GitHub Copilot](https://github.com/features/copilot), or [ChatGPT](https://chatgpt.com/)) generate the code for you.
 
 Copy the contents of [prompts.md](prompts.md) in this directory and provide them to your AI agent. If executed correctly, you will have an environment equivalent to step-4 without manual intervention.
+
+> **Note:** The prompts will create Secrets Manager and RDS resources in the Terraform IaC. The `DATABASE_URL` secret is automatically populated by the ephemeral layer Terraform — no manual secret setup is required for this step.
 
 ## Expected Output After Completion
 

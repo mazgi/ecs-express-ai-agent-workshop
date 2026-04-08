@@ -50,6 +50,7 @@ graph TB
 ## 前提条件
 
 - Docker Engine + Docker Compose（例: [Docker Desktop](https://www.docker.com/products/docker-desktop/)、[Podman](https://podman.io/)、[Colima](https://github.com/abiosoft/colima)）
+- GitHub リポジトリ（オプション — `.github/` の GitHub Actions CI/CD ワークフローを使用する場合のみ必要）
 
 ## クイックスタート
 
@@ -108,6 +109,10 @@ docker compose --profile=iac run --rm iac terraform -chdir=aws/ephemeral init \
   -backend-config="region=$AWS_TF_STATE_REGION"
 docker compose --profile=iac run --rm iac terraform -chdir=aws/ephemeral apply -var-file=terraform.tfvars
 ```
+
+### シークレット
+
+このステップでは、唯一のシークレットである `DATABASE_URL` はエフェメラルレイヤーの Terraform が RDS エンドポイントから**自動的に設定**します。手動でのシークレット設定は不要です。
 
 ## AI エージェントによる実装
 

@@ -51,6 +51,7 @@ graph TB
 ## 前提条件
 
 - Docker Engine + Docker Compose（例: [Docker Desktop](https://www.docker.com/products/docker-desktop/)、[Podman](https://podman.io/)、[Colima](https://github.com/abiosoft/colima)）
+- GitHub リポジトリ（オプション — `.github/` の GitHub Actions CI/CD ワークフローを使用する場合のみ必要）
 
 ## クイックスタート
 
@@ -114,6 +115,21 @@ docker compose --profile=iac run --rm iac terraform -chdir=aws/ephemeral init \
   -backend-config="region=$AWS_TF_STATE_REGION"
 docker compose --profile=iac run --rm iac terraform -chdir=aws/ephemeral apply -var-file=terraform.tfvars
 ```
+
+### シークレットの設定
+
+永続レイヤーのデプロイ後、Terraform は AWS Secrets Manager にシークレットコンテナを作成します。`DATABASE_URL` はエフェメラルレイヤーが自動的に設定しますが、JWT シークレットは手動で設定する必要があります：
+
+```sh
+aws secretsmanager put-secret-value \
+  --secret-id "${APP_UNIQUE_ID}/backend/AUTH_JWT_SECRET" \
+  --secret-string "$(openssl rand -base64 32)"
+aws secretsmanager put-secret-value \
+  --secret-id "${APP_UNIQUE_ID}/backend/AUTH_JWT_REFRESH_SECRET" \
+  --secret-string "$(openssl rand -base64 32)"
+```
+
+> `APP_UNIQUE_ID` は `terraform.tfvars` の `app_unique_id` の値です。
 
 ## AI エージェントによる実装
 

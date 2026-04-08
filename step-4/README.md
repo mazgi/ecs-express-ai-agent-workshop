@@ -50,6 +50,7 @@ graph TB
 ## Prerequisites
 
 - Docker Engine + Docker Compose (e.g. [Docker Desktop](https://www.docker.com/products/docker-desktop/), [Podman](https://podman.io/), [Colima](https://github.com/abiosoft/colima))
+- A GitHub repository (optional — needed only if you want to use the GitHub Actions CI/CD workflows in `.github/`)
 
 ## Quick Start
 
@@ -108,6 +109,10 @@ docker compose --profile=iac run --rm iac terraform -chdir=aws/ephemeral init \
   -backend-config="region=$AWS_TF_STATE_REGION"
 docker compose --profile=iac run --rm iac terraform -chdir=aws/ephemeral apply -var-file=terraform.tfvars
 ```
+
+### Secrets
+
+In this step, the only secret is `DATABASE_URL`, which is **automatically populated** by the ephemeral layer Terraform from the RDS endpoint. No manual secret setup is required.
 
 ## Implementation via AI Agent
 

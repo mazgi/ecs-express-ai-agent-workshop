@@ -78,3 +78,20 @@ All user prompts from this session.
 73. the 'Architecture' diagram in README in each step is architecture diagram at start point. could you indicate it clearly?
 74. Hmm... could you update each 'Architecture' section to more clearly describing 'not yet expected, it just start point'?
 75. Could you add 'Who is this workshop best for?,' 'What you will learn,' 'Time & Cost Estimate,' and 'Prerequisites' in README?
+76. could you write about optional learning path that creates an empty github repository and copy or prompting each step?
+77. I think all cases start step-0 not step-1. How do you think?
+78. So, I think you can merge option A and B. moreover, you can simplify step-1's description.
+79. And, you can simplify 'Pick a step directory (start with `step-0/` or `step-1/`)' in 'How to Use' section.
+80. In '[step-1](step-1/) — Empty Next.js App' section, you wrote 'Starting point: ...' Is it correct?
+81. `step-2/.github` needs a github repository. could you mention it?
+82. Hmm... it's an optional learning path, not required. could you fix it?
+83. In expected output for step-2, it only returns gitsha if user mount repository root. isn't it?
+84. Hmm... could you improve the comment more easily understanding by human?
+85. Hmm... could you update the comment if learner runs this step as a subdirectory, doesn't have their own repository?
+86. in second half steps, user should set secrets into secrets manager by themselves using a method such as AWS CLI. could you write out about it?
+87. it seems needed in also step-3. doesn't it? → No, step-3 has no Secrets Manager. Starts from step-4.
+88. Hmm... however, in `step-3/prompts.md`, user create secrets manager via an AI agent. → Added note in step-3 expected output linking to step-4 secrets setup.
+89. I think it's not a part of expected outputs, it's a step of/after implementation via AI agent.
+90. I think 'populate secrets' section in step-4 is good, but it seems DATABASE_URL is set by terraform. doesn't it?
+91. oops. could you update comments about secrets manager in step-3, too?
+92. you wrote `your-app-AUTH_JWT_SECRET` as example, but in tf files `${var.app_unique_id}/backend/AUTH_JWT_SECRET` is used. could you update your examples?

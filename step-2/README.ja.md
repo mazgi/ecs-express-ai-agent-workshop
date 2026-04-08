@@ -45,6 +45,7 @@ graph TB
 ## 前提条件
 
 - Docker Engine + Docker Compose（例: [Docker Desktop](https://www.docker.com/products/docker-desktop/)、[Podman](https://podman.io/)、[Colima](https://github.com/abiosoft/colima)）
+- GitHub リポジトリ（オプション — `.github/` の GitHub Actions CI/CD ワークフローを使用する場合のみ必要）
 
 ## クイックスタート
 
@@ -112,6 +113,7 @@ docker compose --profile=iac run --rm iac terraform -chdir=aws/ephemeral apply -
   ```json
   { "status": "ok", "gitSha": "abc1234" }
   ```
+  > **注意：** ワークショップリポジトリのサブディレクトリ（例：`step-3/`）としてこのステップを実行している場合、`.git/` が親ディレクトリにあるため `gitSha` は `"undefined"` と表示されます。これは正常です。プロジェクトが独自の Git リポジトリのルートにある場合は、実際のコミットハッシュが表示されます。
 - **http://localhost:4000/api** — Swagger UI（非本番環境）
 - **http://localhost:3000** — **「ECS Express Workshop」** タイトルとバックエンドの Git SHA を表示する Web ページ
 - E2E テストで Git SHA の表示を検証

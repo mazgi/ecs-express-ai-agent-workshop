@@ -45,6 +45,7 @@ graph TB
 ## Prerequisites
 
 - Docker Engine + Docker Compose (e.g. [Docker Desktop](https://www.docker.com/products/docker-desktop/), [Podman](https://podman.io/), [Colima](https://github.com/abiosoft/colima))
+- A GitHub repository (optional — needed only if you want to use the GitHub Actions CI/CD workflows in `.github/`)
 
 ## Quick Start
 
@@ -112,6 +113,7 @@ After completing the prompts, you should have a project equivalent to step-3 wit
   ```json
   { "status": "ok", "gitSha": "abc1234" }
   ```
+  > **Note:** If you are running this step as a subdirectory of the workshop repository (e.g., `step-3/`), `gitSha` will show `"undefined"` because the `.git/` directory is in the parent. This is normal. It will show a real commit hash when the project is in its own Git repository root.
 - **http://localhost:4000/api** — Swagger UI (non-production)
 - **http://localhost:3000** — Web page showing **"ECS Express Workshop"** title and backend Git SHA
 - E2E tests verify the Git SHA is displayed

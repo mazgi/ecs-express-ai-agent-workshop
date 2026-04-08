@@ -60,10 +60,21 @@ By the end of this workshop, you will be able to:
 
 ## How to Use
 
-1. Pick a step directory (start with `step-0/` or `step-1/`)
+1. Pick a step directory (start with `step-0/`)
 2. Open it in your AI agent
 3. Follow the prompts in `prompts.md` to build toward the next step
 4. Compare your result with the next step directory
+
+## Optional Learning Path: Build from Scratch in Your Own Repository
+
+For a more hands-on experience, you can create your own GitHub repository and build the entire project from zero:
+
+1. Create a new empty GitHub repository and open it in your AI agent
+2. Give the AI the contents of `step-0/prompts.md` to generate step-1
+3. Commit the result, then continue with `step-1/prompts.md` to build step-2, and so on
+4. Repeat until you reach step-final
+
+> **Tip:** If the AI produces broken code at any step, you can copy the corresponding `step-*` directory contents into your repository to reset to a known working state, then continue from there.
 
 ## Troubleshooting: When the AI Agent Doesn't Work as Expected
 
@@ -83,7 +94,7 @@ Empty directory. Follow the prompts to create everything from scratch.
 
 ### [step-1](step-1/) — Empty Next.js App
 
-Starting point: an empty Next.js App Router project with Docker Compose for local development and Playwright E2E tests. No backend, no infrastructure.
+An empty Next.js App Router project with Docker Compose for local development and Playwright E2E tests. No backend, no infrastructure.
 
 **What you have:**
 - Next.js 16 App Router (TypeScript)

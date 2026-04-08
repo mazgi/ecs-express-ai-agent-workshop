@@ -62,6 +62,7 @@ graph TB
 ## 前提条件
 
 - Docker Engine + Docker Compose（例: [Docker Desktop](https://www.docker.com/products/docker-desktop/)、[Podman](https://podman.io/)、[Colima](https://github.com/abiosoft/colima)）
+- GitHub リポジトリ（オプション — `.github/` の GitHub Actions CI/CD ワークフローを使用する場合のみ必要）
 
 ## クイックスタート
 
@@ -137,6 +138,33 @@ docker compose --profile=iac run --rm iac terraform -chdir=aws/ephemeral init \
   -backend-config="region=$AWS_TF_STATE_REGION"
 docker compose --profile=iac run --rm iac terraform -chdir=aws/ephemeral apply -var-file=terraform.tfvars
 ```
+
+### シークレットの設定
+
+永続レイヤーのデプロイ後、Terraform は AWS Secrets Manager にシークレットコンテナを作成します。`DATABASE_URL` はエフェメラルレイヤーが自動的に設定しますが、残りのシークレットは AWS CLI で手動で設定する必要があります：
+
+| シークレット | 生成方法 |
+|-------------|---------|
+| `AUTH_JWT_SECRET` | `openssl rand -base64 32` |
+| `AUTH_JWT_REFRESH_SECRET` | `openssl rand -base64 32` |
+| `AUTH_SESSION_SECRET` | `openssl rand -base64 32` |
+| `AUTH_APPLE_PRIVATE_KEY` | [Apple Developer](https://developer.apple.com/) アカウントから取得 |
+| `AUTH_DISCORD_CLIENT_SECRET` | [Discord Developer Portal](https://discord.com/developers/) から取得 |
+| `AUTH_GITHUB_CLIENT_SECRET` | [GitHub Developer Settings](https://github.com/settings/developers) から取得 |
+| `AUTH_GOOGLE_CLIENT_SECRET` | [Google Cloud Console](https://console.cloud.google.com/) から取得 |
+| `AUTH_TWITTER_CLIENT_SECRET` | [Twitter Developer Portal](https://developer.x.com/) から取得 |
+| `SMTP_PASS` | AWS IAM（SES SMTP 認証情報）から取得 |
+
+```sh
+# 例：シークレットを設定
+aws secretsmanager put-secret-value \
+  --secret-id "${APP_UNIQUE_ID}/backend/AUTH_JWT_SECRET" \
+  --secret-string "$(openssl rand -base64 32)"
+```
+
+> `APP_UNIQUE_ID` は `terraform.tfvars` の `app_unique_id` の値です。
+
+詳細な手順は [docs/secrets.md](docs/secrets.md) を参照してください。
 
 ## プロジェクト構成
 

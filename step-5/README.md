@@ -51,6 +51,7 @@ graph TB
 ## Prerequisites
 
 - Docker Engine + Docker Compose (e.g. [Docker Desktop](https://www.docker.com/products/docker-desktop/), [Podman](https://podman.io/), [Colima](https://github.com/abiosoft/colima))
+- A GitHub repository (optional — needed only if you want to use the GitHub Actions CI/CD workflows in `.github/`)
 
 ## Quick Start
 
@@ -114,6 +115,21 @@ docker compose --profile=iac run --rm iac terraform -chdir=aws/ephemeral init \
   -backend-config="region=$AWS_TF_STATE_REGION"
 docker compose --profile=iac run --rm iac terraform -chdir=aws/ephemeral apply -var-file=terraform.tfvars
 ```
+
+### Populate Secrets
+
+After deploying the persistent layer, Terraform creates secret containers in AWS Secrets Manager. `DATABASE_URL` is automatically populated by the ephemeral layer, but you must manually set the JWT secrets:
+
+```sh
+aws secretsmanager put-secret-value \
+  --secret-id "${APP_UNIQUE_ID}/backend/AUTH_JWT_SECRET" \
+  --secret-string "$(openssl rand -base64 32)"
+aws secretsmanager put-secret-value \
+  --secret-id "${APP_UNIQUE_ID}/backend/AUTH_JWT_REFRESH_SECRET" \
+  --secret-string "$(openssl rand -base64 32)"
+```
+
+> `APP_UNIQUE_ID` is the value of `app_unique_id` in your `terraform.tfvars`.
 
 ## Implementation via AI Agent
 
