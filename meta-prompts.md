@@ -118,3 +118,4 @@ All user prompts from this session.
 113. could you write glossaries about oauth2 and mfa in step-5?
 114. I think glossaries are placed after 'Implementation via AI Agent' in each step is easier to understand. could you move these?
 115. there is 'Get Started' in step-0. could you move the glossary part?
+116. could you insert about container registry and ecr before ecs into step-1 glossary part?

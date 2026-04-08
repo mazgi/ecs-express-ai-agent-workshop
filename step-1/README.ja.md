@@ -59,7 +59,15 @@ docker compose --profile=e2e-tests run --rm web-e2e-tests
 > - GitHub Actions の変数とシークレットを設定 — [step-2 docs/ci.md](../step-2/docs/ci.md) を参照
 
 <details>
-<summary><strong>用語解説：ECS、IaC、CI/CD（クリックで展開）</strong></summary>
+<summary><strong>用語解説：コンテナレジストリ、ECR、ECS、IaC、CI/CD（クリックで展開）</strong></summary>
+
+**コンテナレジストリとは？**
+
+コンテナレジストリは、コンテナイメージの保管サービスです。Docker イメージをビルドした後、レジストリにプッシュすることで、他のマシン（クラウドサーバーなど）がそのイメージをプルして実行できるようになります。「Docker イメージ版の GitHub」と考えるとわかりやすいです。
+
+**Amazon ECR とは？**
+
+[Amazon ECR（Elastic Container Registry）](https://aws.amazon.com/ecr/) は、AWS のマネージドコンテナレジストリです。Docker イメージを ECR にプッシュすると、ECS などの AWS サービスがそこからイメージをプルしてアプリケーションを実行します。本ワークショップでは、Terraform が Web とバックエンドのイメージ用に ECR リポジトリを作成します。
 
 **Amazon ECS とは？**
 

@@ -59,7 +59,15 @@ Copy the contents of [prompts.md](prompts.md) in this directory and provide them
 > - Configure GitHub Actions variables and secrets — see [step-2 docs/ci.md](../step-2/docs/ci.md)
 
 <details>
-<summary><strong>Glossary: ECS, IaC, CI/CD (Click to expand)</strong></summary>
+<summary><strong>Glossary: Container Registry, ECR, ECS, IaC, CI/CD (Click to expand)</strong></summary>
+
+**What is a Container Registry?**
+
+A container registry is a storage service for container images. After you build a Docker image, you push it to a registry so that other machines (like cloud servers) can pull and run it. Think of it as "GitHub for Docker images."
+
+**What is Amazon ECR?**
+
+[Amazon ECR (Elastic Container Registry)](https://aws.amazon.com/ecr/) is AWS's managed container registry. You push your Docker images to ECR, and AWS services like ECS pull them from there to run your application. In this workshop, Terraform creates ECR repositories for the web and backend images.
 
 **What is Amazon ECS?**
 
