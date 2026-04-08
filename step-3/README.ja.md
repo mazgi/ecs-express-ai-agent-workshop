@@ -9,6 +9,37 @@ Next.js フロントエンドと最小限の NestJS バックエンド（GIT_SHA
 | backend | NestJS 11（ヘルスチェックのみ） | 4000 |
 | web | Next.js 16 | 3000 |
 
+## アーキテクチャ
+
+```mermaid
+graph TB
+    subgraph Local ["ローカル開発"]
+        direction LR
+        Web["Web<br/>Next.js :3000"]
+        Backend["Backend<br/>NestJS :4000"]
+        E2E["E2E Tests<br/>Playwright"]
+        Web -->|"/health"| Backend
+        E2E -.->|テスト| Web
+    end
+
+    subgraph AWS ["AWS クラウド"]
+        subgraph Persistent ["永続レイヤー"]
+            VPC["VPC"]
+            ECR["ECR"]
+            IAM["IAM ロール"]
+            SG["セキュリティグループ"]
+        end
+        subgraph Ephemeral ["エフェメラルレイヤー"]
+            ECS_Web["ECS Express<br/>Web :3000"]
+            ECS_Backend["ECS Express<br/>Backend :4000"]
+        end
+    end
+
+    ECS_Web -->|"/health"| ECS_Backend
+    ECR -->|イメージ pull| ECS_Web
+    ECR -->|イメージ pull| ECS_Backend
+```
+
 ## 前提条件
 
 - Docker Engine + Docker Compose（例: [Docker Desktop](https://www.docker.com/products/docker-desktop/)、[Podman](https://podman.io/)、[Colima](https://github.com/abiosoft/colima)）

@@ -8,6 +8,38 @@ AWS ECS Express Mode へデプロイするための IaC（Terraform）と GitHub
 |---------|------|--------|
 | web | Next.js 16 | 3000 |
 
+## アーキテクチャ
+
+```mermaid
+graph TB
+    subgraph Local ["ローカル開発"]
+        direction LR
+        Web["Web<br/>Next.js :3000"]
+        E2E["E2E Tests<br/>Playwright"]
+        E2E -.->|テスト| Web
+    end
+
+    subgraph AWS ["AWS クラウド"]
+        subgraph Persistent ["永続レイヤー"]
+            VPC["VPC"]
+            ECR["ECR"]
+            IAM["IAM ロール"]
+            SG["セキュリティグループ"]
+        end
+        subgraph Ephemeral ["エフェメラルレイヤー"]
+            ECS_Web["ECS Express<br/>Web :3000"]
+        end
+    end
+
+    subgraph CI ["GitHub Actions"]
+        GHA["CI/CD ワークフロー"]
+    end
+
+    GHA -->|イメージ push| ECR
+    GHA -->|デプロイ| ECS_Web
+    ECR -->|イメージ pull| ECS_Web
+```
+
 ## 前提条件
 
 - Docker Engine + Docker Compose（例: [Docker Desktop](https://www.docker.com/products/docker-desktop/)、[Podman](https://podman.io/)、[Colima](https://github.com/abiosoft/colima)）

@@ -2,6 +2,19 @@
 
 Starting point: an empty Next.js App Router project with Playwright E2E tests.
 
+## Architecture
+
+```mermaid
+graph LR
+    subgraph Docker Compose
+        Web["Web<br/>Next.js :3000"]
+        E2E["E2E Tests<br/>Playwright"]
+    end
+
+    Browser["Browser"] --> Web
+    E2E -.->|tests| Web
+```
+
 ## Prerequisites
 
 - Docker Engine + Docker Compose (e.g. [Docker Desktop](https://www.docker.com/products/docker-desktop/), [Podman](https://podman.io/), [Colima](https://github.com/abiosoft/colima))

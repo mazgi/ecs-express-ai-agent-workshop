@@ -9,6 +9,54 @@ AI エージェントを使って Next.js、NestJS、Prisma アプリを ECS Exp
 | backend | NestJS 11 + PostgreSQL 17 | 4000 |
 | web | Next.js 16 | 3000 |
 
+## アーキテクチャ
+
+```mermaid
+graph TB
+    subgraph Local ["ローカル開発"]
+        direction LR
+        Web["Web<br/>Next.js :3000"]
+        Backend["Backend<br/>NestJS :4000"]
+        DB_Local["PostgreSQL :5432"]
+        Mailpit["Mailpit<br/>SMTP :1025"]
+        E2E["E2E Tests<br/>Playwright"]
+        Web -->|Auth + API| Backend
+        Backend --> DB_Local
+        Backend -->|メール| Mailpit
+        E2E -.->|テスト| Web
+    end
+
+    subgraph OAuth2 ["OAuth2 IdP"]
+        Apple["Apple"]
+        Discord["Discord"]
+        GitHub["GitHub"]
+        Google["Google"]
+        Twitter["X / Twitter"]
+    end
+
+    subgraph AWS ["AWS クラウド"]
+        subgraph Persistent ["永続レイヤー"]
+            VPC["VPC"]
+            ECR["ECR"]
+            IAM["IAM ロール"]
+            SG["セキュリティグループ"]
+            SM["Secrets Manager<br/>JWT + OAuth2 + SMTP<br/>+ DATABASE_URL"]
+        end
+        subgraph Ephemeral ["エフェメラルレイヤー"]
+            ECS_Web["ECS Express<br/>Web :3000"]
+            ECS_Backend["ECS Express<br/>Backend :4000"]
+            RDS["RDS<br/>PostgreSQL"]
+            NAT["NAT Gateway"]
+        end
+    end
+
+    User["ユーザー"] -->|サインアップ / サインイン / TOTP MFA| ECS_Web
+    ECS_Web -->|JWT Auth + API| ECS_Backend
+    ECS_Backend --> RDS
+    ECS_Backend <-->|OAuth2| OAuth2
+    SM -.->|注入| ECS_Backend
+```
+
 ## 前提条件
 
 - Docker Engine + Docker Compose（例: [Docker Desktop](https://www.docker.com/products/docker-desktop/)、[Podman](https://podman.io/)、[Colima](https://github.com/abiosoft/colima)）

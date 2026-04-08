@@ -9,6 +9,54 @@ An example project for developing a Next.js, NestJS, and Prisma app on ECS Expre
 | backend | NestJS 11 + PostgreSQL 17 | 4000 |
 | web | Next.js 16 | 3000 |
 
+## Architecture
+
+```mermaid
+graph TB
+    subgraph Local ["Local Development"]
+        direction LR
+        Web["Web<br/>Next.js :3000"]
+        Backend["Backend<br/>NestJS :4000"]
+        DB_Local["PostgreSQL :5432"]
+        Mailpit["Mailpit<br/>SMTP :1025"]
+        E2E["E2E Tests<br/>Playwright"]
+        Web -->|Auth + API| Backend
+        Backend --> DB_Local
+        Backend -->|emails| Mailpit
+        E2E -.->|tests| Web
+    end
+
+    subgraph OAuth2 ["OAuth2 IdPs"]
+        Apple["Apple"]
+        Discord["Discord"]
+        GitHub["GitHub"]
+        Google["Google"]
+        Twitter["X / Twitter"]
+    end
+
+    subgraph AWS ["AWS Cloud"]
+        subgraph Persistent ["Persistent Layer"]
+            VPC["VPC"]
+            ECR["ECR"]
+            IAM["IAM Roles"]
+            SG["Security Groups"]
+            SM["Secrets Manager<br/>JWT + OAuth2 + SMTP<br/>+ DATABASE_URL"]
+        end
+        subgraph Ephemeral ["Ephemeral Layer"]
+            ECS_Web["ECS Express<br/>Web :3000"]
+            ECS_Backend["ECS Express<br/>Backend :4000"]
+            RDS["RDS<br/>PostgreSQL"]
+            NAT["NAT Gateway"]
+        end
+    end
+
+    User["User"] -->|Sign up / Sign in / TOTP MFA| ECS_Web
+    ECS_Web -->|JWT Auth + API| ECS_Backend
+    ECS_Backend --> RDS
+    ECS_Backend <-->|OAuth2| OAuth2
+    SM -.->|inject| ECS_Backend
+```
+
 ## Prerequisites
 
 - Docker Engine + Docker Compose (e.g. [Docker Desktop](https://www.docker.com/products/docker-desktop/), [Podman](https://podman.io/), [Colima](https://github.com/abiosoft/colima))

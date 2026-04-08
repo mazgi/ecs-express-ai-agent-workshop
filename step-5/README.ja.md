@@ -9,6 +9,43 @@ Next.js フロントエンドと、メール/パスワード認証（JWT）お�
 | backend | NestJS 11 + PostgreSQL 17 + Prisma + JWT Auth | 4000 |
 | web | Next.js 16 | 3000 |
 
+## アーキテクチャ
+
+```mermaid
+graph TB
+    subgraph Local ["ローカル開発"]
+        direction LR
+        Web["Web<br/>Next.js :3000"]
+        Backend["Backend<br/>NestJS :4000"]
+        DB_Local["PostgreSQL :5432"]
+        E2E["E2E Tests<br/>Playwright"]
+        Web -->|Auth + API| Backend
+        Backend --> DB_Local
+        E2E -.->|テスト| Web
+    end
+
+    subgraph AWS ["AWS クラウド"]
+        subgraph Persistent ["永続レイヤー"]
+            VPC["VPC"]
+            ECR["ECR"]
+            IAM["IAM ロール"]
+            SG["セキュリティグループ"]
+            SM["Secrets Manager<br/>JWT + DATABASE_URL"]
+        end
+        subgraph Ephemeral ["エフェメラルレイヤー"]
+            ECS_Web["ECS Express<br/>Web :3000"]
+            ECS_Backend["ECS Express<br/>Backend :4000"]
+            RDS["RDS<br/>PostgreSQL"]
+            NAT["NAT Gateway"]
+        end
+    end
+
+    User["ユーザー"] -->|サインアップ / サインイン| ECS_Web
+    ECS_Web -->|JWT Auth + API| ECS_Backend
+    ECS_Backend --> RDS
+    SM -.->|注入| ECS_Backend
+```
+
 ## 前提条件
 
 - Docker Engine + Docker Compose（例: [Docker Desktop](https://www.docker.com/products/docker-desktop/)、[Podman](https://podman.io/)、[Colima](https://github.com/abiosoft/colima)）

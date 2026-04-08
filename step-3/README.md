@@ -9,6 +9,37 @@ Next.js frontend and a minimal NestJS backend (health check with GIT_SHA only), 
 | backend | NestJS 11 (health check only) | 4000 |
 | web | Next.js 16 | 3000 |
 
+## Architecture
+
+```mermaid
+graph TB
+    subgraph Local ["Local Development"]
+        direction LR
+        Web["Web<br/>Next.js :3000"]
+        Backend["Backend<br/>NestJS :4000"]
+        E2E["E2E Tests<br/>Playwright"]
+        Web -->|"/health"| Backend
+        E2E -.->|tests| Web
+    end
+
+    subgraph AWS ["AWS Cloud"]
+        subgraph Persistent ["Persistent Layer"]
+            VPC["VPC"]
+            ECR["ECR"]
+            IAM["IAM Roles"]
+            SG["Security Groups"]
+        end
+        subgraph Ephemeral ["Ephemeral Layer"]
+            ECS_Web["ECS Express<br/>Web :3000"]
+            ECS_Backend["ECS Express<br/>Backend :4000"]
+        end
+    end
+
+    ECS_Web -->|"/health"| ECS_Backend
+    ECR -->|pull images| ECS_Web
+    ECR -->|pull images| ECS_Backend
+```
+
 ## Prerequisites
 
 - Docker Engine + Docker Compose (e.g. [Docker Desktop](https://www.docker.com/products/docker-desktop/), [Podman](https://podman.io/), [Colima](https://github.com/abiosoft/colima))

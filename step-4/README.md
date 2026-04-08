@@ -9,6 +9,42 @@ Next.js frontend and a NestJS backend with health check (Git SHA) and Items CRUD
 | backend | NestJS 11 + PostgreSQL 17 + Prisma | 4000 |
 | web | Next.js 16 | 3000 |
 
+## Architecture
+
+```mermaid
+graph TB
+    subgraph Local ["Local Development"]
+        direction LR
+        Web["Web<br/>Next.js :3000"]
+        Backend["Backend<br/>NestJS :4000"]
+        DB_Local["PostgreSQL :5432"]
+        E2E["E2E Tests<br/>Playwright"]
+        Web -->|API| Backend
+        Backend --> DB_Local
+        E2E -.->|tests| Web
+    end
+
+    subgraph AWS ["AWS Cloud"]
+        subgraph Persistent ["Persistent Layer"]
+            VPC["VPC"]
+            ECR["ECR"]
+            IAM["IAM Roles"]
+            SG["Security Groups"]
+            SM["Secrets Manager<br/>DATABASE_URL"]
+        end
+        subgraph Ephemeral ["Ephemeral Layer"]
+            ECS_Web["ECS Express<br/>Web :3000"]
+            ECS_Backend["ECS Express<br/>Backend :4000"]
+            RDS["RDS<br/>PostgreSQL"]
+            NAT["NAT Gateway"]
+        end
+    end
+
+    ECS_Web -->|API| ECS_Backend
+    ECS_Backend --> RDS
+    SM -.->|inject| ECS_Backend
+```
+
 ## Prerequisites
 
 - Docker Engine + Docker Compose (e.g. [Docker Desktop](https://www.docker.com/products/docker-desktop/), [Podman](https://podman.io/), [Colima](https://github.com/abiosoft/colima))

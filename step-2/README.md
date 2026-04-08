@@ -8,6 +8,38 @@ Next.js app with IaC (Terraform) for deploying to AWS ECS Express Mode, plus CI/
 |---------|-----------|------|
 | web | Next.js 16 | 3000 |
 
+## Architecture
+
+```mermaid
+graph TB
+    subgraph Local ["Local Development"]
+        direction LR
+        Web["Web<br/>Next.js :3000"]
+        E2E["E2E Tests<br/>Playwright"]
+        E2E -.->|tests| Web
+    end
+
+    subgraph AWS ["AWS Cloud"]
+        subgraph Persistent ["Persistent Layer"]
+            VPC["VPC"]
+            ECR["ECR"]
+            IAM["IAM Roles"]
+            SG["Security Groups"]
+        end
+        subgraph Ephemeral ["Ephemeral Layer"]
+            ECS_Web["ECS Express<br/>Web :3000"]
+        end
+    end
+
+    subgraph CI ["GitHub Actions"]
+        GHA["CI/CD Workflows"]
+    end
+
+    GHA -->|push image| ECR
+    GHA -->|deploy| ECS_Web
+    ECR -->|pull image| ECS_Web
+```
+
 ## Prerequisites
 
 - Docker Engine + Docker Compose (e.g. [Docker Desktop](https://www.docker.com/products/docker-desktop/), [Podman](https://podman.io/), [Colima](https://github.com/abiosoft/colima))
