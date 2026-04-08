@@ -54,7 +54,9 @@ To prepare for the next step (step-2), you can have an AI agent (such as [Claude
 
 Copy the contents of [prompts.md](prompts.md) in this directory and provide them to your AI agent. If executed correctly, you will have an environment equivalent to step-2 without manual intervention.
 
-> **Note:** The prompts will create Terraform IaC with ECR repositories and ECS Express Gateway. For cloud deployment, you will need to build and push Docker images to ECR — see [step-2 Build and Push Images](../step-2/README.md#build-and-push-images) for instructions.
+> **Note:** The prompts will create Terraform IaC with ECR repositories and ECS Express Gateway, plus GitHub Actions workflows for CI/CD. To use GitHub Actions for cloud deployment, you will need to:
+> - Set up OIDC authentication between GitHub and AWS — see [step-2 docs/oidc-setup.md](../step-2/docs/oidc-setup.md)
+> - Configure GitHub Actions variables and secrets — see [step-2 docs/ci.md](../step-2/docs/ci.md)
 
 ## Expected Output After Completion
 

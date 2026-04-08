@@ -159,6 +159,8 @@ aws secretsmanager put-secret-value \
 
 このディレクトリの [prompts.ja.md](prompts.ja.md) の内容をコピーして AI エージェントに渡してください。正しく実行されれば、手動の作業なしで step-final と同等の環境が構築されます。
 
+> **注意：** プロンプトによりメール送信機能が追加されます。ローカル開発では Mailpit がモック SMTP サーバーとして使用されます（設定不要）。実際の SMTP サービスは**オプション**です — 本ワークショップではデフォルトで `AUTH_REQUIRE_EMAIL_VERIFICATION=false` が設定されており、メール認証はバイパスされます。クラウドデプロイでメール認証を有効にしたい場合は、[Amazon SES](https://aws.amazon.com/ses/)、[SendGrid](https://sendgrid.com/)、[Mailgun](https://www.mailgun.com/) などのサービスを利用できます。
+
 ## 完了後の期待される出力
 
 プロンプトを完了すると、step-final と同等のプロジェクトが構築されます：

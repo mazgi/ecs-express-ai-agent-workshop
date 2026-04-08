@@ -54,7 +54,9 @@ docker compose --profile=e2e-tests run --rm web-e2e-tests
 
 このディレクトリの [prompts.ja.md](prompts.ja.md) の内容をコピーして AI エージェントに渡してください。正しく実行されれば、手動の作業なしで step-2 と同等の環境が構築されます。
 
-> **注意：** プロンプトにより ECR リポジトリと ECS Express Gateway を含む Terraform IaC が作成されます。クラウドデプロイ時には Docker イメージをビルドして ECR にプッシュする必要があります — 手順は [step-2 イメージのビルドとプッシュ](../step-2/README.ja.md#イメージのビルドとプッシュ) を参照してください。
+> **注意：** プロンプトにより ECR リポジトリと ECS Express Gateway を含む Terraform IaC、および CI/CD 用の GitHub Actions ワークフローが作成されます。GitHub Actions でクラウドデプロイを行うには、以下が必要です：
+> - GitHub と AWS 間の OIDC 認証を設定 — [step-2 docs/oidc-setup.md](../step-2/docs/oidc-setup.md) を参照
+> - GitHub Actions の変数とシークレットを設定 — [step-2 docs/ci.md](../step-2/docs/ci.md) を参照
 
 ## 完了後の期待される出力
 

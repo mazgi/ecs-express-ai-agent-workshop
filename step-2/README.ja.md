@@ -77,7 +77,7 @@ docker compose --profile=e2e-tests run --rm web-e2e-tests
 
 ## クラウドデプロイ（Terraform）
 
-詳細は [docs/cloud-deployment-aws.md](docs/cloud-deployment-aws.md) を参照してください。概要：
+詳細は [docs/cloud-deployment-aws.md](docs/cloud-deployment-aws.md) を参照してください。GitHub Actions で CI/CD を行うには、[OIDC 認証](docs/oidc-setup.md)の設定と [GitHub Actions の変数とシークレット](docs/ci.md)の設定が必要です。概要：
 
 ```sh
 # 1. 変数の設定

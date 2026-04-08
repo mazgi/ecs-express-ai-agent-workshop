@@ -159,6 +159,8 @@ To prepare for the next step (step-final), you can have an AI agent (such as [Cl
 
 Copy the contents of [prompts.md](prompts.md) in this directory and provide them to your AI agent. If executed correctly, you will have an environment equivalent to step-final without manual intervention.
 
+> **Note:** The prompts will add email sending functionality. For local development, Mailpit is used as a mock SMTP server (no configuration needed). A real SMTP service is **optional** — this workshop sets `AUTH_REQUIRE_EMAIL_VERIFICATION=false` by default, so email verification is bypassed. If you want to enable email verification for cloud deployment, you can use a service such as [Amazon SES](https://aws.amazon.com/ses/), [SendGrid](https://sendgrid.com/), or [Mailgun](https://www.mailgun.com/).
+
 ## Expected Output After Completion
 
 After completing the prompts, you should have a project equivalent to step-final with:

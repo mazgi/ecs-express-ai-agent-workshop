@@ -99,3 +99,9 @@ All user prompts from this session.
 94. oops. it's also needed in step-1 because user implements ECR in the step using AI agent.
 95. oops. I think `step-final/Dockerfiles.d/backend-build` is needed step-3 and after steps, and it should be created in step-2. could you update prompts.md in each step?
 96. could you translate prompts.md to Japanese prompts as prompts.ja.md in each step?
+97. in step-1, could you mention OIDC set up for github users?
+98. could you mention it in step-2 as same as step-1 for users who start from step-2?
+99. in step-1 and after steps, if user set github actions, user needs to set github actions variables and secrets. could you mention it refer `step-2/docs/ci.md`?
+100. you wrote 'Build and push Docker images to ECR' in the note for github actions. is it correct? → No, removed it. GitHub Actions handles that automatically.
+101. in step-5, could you add advice for SMTP services such as Amazon SES if user needed?
+102. An SMTP service is optional. because this workshop material is able to bypass email verification. could you update the text?

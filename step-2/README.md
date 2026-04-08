@@ -77,7 +77,7 @@ docker compose --profile=e2e-tests run --rm web-e2e-tests
 
 ## Cloud Deployment (Terraform)
 
-See [docs/cloud-deployment-aws.md](docs/cloud-deployment-aws.md) for full details. Quick summary:
+See [docs/cloud-deployment-aws.md](docs/cloud-deployment-aws.md) for full details. To use GitHub Actions for CI/CD, you will need to set up [OIDC authentication](docs/oidc-setup.md) and configure [GitHub Actions variables and secrets](docs/ci.md). Quick summary:
 
 ```sh
 # 1. Configure variables
