@@ -98,6 +98,24 @@ docker compose --profile=iac run --rm iac terraform -chdir=aws/ephemeral init \
 docker compose --profile=iac run --rm iac terraform -chdir=aws/ephemeral apply -var-file=terraform.tfvars
 ```
 
+### Build and Push Images
+
+After deploying the persistent layer (which creates ECR repositories), build and push the production images before deploying the ephemeral layer:
+
+```sh
+# Authenticate Docker with ECR
+aws ecr get-login-password --region $AWS_REGION | \
+  docker login --username AWS --password-stdin $ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com
+
+# Build and push web
+docker build -f Dockerfiles.d/web-build/Dockerfile \
+  -t $ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/${APP_UNIQUE_ID}-web:latest \
+  web/app
+docker push $ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/${APP_UNIQUE_ID}-web:latest
+```
+
+> The ECR repository URL can be found in the persistent layer Terraform output. See [docs/cloud-deployment-aws.md](docs/cloud-deployment-aws.md) for full details.
+
 ## Implementation via AI Agent
 
 To prepare for the next step (step-3), you can have an AI agent (such as [Claude Code](https://claude.ai/claude-code), [Cursor](https://www.cursor.com/), [GitHub Copilot](https://github.com/features/copilot), or [ChatGPT](https://chatgpt.com/)) generate the code for you.

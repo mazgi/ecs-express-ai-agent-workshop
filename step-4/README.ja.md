@@ -110,6 +110,28 @@ docker compose --profile=iac run --rm iac terraform -chdir=aws/ephemeral init \
 docker compose --profile=iac run --rm iac terraform -chdir=aws/ephemeral apply -var-file=terraform.tfvars
 ```
 
+### イメージのビルドとプッシュ
+
+永続レイヤーのデプロイ後、エフェメラルレイヤーのデプロイ前に本番イメージをビルドしてプッシュします：
+
+```sh
+# Docker を ECR に認証
+aws ecr get-login-password --region $AWS_REGION | \
+  docker login --username AWS --password-stdin $ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com
+
+# Backend をビルドしてプッシュ
+docker build -f Dockerfiles.d/backend/Dockerfile \
+  -t $ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/${APP_UNIQUE_ID}-backend:latest \
+  backend
+docker push $ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/${APP_UNIQUE_ID}-backend:latest
+
+# Web をビルドしてプッシュ
+docker build -f Dockerfiles.d/web-build/Dockerfile \
+  -t $ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/${APP_UNIQUE_ID}-web:latest \
+  web/app
+docker push $ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/${APP_UNIQUE_ID}-web:latest
+```
+
 ### シークレット
 
 このステップでは、唯一のシークレットである `DATABASE_URL` はエフェメラルレイヤーの Terraform が RDS エンドポイントから**自動的に設定**します。手動でのシークレット設定は不要です。

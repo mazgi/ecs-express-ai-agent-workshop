@@ -98,6 +98,24 @@ docker compose --profile=iac run --rm iac terraform -chdir=aws/ephemeral init \
 docker compose --profile=iac run --rm iac terraform -chdir=aws/ephemeral apply -var-file=terraform.tfvars
 ```
 
+### イメージのビルドとプッシュ
+
+永続レイヤーのデプロイ後（ECR リポジトリが作成される）、エフェメラルレイヤーのデプロイ前に本番イメージをビルドしてプッシュします：
+
+```sh
+# Docker を ECR に認証
+aws ecr get-login-password --region $AWS_REGION | \
+  docker login --username AWS --password-stdin $ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com
+
+# Web をビルドしてプッシュ
+docker build -f Dockerfiles.d/web-build/Dockerfile \
+  -t $ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/${APP_UNIQUE_ID}-web:latest \
+  web/app
+docker push $ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/${APP_UNIQUE_ID}-web:latest
+```
+
+> ECR リポジトリの URL は永続レイヤーの Terraform 出力から確認できます。詳細は [docs/cloud-deployment-aws.md](docs/cloud-deployment-aws.md) を参照してください。
+
 ## AI エージェントによる実装
 
 次のステップ（step-3）に進むために、AI エージェント（[Claude Code](https://claude.ai/claude-code)、[Cursor](https://www.cursor.com/)、[GitHub Copilot](https://github.com/features/copilot)、[ChatGPT](https://chatgpt.com/) など）にコードを生成させることができます。

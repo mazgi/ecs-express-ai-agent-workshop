@@ -95,3 +95,5 @@ All user prompts from this session.
 90. I think 'populate secrets' section in step-4 is good, but it seems DATABASE_URL is set by terraform. doesn't it?
 91. oops. could you update comments about secrets manager in step-3, too?
 92. you wrote `your-app-AUTH_JWT_SECRET` as example, but in tf files `${var.app_unique_id}/backend/AUTH_JWT_SECRET` is used. could you update your examples?
+93. in step-2 and after steps, it seems user should build and push container images. could you add the text about it?
+94. oops. it's also needed in step-1 because user implements ECR in the step using AI agent.

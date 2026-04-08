@@ -102,6 +102,30 @@ docker compose --profile=iac run --rm iac terraform -chdir=aws/ephemeral init \
 docker compose --profile=iac run --rm iac terraform -chdir=aws/ephemeral apply -var-file=terraform.tfvars
 ```
 
+### Build and Push Images
+
+After deploying the persistent layer, build and push the production images before deploying the ephemeral layer:
+
+```sh
+# Authenticate Docker with ECR
+aws ecr get-login-password --region $AWS_REGION | \
+  docker login --username AWS --password-stdin $ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com
+
+# Build and push backend
+docker build -f Dockerfiles.d/backend/Dockerfile \
+  -t $ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/${APP_UNIQUE_ID}-backend:latest \
+  backend
+docker push $ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/${APP_UNIQUE_ID}-backend:latest
+
+# Build and push web
+docker build -f Dockerfiles.d/web-build/Dockerfile \
+  -t $ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/${APP_UNIQUE_ID}-web:latest \
+  web/app
+docker push $ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/${APP_UNIQUE_ID}-web:latest
+```
+
+> See [docs/cloud-deployment-aws.md](docs/cloud-deployment-aws.md) for full details.
+
 ## Implementation via AI Agent
 
 To prepare for the next step (step-4), you can have an AI agent (such as [Claude Code](https://claude.ai/claude-code), [Cursor](https://www.cursor.com/), [GitHub Copilot](https://github.com/features/copilot), or [ChatGPT](https://chatgpt.com/)) generate the code for you.
