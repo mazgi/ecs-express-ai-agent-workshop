@@ -2,6 +2,15 @@
 
 Next.js frontend and a NestJS backend with health check (Git SHA) and Items CRUD (PostgreSQL + Prisma), deployed to AWS ECS Express Mode.
 
+<details>
+<summary><strong>Glossary: JWT (Click to expand)</strong></summary>
+
+**What is JWT?**
+
+JWT (JSON Web Token) is a compact, URL-safe token format used for authentication. When a user signs in, the server creates a signed token containing the user's identity (e.g., user ID and email). The client stores this token and sends it with each request in the `Authorization: Bearer <token>` header. The server verifies the signature without needing to look up a session in the database, making it stateless and scalable. In this workshop, we use two JWTs: an **access token** (short-lived, for API requests) and a **refresh token** (longer-lived, for obtaining new access tokens).
+
+</details>
+
 ## Services
 
 | Service | Technology | Port |

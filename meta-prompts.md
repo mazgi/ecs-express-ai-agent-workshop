@@ -105,3 +105,14 @@ All user prompts from this session.
 100. you wrote 'Build and push Docker images to ECR' in the note for github actions. is it correct? → No, removed it. GitHub Actions handles that automatically.
 101. in step-5, could you add advice for SMTP services such as Amazon SES if user needed?
 102. An SMTP service is optional. because this workshop material is able to bypass email verification. could you update the text?
+103. could you write what next.js is? and what are e2e tests? in step-0?
+104. could you move these glossaries into a `<details>`?
+105. could you write what IaC is? and what's CI/CD? as glossaries in step-1?
+106. could you add what containers are? and what ECS is? as glossaries in step-1?
+107. could you move what containers are? to step-0 and add what docker compose is? in step-0 as glossaries?
+108. sort step-0 glossaries: next.js, e2e tests, containers, docker compose
+109. could you write glossaries in step-2 about nestjs?
+110. could you insert the glossary what docker is? before docker compose in step-0?
+111. could you write glossaries about rdbms, postgresql, rds, orm, prisma in step-3?
+112. could you write glossary about jwt in step-4?
+113. could you write glossaries about oauth2 and mfa in step-5?

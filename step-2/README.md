@@ -2,6 +2,15 @@
 
 Next.js app with IaC (Terraform) for deploying to AWS ECS Express Mode, plus CI/CD via GitHub Actions.
 
+<details>
+<summary><strong>Glossary: NestJS (Click to expand)</strong></summary>
+
+**What is NestJS?**
+
+[NestJS](https://nestjs.com/) is a TypeScript-based backend framework for building server-side applications. It uses a highly structured, modular architecture inspired by Angular (with decorators, dependency injection, and modules), making it very predictable for AI agents to generate and extend code. In this workshop, we use NestJS as the backend API starting from the next step.
+
+</details>
+
 ## Services
 
 | Service | Technology | Port |

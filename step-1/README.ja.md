@@ -2,6 +2,23 @@
 
 出発点：Playwright E2E テスト付きの空の Next.js App Router プロジェクトです。
 
+<details>
+<summary><strong>用語解説：ECS、IaC、CI/CD（クリックで展開）</strong></summary>
+
+**Amazon ECS とは？**
+
+[Amazon ECS（Elastic Container Service）](https://aws.amazon.com/ecs/) は、クラウドでコンテナを実行するための AWS のマネージドサービスです。[ECS Express Mode](https://aws.amazon.com/blogs/containers/introducing-amazon-ecs-express/) は、ロードバランサー、ネットワーキング、オートスケーリングを自動的にプロビジョニングすることでデプロイをさらに簡素化し、最小限の設定で Docker イメージから本番 URL まで構築できます。
+
+**IaC（Infrastructure as Code）とは？**
+
+IaC は、インフラ（サーバー、ネットワーク、データベース）を手動設定ではなくコードファイルで管理する手法です。[Terraform](https://www.terraform.io/) は最も人気のある IaC ツールの一つで、`.tf` ファイルに望む状態を記述すると、Terraform がクラウドリソースの作成・更新・削除を行います。これによりインフラが再現可能でバージョン管理でき、AI エージェントによる生成も容易になります。
+
+**CI/CD とは？**
+
+CI/CD（継続的インテグレーション / 継続的デプロイ）は、コードのテストとデプロイのプロセスを自動化します。[GitHub Actions](https://github.com/features/actions) は GitHub に組み込まれた CI/CD プラットフォームで、コードをプッシュすると自動的にテストを実行し、Docker イメージをビルドし、クラウドにデプロイします。本ワークショップでは、AI エージェントがこれらのワークフローファイルを生成します。
+
+</details>
+
 ## 開始時のアーキテクチャ
 
 以下の図は、このステップを**開始した時点で既にあるもの**を示しています — 最終目標ではありません。完了後に何が構築されるかは[完了後の期待される出力](#完了後の期待される出力)を参照してください。

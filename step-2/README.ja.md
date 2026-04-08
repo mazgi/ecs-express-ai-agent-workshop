@@ -2,6 +2,15 @@
 
 AWS ECS Express Mode へデプロイするための IaC（Terraform）と GitHub Actions による CI/CD を備えた Next.js アプリです。
 
+<details>
+<summary><strong>用語解説：NestJS（クリックで展開）</strong></summary>
+
+**NestJS とは？**
+
+[NestJS](https://nestjs.com/) は、サーバーサイドアプリケーションを構築するための TypeScript ベースのバックエンドフレームワークです。Angular に触発された高度に構造化されたモジュラーアーキテクチャ（デコレーター、依存性注入、モジュール）を使用しており、AI エージェントがコードを生成・拡張する際に非常に予測しやすくなっています。本ワークショップでは、次のステップから NestJS をバックエンド API として使用します。
+
+</details>
+
 ## サービス
 
 | サービス | 技術 | ポート |

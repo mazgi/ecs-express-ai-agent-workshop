@@ -2,6 +2,19 @@
 
 Next.js frontend and a NestJS backend with email/password authentication (JWT), user-scoped Items CRUD (PostgreSQL + Prisma), deployed to AWS ECS Express Mode.
 
+<details>
+<summary><strong>Glossary: OAuth2, MFA / TOTP (Click to expand)</strong></summary>
+
+**What is OAuth2?**
+
+OAuth2 is an authorization protocol that lets users sign in to your application using their existing accounts on other services (Google, GitHub, Apple, etc.) instead of creating a new password. When a user clicks "Sign in with Google," they are redirected to Google to authenticate, then sent back to your app with a token proving their identity. This is both more convenient for users and more secure since your app never handles their password.
+
+**What is MFA / TOTP?**
+
+MFA (Multi-Factor Authentication) adds a second layer of security beyond just a password. TOTP (Time-based One-Time Password) is one of the most common MFA methods — the user scans a QR code with an authenticator app (e.g., Google Authenticator, Authy), which then generates a 6-digit code that changes every 30 seconds. At sign-in, the user enters both their password and the current code, making it much harder for an attacker to gain access even if the password is compromised.
+
+</details>
+
 ## Services
 
 | Service | Technology | Port |

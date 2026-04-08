@@ -2,6 +2,31 @@
 
 Next.js frontend and a minimal NestJS backend (health check with GIT_SHA only), both deployed to AWS ECS Express Mode with Terraform IaC and CI/CD via GitHub Actions.
 
+<details>
+<summary><strong>Glossary: RDBMS, PostgreSQL, RDS, ORM, Prisma (Click to expand)</strong></summary>
+
+**What is an RDBMS?**
+
+An RDBMS (Relational Database Management System) is a database that stores data in tables with rows and columns, and uses SQL to query and manipulate the data. Relationships between tables (e.g., a user has many items) are a core feature, making it ideal for structured application data.
+
+**What is PostgreSQL?**
+
+[PostgreSQL](https://www.postgresql.org/) is a powerful, open-source RDBMS known for its reliability, feature richness, and standards compliance. It is one of the most popular databases for web applications. In this workshop, we use PostgreSQL starting from the next step.
+
+**What is Amazon RDS?**
+
+[Amazon RDS (Relational Database Service)](https://aws.amazon.com/rds/) is a managed database service that handles setup, patching, backups, and scaling for you. Instead of installing and maintaining PostgreSQL on a server yourself, RDS provides a ready-to-use database instance in the cloud.
+
+**What is an ORM?**
+
+An ORM (Object-Relational Mapping) is a library that lets you interact with a database using your programming language's objects instead of writing raw SQL. It maps database tables to classes/types, making database operations type-safe and less error-prone.
+
+**What is Prisma?**
+
+[Prisma](https://www.prisma.io/) is a modern, type-safe ORM for TypeScript/JavaScript. You define your data models in a `.prisma` schema file, and Prisma generates a fully typed client for querying the database. This makes it especially well-suited for AI agents — they can modify the schema and get type-safe code automatically.
+
+</details>
+
 ## Services
 
 | Service | Technology | Port |
