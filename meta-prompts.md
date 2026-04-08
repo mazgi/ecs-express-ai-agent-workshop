@@ -97,3 +97,4 @@ All user prompts from this session.
 92. you wrote `your-app-AUTH_JWT_SECRET` as example, but in tf files `${var.app_unique_id}/backend/AUTH_JWT_SECRET` is used. could you update your examples?
 93. in step-2 and after steps, it seems user should build and push container images. could you add the text about it?
 94. oops. it's also needed in step-1 because user implements ECR in the step using AI agent.
+95. oops. I think `step-final/Dockerfiles.d/backend-build` is needed step-3 and after steps, and it should be created in step-2. could you update prompts.md in each step?
