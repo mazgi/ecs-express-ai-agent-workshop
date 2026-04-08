@@ -6,10 +6,57 @@ Beyond a simple tutorial, the final application you build serves as a production
 
 Each `step-*` directory is a self-contained project snapshot. Use the `prompts.md` in each step to guide the AI agent to write code, provision infrastructure, and evolve the project to the next level — allowing you to experience a modern, AI-driven development workflow firsthand.
 
+## Tech Stack & Why We Chose Them
+
+This workshop utilizes a modern, production-ready technology stack. These tools were chosen not only for their robust features but also because **their structured nature makes them highly predictable and optimal for AI agents (LLMs) to generate and refactor code.**
+
+<details>
+<summary><strong>View detailed tech stack and our design choices (Click to expand)</strong></summary>
+
+### Infrastructure & DevOps
+* **Amazon ECS Express Mode:** Introduced as the "easy button" for container deployments, automating ALB, networking, and scaling. It removes tedious boilerplate, allowing AI to provision production-grade environments instantly.
+* **Terraform (IaC):** The industry standard for declarative infrastructure. AI agents excel at writing HCL, ensuring a seamless and highly reproducible workflow from creation to safe cleanup.
+* **Docker & Docker Compose:** Containerization that guarantees consistent execution. AI agents easily generate `docker-compose.yml` configurations for complex, multi-container local environments.
+
+### Application & Database
+* **Next.js (Frontend):** The industry-standard React framework, serving as a predictable foundation for rapidly building interactive UIs with AI.
+* **NestJS (Backend API):** A TypeScript-based framework with a highly structured, modular architecture (OOP/DI). It makes it incredibly easy for AI to add features and refactor code predictably without breaking existing logic.
+* **Prisma (ORM):** A fully type-safe ORM. By simply instructing the AI on the desired structure, it can seamlessly handle schema creation, migrations, and TypeScript type generation.
+
+### Quality Assurance
+* **Playwright (E2E Testing):** A modern framework for End-to-End testing. As AI accelerates code generation, prompting the AI to write Playwright tests is the best practice to verify that the generated code actually works.
+
+</details>
+
+## Who is this workshop best for?
+
+This workshop is designed for:
+
+* **Full-stack Developers** who want to experience the future of AI-driven development.
+* **Frontend/Backend Engineers** who want to learn how to deploy production-ready applications on AWS without becoming DevOps experts.
+* **Tech Leads & Architects** looking for modern infrastructure design patterns (e.g., separating Persistent and Ephemeral layers) that work perfectly with AI generation.
+
+## What you will learn
+
+By the end of this workshop, you will be able to:
+
+* Use AI agents (like Claude Code) to generate, refactor, and test full-stack code.
+* Provision AWS infrastructure using Terraform and the new **Amazon ECS Express Mode**.
+* Manage a modern Node.js stack (Next.js, NestJS, Prisma) within a containerized environment (Docker).
+* Control cloud costs effectively by mastering the "Disposable Environment" pattern.
+
+## Time & Cost Estimate
+
+* **Estimated Time:** 2 - 3 hours
+* **Estimated AWS Cost:** Less than $5 (Assuming you destroy the ephemeral layer immediately after the workshop. **Note:** RDS and ECS will incur hourly charges while running.)
+
 ## Prerequisites
 
-- Docker Engine + Docker Compose (e.g. [Docker Desktop](https://www.docker.com/products/docker-desktop/), [Podman](https://podman.io/), [Colima](https://github.com/abiosoft/colima))
-- An AI coding agent (e.g. [Claude Code](https://claude.ai/claude-code))
+* **Knowledge:** Basic understanding of TypeScript and Docker. No deep AWS or Terraform expertise is required (the AI will help you!).
+* **Environment:**
+  * Docker Engine + Docker Compose (e.g. [Docker Desktop](https://www.docker.com/products/docker-desktop/), [Podman](https://podman.io/), [Colima](https://github.com/abiosoft/colima))
+  * AWS CLI configured with administrator access
+  * An AI agent tool (e.g. [Claude Code](https://claude.ai/claude-code), [Cursor](https://www.cursor.com/), or [GitHub Copilot](https://github.com/features/copilot))
 
 ## How to Use
 

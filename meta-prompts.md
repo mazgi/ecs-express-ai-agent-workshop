@@ -74,3 +74,7 @@ All user prompts from this session.
 69. could you generate architecture diagrams for each step using mermaid.js and insert it in each README?
 70. could you write expected outputs in each step?
 71. I think it more easier to understand 'Expected Output After Completion' section is placed after 'Implementation via AI Agent' section in each README. How do you think?
+72. Could you add 'tech stack' section to README in top?
+73. the 'Architecture' diagram in README in each step is architecture diagram at start point. could you indicate it clearly?
+74. Hmm... could you update each 'Architecture' section to more clearly describing 'not yet expected, it just start point'?
+75. Could you add 'Who is this workshop best for?,' 'What you will learn,' 'Time & Cost Estimate,' and 'Prerequisites' in README?

@@ -11,6 +11,8 @@ An example project for developing a Next.js, NestJS, and Prisma app on ECS Expre
 
 ## Architecture
 
+The following diagram shows the architecture of this completed application.
+
 ```mermaid
 graph TB
     subgraph Local ["Local Development"]

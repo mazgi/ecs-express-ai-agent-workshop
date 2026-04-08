@@ -9,7 +9,9 @@ Next.js frontend and a NestJS backend with health check (Git SHA) and Items CRUD
 | backend | NestJS 11 + PostgreSQL 17 + Prisma | 4000 |
 | web | Next.js 16 | 3000 |
 
-## Architecture
+## Architecture at Start
+
+The following diagram shows what you **already have** when you begin this step — not the final goal. See [Expected Output After Completion](#expected-output-after-completion) for what you will build.
 
 ```mermaid
 graph TB

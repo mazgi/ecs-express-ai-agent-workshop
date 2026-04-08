@@ -9,7 +9,9 @@ Next.js frontend and a minimal NestJS backend (health check with GIT_SHA only), 
 | backend | NestJS 11 (health check only) | 4000 |
 | web | Next.js 16 | 3000 |
 
-## Architecture
+## Architecture at Start
+
+The following diagram shows what you **already have** when you begin this step — not the final goal. See [Expected Output After Completion](#expected-output-after-completion) for what you will build.
 
 ```mermaid
 graph TB

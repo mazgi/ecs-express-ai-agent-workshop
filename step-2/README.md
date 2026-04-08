@@ -8,7 +8,9 @@ Next.js app with IaC (Terraform) for deploying to AWS ECS Express Mode, plus CI/
 |---------|-----------|------|
 | web | Next.js 16 | 3000 |
 
-## Architecture
+## Architecture at Start
+
+The following diagram shows what you **already have** when you begin this step — not the final goal. See [Expected Output After Completion](#expected-output-after-completion) for what you will build.
 
 ```mermaid
 graph TB

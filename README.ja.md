@@ -6,10 +6,57 @@ Next.js、NestJS、Prisma アプリケーションを AI エージェント（[C
 
 各 `step-*` ディレクトリはプロジェクトの自己完結型スナップショットです。各ステップの `prompts.md` に従って AI エージェントにコードの記述、インフラのプロビジョニング、プロジェクトの進化を指示し、モダンな AI 駆動の開発ワークフローを体験しましょう。
 
+## 技術スタックと選定理由
+
+本ワークショップでは、モダンで本番環境対応の技術スタックを使用しています。これらのツールは堅牢な機能だけでなく、**その構造化された性質が AI エージェント（LLM）にとってコードの生成やリファクタリングを高い予測性で行えるため**に選定されました。
+
+<details>
+<summary><strong>技術スタックと設計選択の詳細を見る（クリックで展開）</strong></summary>
+
+### インフラ & DevOps
+* **Amazon ECS Express Mode:** コンテナデプロイの「イージーボタン」として導入され、ALB、ネットワーキング、スケーリングを自動化します。面倒なボイラープレートを排除し、AI が本番グレードの環境を即座にプロビジョニングできます。
+* **Terraform（IaC）:** 宣言的インフラの業界標準。AI エージェントは HCL の記述に優れており、作成から安全なクリーンアップまでシームレスで高い再現性を持つワークフローを実現します。
+* **Docker & Docker Compose:** 一貫した実行を保証するコンテナ化。AI エージェントは複雑なマルチコンテナのローカル環境用の `docker-compose.yml` 設定を容易に生成できます。
+
+### アプリケーション & データベース
+* **Next.js（フロントエンド）:** 業界標準の React フレームワークで、AI によるインタラクティブな UI の迅速な構築の予測可能な基盤として機能します。
+* **NestJS（バックエンド API）:** 高度に構造化されたモジュラーアーキテクチャ（OOP/DI）を持つ TypeScript ベースのフレームワーク。AI が既存のロジックを壊すことなく、予測可能な形で機能追加やコードリファクタリングを行うことが非常に容易です。
+* **Prisma（ORM）:** 完全に型安全な ORM。AI に望む構造を指示するだけで、スキーマ作成、マイグレーション、TypeScript 型生成をシームレスに処理できます。
+
+### 品質保証
+* **Playwright（E2E テスト）:** エンドツーエンドテストのためのモダンなフレームワーク。AI がコード生成を加速する中、AI に Playwright テストを書かせることは、生成されたコードが実際に動作することを検証するベストプラクティスです。
+
+</details>
+
+## 対象者
+
+本ワークショップは以下の方を対象としています：
+
+* **フルスタック開発者** — AI 駆動開発の未来を体験したい方。
+* **フロントエンド/バックエンドエンジニア** — DevOps の専門家にならずとも、本番環境対応のアプリケーションを AWS にデプロイする方法を学びたい方。
+* **テックリード & アーキテクト** — AI 生成と相性の良いモダンなインフラ設計パターン（永続レイヤーとエフェメラルレイヤーの分離など）を探している方。
+
+## 学べること
+
+本ワークショップを完了すると、以下ができるようになります：
+
+* AI エージェント（Claude Code など）を使ってフルスタックコードの生成、リファクタリング、テストを行う。
+* Terraform と新しい **Amazon ECS Express Mode** を使って AWS インフラをプロビジョニングする。
+* コンテナ化された環境（Docker）でモダンな Node.js スタック（Next.js、NestJS、Prisma）を管理する。
+* 「使い捨て環境」パターンを習得して、クラウドコストを効果的にコントロールする。
+
+## 所要時間 & コスト見積もり
+
+* **所要時間：** 2 〜 3 時間
+* **AWS コスト見積もり：** 5 ドル未満（ワークショップ終了後すぐにエフェメラルレイヤーを破棄した場合。**注意：** RDS と ECS は稼働中に時間単位で課金されます。）
+
 ## 前提条件
 
-- Docker Engine + Docker Compose（例: [Docker Desktop](https://www.docker.com/products/docker-desktop/)、[Podman](https://podman.io/)、[Colima](https://github.com/abiosoft/colima)）
-- AI コーディングエージェント（例: [Claude Code](https://claude.ai/claude-code)）
+* **知識：** TypeScript と Docker の基本的な理解。AWS や Terraform の深い専門知識は不要です（AI がサポートします！）。
+* **環境：**
+  * Docker Engine + Docker Compose（例: [Docker Desktop](https://www.docker.com/products/docker-desktop/)、[Podman](https://podman.io/)、[Colima](https://github.com/abiosoft/colima)）
+  * 管理者アクセスが設定された AWS CLI
+  * AI エージェントツール（例: [Claude Code](https://claude.ai/claude-code)、[Cursor](https://www.cursor.com/)、[GitHub Copilot](https://github.com/features/copilot)）
 
 ## 使い方
 

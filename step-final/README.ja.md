@@ -11,6 +11,8 @@ AI エージェントを使って Next.js、NestJS、Prisma アプリを ECS Exp
 
 ## アーキテクチャ
 
+以下の図は、この完成版アプリケーションのアーキテクチャを示しています。
+
 ```mermaid
 graph TB
     subgraph Local ["ローカル開発"]

@@ -2,7 +2,9 @@
 
 Starting point: an empty Next.js App Router project with Playwright E2E tests.
 
-## Architecture
+## Architecture at Start
+
+The following diagram shows what you **already have** when you begin this step — not the final goal. See [Expected Output After Completion](#expected-output-after-completion) for what you will build.
 
 ```mermaid
 graph LR
