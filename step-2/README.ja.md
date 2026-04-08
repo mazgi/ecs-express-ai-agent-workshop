@@ -101,6 +101,19 @@ docker compose --profile=iac run --rm iac terraform -chdir=aws/ephemeral apply -
 
 このディレクトリの [prompts.md](prompts.md) の内容をコピーして AI エージェントに渡してください。正しく実行されれば、手動の作業なしで step-3 と同等の環境が構築されます。
 
+## 完了後の期待される出力
+
+プロンプトを完了すると、step-3 と同等のプロジェクトが構築されます：
+
+- ヘルスチェックエンドポイントを持つ NestJS バックエンド
+- **http://localhost:4000/health** のレスポンス：
+  ```json
+  { "status": "ok", "gitSha": "abc1234" }
+  ```
+- **http://localhost:4000/api** — Swagger UI（非本番環境）
+- **http://localhost:3000** — **「ECS Express Workshop」** タイトルとバックエンドの Git SHA を表示する Web ページ
+- E2E テストで Git SHA の表示を検証
+
 ---
 
 [前へ: step-1 — 空の Next.js アプリ](../step-1/README.ja.md) | [次へ: step-3 — Next.js + NestJS（ヘルスチェック）](../step-3/README.ja.md)

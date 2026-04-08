@@ -105,6 +105,22 @@ docker compose --profile=iac run --rm iac terraform -chdir=aws/ephemeral apply -
 
 このディレクトリの [prompts.md](prompts.md) の内容をコピーして AI エージェントに渡してください。正しく実行されれば、手動の作業なしで step-4 と同等の環境が構築されます。
 
+## 完了後の期待される出力
+
+プロンプトを完了すると、step-4 と同等のプロジェクトが構築されます：
+
+- Docker Compose で PostgreSQL データベースが起動
+- Prisma ORM（Item モデル）
+- **http://localhost:3000** — Items セクション付き Web ページ：
+  - 入力フィールドと「Add」ボタンでアイテムを作成
+  - 削除ボタン付きアイテム一覧
+  - リストが空の場合は「No items yet」
+- **http://localhost:4000/api** — Swagger UI（Items CRUD）：
+  - `POST /items` — アイテム作成（`{ "name": "My item" }`）→ `201 Created`
+  - `GET /items` — 全アイテム一覧 → `200 OK`
+  - `DELETE /items/:id` — アイテム削除 → `204 No Content`
+- E2E テストでアイテムの作成と削除を検証
+
 ---
 
 [前へ: step-2 — ECS Express Mode 上の Next.js](../step-2/README.ja.md) | [次へ: step-4 — Next.js + NestJS（Items CRUD）](../step-4/README.ja.md)

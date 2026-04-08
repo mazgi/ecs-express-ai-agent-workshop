@@ -72,3 +72,5 @@ All user prompts from this session.
 67. Could you improve intro section in README like this?: (production-ready foundation, AI-driven workflow)
 68. could you insert suggestion and advice about LLM troubleshooting in the right position?
 69. could you generate architecture diagrams for each step using mermaid.js and insert it in each README?
+70. could you write expected outputs in each step?
+71. I think it more easier to understand 'Expected Output After Completion' section is placed after 'Implementation via AI Agent' section in each README. How do you think?

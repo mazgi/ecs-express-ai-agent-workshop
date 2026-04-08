@@ -76,6 +76,34 @@ docker compose up
 
 See [Local Development](docs/local-development.md) for detailed setup instructions (OAuth provider configuration, E2E tests, etc.).
 
+## Expected Output
+
+After running `docker compose up`:
+
+| URL | Description |
+|-----|-------------|
+| http://localhost:3000 | Web — redirects to `/signin` or `/dashboard` |
+| http://localhost:3000/signup | Registration with email verification |
+| http://localhost:3000/items | Authenticated items CRUD (user-scoped) |
+| http://localhost:3000/settings | Email, password, TOTP MFA, OAuth linking, theme |
+| http://localhost:4000/api | Swagger UI (Auth, Users, Items endpoints) |
+| http://localhost:4000/health | `{ "status": "ok", "gitSha": "..." }` |
+| http://localhost:8025 | Mailpit UI (local email testing) |
+
+**Sign-in page features:**
+- Email/password fields
+- OAuth2 buttons (Apple, Discord, GitHub, Google, X)
+- "Forgot password?" link and language switcher
+- TOTP MFA challenge (if enabled for the user)
+
+**Settings page features:**
+- Email management (change, verify, resend)
+- Password reset
+- TOTP MFA setup/disable with QR code and recovery codes
+- OAuth provider linking/unlinking
+- Theme toggle (System / Light / Dark)
+- Account deletion
+
 ## Use This Template
 
 After creating a repository from this template, follow these steps. Only step 1 is required — the rest are optional depending on your needs.

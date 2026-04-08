@@ -52,6 +52,16 @@ To prepare for the next step (step-2), you can have an AI agent (such as [Claude
 
 Copy the contents of [prompts.md](prompts.md) in this directory and provide them to your AI agent. If executed correctly, you will have an environment equivalent to step-2 without manual intervention.
 
+## Expected Output After Completion
+
+After completing the prompts, you should have a project equivalent to step-2 with:
+
+- Terraform IaC under `iac/` (persistent + ephemeral layers)
+- GitHub Actions workflows under `.github/`
+- A production Dockerfile for web (`Dockerfiles.d/web-build/`)
+- Cloud deployment documentation under `docs/`
+- Local development still works: `docker compose up` → http://localhost:3000
+
 ---
 
 [Prev: step-0 — Starting from Scratch](../step-0/README.md) | [Next: step-2 — Next.js on ECS Express Mode](../step-2/README.md)

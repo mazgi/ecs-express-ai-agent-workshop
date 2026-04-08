@@ -105,6 +105,22 @@ To prepare for the next step (step-4), you can have an AI agent (such as [Claude
 
 Copy the contents of [prompts.md](prompts.md) in this directory and provide them to your AI agent. If executed correctly, you will have an environment equivalent to step-4 without manual intervention.
 
+## Expected Output After Completion
+
+After completing the prompts, you should have a project equivalent to step-4 with:
+
+- PostgreSQL database running via Docker Compose
+- Prisma ORM with Item model
+- **http://localhost:3000** — Web page with Items section:
+  - Input field and "Add" button to create items
+  - List of items with delete buttons
+  - "No items yet" when the list is empty
+- **http://localhost:4000/api** — Swagger UI with Items CRUD:
+  - `POST /items` — Create item (`{ "name": "My item" }`) → `201 Created`
+  - `GET /items` — List all items → `200 OK`
+  - `DELETE /items/:id` — Delete item → `204 No Content`
+- E2E tests verify creating and deleting items
+
 ---
 
 [Prev: step-2 — Next.js on ECS Express Mode](../step-2/README.md) | [Next: step-4 — Next.js + NestJS with Items CRUD](../step-4/README.md)

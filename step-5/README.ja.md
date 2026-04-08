@@ -119,6 +119,27 @@ docker compose --profile=iac run --rm iac terraform -chdir=aws/ephemeral apply -
 
 このディレクトリの [prompts.md](prompts.md) の内容をコピーして AI エージェントに渡してください。正しく実行されれば、手動の作業なしで step-final と同等の環境が構築されます。
 
+## 完了後の期待される出力
+
+プロンプトを完了すると、step-final と同等のプロジェクトが構築されます：
+
+- **http://localhost:3000/signin** — サインインフォーム：
+  - メール/パスワードフィールド
+  - OAuth2 ボタン（Apple、Discord、GitHub、Google、X）
+  - 「パスワードを忘れた場合」リンクと言語切り替え
+  - TOTP MFA チャレンジ（ユーザーが有効にしている場合）
+- **http://localhost:3000/signup** — メール認証フロー付き登録
+- **http://localhost:3000/settings** — ユーザー設定：
+  - メール管理（変更、認証、再送信）
+  - パスワードリセット
+  - TOTP MFA 設定/無効化（QR コードとリカバリーコード）
+  - OAuth プロバイダーのリンク/リンク解除
+  - テーマ切り替え（システム / ライト / ダーク）
+  - アカウント削除
+- **http://localhost:8025** — Mailpit UI（ローカルメールテスト）
+- 国際化（英語 + 日本語）
+- Auth、Items、TOTP、テーマの完全な E2E テストスイート
+
 ---
 
 [前へ: step-4 — Next.js + NestJS（Items CRUD）](../step-4/README.ja.md) | [次へ: step-final — フルスタックアプリ](../step-final/README.ja.md)

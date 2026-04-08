@@ -101,6 +101,19 @@ To prepare for the next step (step-3), you can have an AI agent (such as [Claude
 
 Copy the contents of [prompts.md](prompts.md) in this directory and provide them to your AI agent. If executed correctly, you will have an environment equivalent to step-3 without manual intervention.
 
+## Expected Output After Completion
+
+After completing the prompts, you should have a project equivalent to step-3 with:
+
+- A NestJS backend with a health check endpoint
+- **http://localhost:4000/health** returns:
+  ```json
+  { "status": "ok", "gitSha": "abc1234" }
+  ```
+- **http://localhost:4000/api** — Swagger UI (non-production)
+- **http://localhost:3000** — Web page showing **"ECS Express Workshop"** title and backend Git SHA
+- E2E tests verify the Git SHA is displayed
+
 ---
 
 [Prev: step-1 — Empty Next.js App](../step-1/README.md) | [Next: step-3 — Next.js + NestJS (health check)](../step-3/README.md)

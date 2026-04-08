@@ -76,6 +76,34 @@ docker compose up
 
 詳細なセットアップ手順（OAuth プロバイダーの設定、E2E テストなど）は [Local Development](docs/local-development.md) を参照してください。
 
+## 期待される出力
+
+`docker compose up` 実行後：
+
+| URL | 説明 |
+|-----|------|
+| http://localhost:3000 | Web — `/signin` または `/dashboard` にリダイレクト |
+| http://localhost:3000/signup | メール認証付き登録 |
+| http://localhost:3000/items | 認証済み Items CRUD（ユーザースコープ） |
+| http://localhost:3000/settings | メール、パスワード、TOTP MFA、OAuth リンク、テーマ |
+| http://localhost:4000/api | Swagger UI（Auth、Users、Items エンドポイント） |
+| http://localhost:4000/health | `{ "status": "ok", "gitSha": "..." }` |
+| http://localhost:8025 | Mailpit UI（ローカルメールテスト） |
+
+**サインインページの機能：**
+- メール/パスワードフィールド
+- OAuth2 ボタン（Apple、Discord、GitHub、Google、X）
+- 「パスワードを忘れた場合」リンクと言語切り替え
+- TOTP MFA チャレンジ（ユーザーが有効にしている場合）
+
+**設定ページの機能：**
+- メール管理（変更、認証、再送信）
+- パスワードリセット
+- TOTP MFA 設定/無効化（QR コードとリカバリーコード）
+- OAuth プロバイダーのリンク/リンク解除
+- テーマ切り替え（システム / ライト / ダーク）
+- アカウント削除
+
 ## このテンプレートの使い方
 
 このテンプレートからリポジトリを作成した後、以下の手順に従ってください。ステップ 1 のみ必須で、残りは必要に応じて実施してください。

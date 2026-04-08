@@ -52,6 +52,16 @@ docker compose --profile=e2e-tests run --rm web-e2e-tests
 
 このディレクトリの [prompts.md](prompts.md) の内容をコピーして AI エージェントに渡してください。正しく実行されれば、手動の作業なしで step-2 と同等の環境が構築されます。
 
+## 完了後の期待される出力
+
+プロンプトを完了すると、step-2 と同等のプロジェクトが構築されます：
+
+- `iac/` 配下に Terraform IaC（永続 + エフェメラルレイヤー）
+- `.github/` 配下に GitHub Actions ワークフロー
+- Web 用本番 Dockerfile（`Dockerfiles.d/web-build/`）
+- `docs/` 配下にクラウドデプロイドキュメント
+- ローカル開発は引き続き動作：`docker compose up` → http://localhost:3000
+
 ---
 
 [前へ: step-0 — ゼロからスタート](../step-0/README.ja.md) | [次へ: step-2 — ECS Express Mode 上の Next.js](../step-2/README.ja.md)

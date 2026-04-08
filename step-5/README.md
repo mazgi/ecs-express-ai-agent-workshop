@@ -119,6 +119,27 @@ To prepare for the next step (step-final), you can have an AI agent (such as [Cl
 
 Copy the contents of [prompts.md](prompts.md) in this directory and provide them to your AI agent. If executed correctly, you will have an environment equivalent to step-final without manual intervention.
 
+## Expected Output After Completion
+
+After completing the prompts, you should have a project equivalent to step-final with:
+
+- **http://localhost:3000/signin** — Sign-in form with:
+  - Email/password fields
+  - OAuth2 buttons (Apple, Discord, GitHub, Google, X)
+  - "Forgot password?" link and language switcher
+  - TOTP MFA challenge (if enabled for the user)
+- **http://localhost:3000/signup** — Registration with email verification flow
+- **http://localhost:3000/settings** — User settings:
+  - Email management (change, verify, resend)
+  - Password reset
+  - TOTP MFA setup/disable with QR code and recovery codes
+  - OAuth provider linking/unlinking
+  - Theme toggle (System / Light / Dark)
+  - Account deletion
+- **http://localhost:8025** — Mailpit UI for local email testing
+- Internationalization (English + Japanese)
+- Full E2E test suites for auth, items, TOTP, and theme
+
 ---
 
 [Prev: step-4 — Next.js + NestJS with Items CRUD](../step-4/README.md) | [Next: step-final — Full-Stack App](../step-final/README.md)

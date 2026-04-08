@@ -113,6 +113,19 @@ docker compose --profile=iac run --rm iac terraform -chdir=aws/ephemeral apply -
 
 このディレクトリの [prompts.md](prompts.md) の内容をコピーして AI エージェントに渡してください。正しく実行されれば、手動の作業なしで step-5 と同等の環境が構築されます。
 
+## 完了後の期待される出力
+
+プロンプトを完了すると、step-5 と同等のプロジェクトが構築されます：
+
+- **http://localhost:3000** — 未認証は `/signin`、認証済みは `/dashboard` にリダイレクト
+- **http://localhost:3000/signup** — 登録フォーム（メール + パスワード、8 文字以上）
+- **http://localhost:3000/signin** — メール/パスワードのサインインフォーム
+- **http://localhost:3000/dashboard** — ユーザープロフィール表示（ID、メール、登録日）
+- **http://localhost:3000/items** — ユーザースコープのアイテム（認証必須）
+- **http://localhost:4000/api** — Swagger UI（Auth + Items エンドポイント）
+- アイテムは認証ユーザーにスコープ（削除時に所有権チェック）
+- E2E テストでサインアップフローと認証済みアイテム管理を検証
+
 ---
 
 [前へ: step-3 — Next.js + NestJS（ヘルスチェック）](../step-3/README.ja.md) | [次へ: step-5 — Next.js + NestJS（認証 + Items CRUD）](../step-5/README.ja.md)

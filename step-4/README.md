@@ -113,6 +113,19 @@ To prepare for the next step (step-5), you can have an AI agent (such as [Claude
 
 Copy the contents of [prompts.md](prompts.md) in this directory and provide them to your AI agent. If executed correctly, you will have an environment equivalent to step-5 without manual intervention.
 
+## Expected Output After Completion
+
+After completing the prompts, you should have a project equivalent to step-5 with:
+
+- **http://localhost:3000** — Redirects to `/signin` (unauthenticated) or `/dashboard` (authenticated)
+- **http://localhost:3000/signup** — Registration form (email + password, 8+ characters)
+- **http://localhost:3000/signin** — Sign-in form with email/password
+- **http://localhost:3000/dashboard** — User profile showing ID, email, and join date
+- **http://localhost:3000/items** — User-scoped items (requires authentication)
+- **http://localhost:4000/api** — Swagger UI with Auth + Items endpoints
+- Items are now scoped to the authenticated user (ownership check on delete)
+- E2E tests verify sign-up flow and authenticated items management
+
 ---
 
 [Prev: step-3 — Next.js + NestJS (health check)](../step-3/README.md) | [Next: step-5 — Next.js + NestJS with Auth + Items CRUD](../step-5/README.md)
