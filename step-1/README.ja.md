@@ -52,7 +52,7 @@ docker compose --profile=e2e-tests run --rm web-e2e-tests
 
 次のステップ（step-2）に進むために、AI エージェント（[Claude Code](https://claude.ai/claude-code)、[Cursor](https://www.cursor.com/)、[GitHub Copilot](https://github.com/features/copilot)、[ChatGPT](https://chatgpt.com/) など）にコードを生成させることができます。
 
-このディレクトリの [prompts.md](prompts.md) の内容をコピーして AI エージェントに渡してください。正しく実行されれば、手動の作業なしで step-2 と同等の環境が構築されます。
+このディレクトリの [prompts.ja.md](prompts.ja.md) の内容をコピーして AI エージェントに渡してください。正しく実行されれば、手動の作業なしで step-2 と同等の環境が構築されます。
 
 > **注意：** プロンプトにより ECR リポジトリと ECS Express Gateway を含む Terraform IaC が作成されます。クラウドデプロイ時には Docker イメージをビルドして ECR にプッシュする必要があります — 手順は [step-2 イメージのビルドとプッシュ](../step-2/README.ja.md#イメージのビルドとプッシュ) を参照してください。
 

@@ -98,3 +98,4 @@ All user prompts from this session.
 93. in step-2 and after steps, it seems user should build and push container images. could you add the text about it?
 94. oops. it's also needed in step-1 because user implements ECR in the step using AI agent.
 95. oops. I think `step-final/Dockerfiles.d/backend-build` is needed step-3 and after steps, and it should be created in step-2. could you update prompts.md in each step?
+96. could you translate prompts.md to Japanese prompts as prompts.ja.md in each step?

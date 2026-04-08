@@ -4,7 +4,7 @@ Next.js、NestJS、Prisma アプリケーションを AI エージェント（[C
 
 単なるチュートリアルにとどまらず、最終的に構築するアプリケーションは、堅牢なユーザー認証の実装や OAuth2 Identity Provider（IdP）とのシームレスな連携が可能な、本番環境にも対応できる基盤となります。
 
-各 `step-*` ディレクトリはプロジェクトの自己完結型スナップショットです。各ステップの `prompts.md` に従って AI エージェントにコードの記述、インフラのプロビジョニング、プロジェクトの進化を指示し、モダンな AI 駆動の開発ワークフローを体験しましょう。
+各 `step-*` ディレクトリはプロジェクトの自己完結型スナップショットです。各ステップの `prompts.ja.md` に従って AI エージェントにコードの記述、インフラのプロビジョニング、プロジェクトの進化を指示し、モダンな AI 駆動の開発ワークフローを体験しましょう。
 
 ## 技術スタックと選定理由
 
@@ -62,7 +62,7 @@ Next.js、NestJS、Prisma アプリケーションを AI エージェント（[C
 
 1. ステップディレクトリを選択（`step-0/` から開始）
 2. AI エージェントで開く
-3. `prompts.md` のプロンプトに従って次のステップに向けてビルド
+3. `prompts.ja.md` のプロンプトに従って次のステップに向けてビルド
 4. 結果を次のステップディレクトリと比較
 
 ## オプション学習パス：自分のリポジトリでゼロから構築
@@ -70,8 +70,8 @@ Next.js、NestJS、Prisma アプリケーションを AI エージェント（[C
 より実践的な体験のために、自分の GitHub リポジトリを作成し、プロジェクト全体をゼロから構築できます：
 
 1. 新しい空の GitHub リポジトリを作成し、AI エージェントで開く
-2. `step-0/prompts.md` の内容を AI に渡して step-1 を生成
-3. 結果をコミットし、`step-1/prompts.md` で step-2 を構築、以降も同様に続ける
+2. `step-0/prompts.ja.md` の内容を AI に渡して step-1 を生成
+3. 結果をコミットし、`step-1/prompts.ja.md` で step-2 を構築、以降も同様に続ける
 4. step-final に到達するまで繰り返す
 
 > **ヒント：** AI が壊れたコードを生成した場合は、対応する `step-*` ディレクトリの内容をリポジトリにコピーして正常な状態にリセットし、そこから続行できます。
@@ -90,7 +90,7 @@ Next.js、NestJS、Prisma アプリケーションを AI エージェント（[C
 
 空のディレクトリです。プロンプトに従ってすべてをゼロから作成します。
 
-**次へ:** [step-0/prompts.md](step-0/prompts.md) に従って、Docker Compose と Playwright E2E テストを含む Next.js プロジェクトを作成します。
+**次へ:** [step-0/prompts.ja.md](step-0/prompts.ja.md) に従って、Docker Compose と Playwright E2E テストを含む Next.js プロジェクトを作成します。
 
 ### [step-1](step-1/README.ja.md) — 空の Next.js アプリ
 
@@ -101,7 +101,7 @@ Next.js、NestJS、Prisma アプリケーションを AI エージェント（[C
 - Docker Compose（`web` + `web-e2e-tests` サービス）
 - Playwright スモークテスト
 
-**次へ:** [step-1/prompts.md](step-1/prompts.md) に従って、AWS インフラ（Terraform）、CI/CD（GitHub Actions）、本番用 Docker ビルドを追加します。
+**次へ:** [step-1/prompts.ja.md](step-1/prompts.ja.md) に従って、AWS インフラ（Terraform）、CI/CD（GitHub Actions）、本番用 Docker ビルドを追加します。
 
 ### [step-2](step-2/README.ja.md) — ECS Express Mode 上の Next.js
 
@@ -113,7 +113,7 @@ Next.js アプリに、AWS ECS Express Mode へデプロイするための Terra
 - Web 用本番 Dockerfile
 - OIDC セットアップとクラウドデプロイドキュメント
 
-**次へ:** [step-2/prompts.md](step-2/prompts.md) に従って、ヘルスチェックと Git SHA 表示を備えた最小限の NestJS バックエンドを追加します。
+**次へ:** [step-2/prompts.ja.md](step-2/prompts.ja.md) に従って、ヘルスチェックと Git SHA 表示を備えた最小限の NestJS バックエンドを追加します。
 
 ### [step-3](step-3/README.ja.md) — ECS Express Mode 上の Next.js + NestJS（ヘルスチェック）
 
@@ -126,7 +126,7 @@ Next.js フロントエンドと最小限の NestJS バックエンド（GIT_SHA
 - Web アプリがバックエンドの Git SHA を取得・表示
 - Docker Compose にバックエンドサービスを追加
 
-**次へ:** [step-3/prompts.md](step-3/prompts.md) に従って、PostgreSQL、Prisma ORM、Items CRUD を追加します。
+**次へ:** [step-3/prompts.ja.md](step-3/prompts.ja.md) に従って、PostgreSQL、Prisma ORM、Items CRUD を追加します。
 
 ### [step-4](step-4/README.ja.md) — ECS Express Mode 上の Next.js + NestJS（Items CRUD）
 
@@ -141,7 +141,7 @@ Next.js フロントエンドと、ヘルスチェックおよび Items CRUD（P
 - Terraform に RDS PostgreSQL、プライベートサブネット、NAT ゲートウェイ
 - DATABASE_URL 用 Secrets Manager
 
-**次へ:** [step-4/prompts.md](step-4/prompts.md) に従って、メール/パスワード認証（JWT）とユーザースコープのアイテムを追加します。
+**次へ:** [step-4/prompts.ja.md](step-4/prompts.ja.md) に従って、メール/パスワード認証（JWT）とユーザースコープのアイテムを追加します。
 
 ### [step-5](step-5/README.ja.md) — ECS Express Mode 上の Next.js + NestJS（認証 + Items CRUD）
 
@@ -156,7 +156,7 @@ Next.js フロントエンドと、メール/パスワード認証（JWT）お�
 - ナビゲーションヘッダー（ダッシュボード、アイテム、サインアウト）
 - Terraform に JWT シークレットと DATABASE_URL 用 Secrets Manager
 
-**次へ:** [step-5/prompts.md](step-5/prompts.md) に従って、OAuth2、メール認証、TOTP MFA、国際化を追加します。
+**次へ:** [step-5/prompts.ja.md](step-5/prompts.ja.md) に従って、OAuth2、メール認証、TOTP MFA、国際化を追加します。
 
 ### [step-final](step-final/README.ja.md) — フルスタックアプリ
 

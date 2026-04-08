@@ -9,7 +9,7 @@
 
 ## はじめに
 
-このディレクトリの [prompts.md](prompts.md) の内容をコピーして AI エージェント（[Claude Code](https://claude.ai/claude-code)、[Cursor](https://www.cursor.com/)、[GitHub Copilot](https://github.com/features/copilot)、[ChatGPT](https://chatgpt.com/) など）に渡してください。正しく実行されれば、手動の作業なしで step-1 と同等の環境が構築されます。
+このディレクトリの [prompts.ja.md](prompts.ja.md) の内容をコピーして AI エージェント（[Claude Code](https://claude.ai/claude-code)、[Cursor](https://www.cursor.com/)、[GitHub Copilot](https://github.com/features/copilot)、[ChatGPT](https://chatgpt.com/) など）に渡してください。正しく実行されれば、手動の作業なしで step-1 と同等の環境が構築されます。
 
 ## 完了後の期待される出力
 
