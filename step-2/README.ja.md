@@ -2,15 +2,6 @@
 
 AWS ECS Express Mode へデプロイするための IaC（Terraform）と GitHub Actions による CI/CD を備えた Next.js アプリです。
 
-<details>
-<summary><strong>用語解説：NestJS（クリックで展開）</strong></summary>
-
-**NestJS とは？**
-
-[NestJS](https://nestjs.com/) は、サーバーサイドアプリケーションを構築するための TypeScript ベースのバックエンドフレームワークです。Angular に触発された高度に構造化されたモジュラーアーキテクチャ（デコレーター、依存性注入、モジュール）を使用しており、AI エージェントがコードを生成・拡張する際に非常に予測しやすくなっています。本ワークショップでは、次のステップから NestJS をバックエンド API として使用します。
-
-</details>
-
 ## サービス
 
 | サービス | 技術 | ポート |
@@ -130,6 +121,15 @@ docker push $ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/${APP_UNIQUE_ID}-web:l
 次のステップ（step-3）に進むために、AI エージェント（[Claude Code](https://claude.ai/claude-code)、[Cursor](https://www.cursor.com/)、[GitHub Copilot](https://github.com/features/copilot)、[ChatGPT](https://chatgpt.com/) など）にコードを生成させることができます。
 
 このディレクトリの [prompts.ja.md](prompts.ja.md) の内容をコピーして AI エージェントに渡してください。正しく実行されれば、手動の作業なしで step-3 と同等の環境が構築されます。
+
+<details>
+<summary><strong>用語解説：NestJS（クリックで展開）</strong></summary>
+
+**NestJS とは？**
+
+[NestJS](https://nestjs.com/) は、サーバーサイドアプリケーションを構築するための TypeScript ベースのバックエンドフレームワークです。Angular に触発された高度に構造化されたモジュラーアーキテクチャ（デコレーター、依存性注入、モジュール）を使用しており、AI エージェントがコードを生成・拡張する際に非常に予測しやすくなっています。本ワークショップでは、次のステップから NestJS をバックエンド API として使用します。
+
+</details>
 
 ## 完了後の期待される出力
 

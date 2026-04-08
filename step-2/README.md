@@ -2,15 +2,6 @@
 
 Next.js app with IaC (Terraform) for deploying to AWS ECS Express Mode, plus CI/CD via GitHub Actions.
 
-<details>
-<summary><strong>Glossary: NestJS (Click to expand)</strong></summary>
-
-**What is NestJS?**
-
-[NestJS](https://nestjs.com/) is a TypeScript-based backend framework for building server-side applications. It uses a highly structured, modular architecture inspired by Angular (with decorators, dependency injection, and modules), making it very predictable for AI agents to generate and extend code. In this workshop, we use NestJS as the backend API starting from the next step.
-
-</details>
-
 ## Services
 
 | Service | Technology | Port |
@@ -130,6 +121,15 @@ docker push $ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/${APP_UNIQUE_ID}-web:l
 To prepare for the next step (step-3), you can have an AI agent (such as [Claude Code](https://claude.ai/claude-code), [Cursor](https://www.cursor.com/), [GitHub Copilot](https://github.com/features/copilot), or [ChatGPT](https://chatgpt.com/)) generate the code for you.
 
 Copy the contents of [prompts.md](prompts.md) in this directory and provide them to your AI agent. If executed correctly, you will have an environment equivalent to step-3 without manual intervention.
+
+<details>
+<summary><strong>Glossary: NestJS (Click to expand)</strong></summary>
+
+**What is NestJS?**
+
+[NestJS](https://nestjs.com/) is a TypeScript-based backend framework for building server-side applications. It uses a highly structured, modular architecture inspired by Angular (with decorators, dependency injection, and modules), making it very predictable for AI agents to generate and extend code. In this workshop, we use NestJS as the backend API starting from the next step.
+
+</details>
 
 ## Expected Output After Completion
 

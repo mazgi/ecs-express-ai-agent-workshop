@@ -2,6 +2,15 @@
 
 Empty directory. Use the prompts to create a Next.js project with Docker Compose and Playwright E2E tests.
 
+## Prerequisites
+
+- Docker Engine + Docker Compose (e.g. [Docker Desktop](https://www.docker.com/products/docker-desktop/), [Podman](https://podman.io/), [Colima](https://github.com/abiosoft/colima))
+- An AI coding agent (e.g. [Claude Code](https://claude.ai/claude-code))
+
+## Get Started
+
+Copy the contents of [prompts.md](prompts.md) in this directory and provide them to your AI agent (such as [Claude Code](https://claude.ai/claude-code), [Cursor](https://www.cursor.com/), [GitHub Copilot](https://github.com/features/copilot), or [ChatGPT](https://chatgpt.com/)). If executed correctly, you will have an environment equivalent to step-1 without manual intervention.
+
 <details>
 <summary><strong>Glossary: Next.js, E2E tests, Containers, Docker, Docker Compose (Click to expand)</strong></summary>
 
@@ -26,15 +35,6 @@ Containers are lightweight, portable packages that bundle your application code 
 [Docker Compose](https://docs.docker.com/compose/) is a tool for defining and running multi-container applications. You describe all your services (web server, database, test runner, etc.) in a single `compose.yaml` file, then start everything with one command: `docker compose up`. In this workshop, every step uses Docker Compose to run the development environment.
 
 </details>
-
-## Prerequisites
-
-- Docker Engine + Docker Compose (e.g. [Docker Desktop](https://www.docker.com/products/docker-desktop/), [Podman](https://podman.io/), [Colima](https://github.com/abiosoft/colima))
-- An AI coding agent (e.g. [Claude Code](https://claude.ai/claude-code))
-
-## Get Started
-
-Copy the contents of [prompts.md](prompts.md) in this directory and provide them to your AI agent (such as [Claude Code](https://claude.ai/claude-code), [Cursor](https://www.cursor.com/), [GitHub Copilot](https://github.com/features/copilot), or [ChatGPT](https://chatgpt.com/)). If executed correctly, you will have an environment equivalent to step-1 without manual intervention.
 
 ## Expected Output After Completion
 

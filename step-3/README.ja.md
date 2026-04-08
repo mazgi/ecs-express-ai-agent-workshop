@@ -2,31 +2,6 @@
 
 Next.js フロントエンドと最小限の NestJS バックエンド（GIT_SHA 付きヘルスチェックのみ）を、Terraform IaC と GitHub Actions による CI/CD で AWS ECS Express Mode にデプロイします。
 
-<details>
-<summary><strong>用語解説：RDBMS、PostgreSQL、RDS、ORM、Prisma（クリックで展開）</strong></summary>
-
-**RDBMS とは？**
-
-RDBMS（リレーショナルデータベース管理システム）は、データを行と列のテーブルに格納し、SQL を使用してデータの照会・操作を行うデータベースです。テーブル間のリレーション（例：ユーザーが複数のアイテムを持つ）が中核機能であり、構造化されたアプリケーションデータに最適です。
-
-**PostgreSQL とは？**
-
-[PostgreSQL](https://www.postgresql.org/) は、信頼性、豊富な機能、標準準拠で知られる強力なオープンソースの RDBMS です。Web アプリケーションで最も人気のあるデータベースの一つです。本ワークショップでは、次のステップから PostgreSQL を使用します。
-
-**Amazon RDS とは？**
-
-[Amazon RDS（Relational Database Service）](https://aws.amazon.com/rds/) は、セットアップ、パッチ適用、バックアップ、スケーリングを自動的に処理するマネージドデータベースサービスです。自分でサーバーに PostgreSQL をインストール・保守する代わりに、RDS がクラウド上ですぐに使えるデータベースインスタンスを提供します。
-
-**ORM とは？**
-
-ORM（オブジェクトリレーショナルマッピング）は、生の SQL を書く代わりにプログラミング言語のオブジェクトを使ってデータベースとやり取りできるライブラリです。データベーステーブルをクラス/型にマッピングすることで、データベース操作を型安全でエラーの少ないものにします。
-
-**Prisma とは？**
-
-[Prisma](https://www.prisma.io/) は、TypeScript/JavaScript 向けのモダンで型安全な ORM です。`.prisma` スキーマファイルにデータモデルを定義すると、Prisma がデータベース照会用の完全に型付けされたクライアントを生成します。AI エージェントがスキーマを変更すると型安全なコードが自動的に得られるため、AI 駆動開発に特に適しています。
-
-</details>
-
 ## サービス
 
 | サービス | 技術 | ポート |
@@ -158,6 +133,31 @@ docker push $ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/${APP_UNIQUE_ID}-web:l
 このディレクトリの [prompts.ja.md](prompts.ja.md) の内容をコピーして AI エージェントに渡してください。正しく実行されれば、手動の作業なしで step-4 と同等の環境が構築されます。
 
 > **注意：** プロンプトにより Terraform IaC に Secrets Manager と RDS リソースが作成されます。`DATABASE_URL` シークレットはエフェメラルレイヤーの Terraform が自動的に設定するため、このステップでは手動でのシークレット設定は不要です。
+
+<details>
+<summary><strong>用語解説：RDBMS、PostgreSQL、RDS、ORM、Prisma（クリックで展開）</strong></summary>
+
+**RDBMS とは？**
+
+RDBMS（リレーショナルデータベース管理システム）は、データを行と列のテーブルに格納し、SQL を使用してデータの照会・操作を行うデータベースです。テーブル間のリレーション（例：ユーザーが複数のアイテムを持つ）が中核機能であり、構造化されたアプリケーションデータに最適です。
+
+**PostgreSQL とは？**
+
+[PostgreSQL](https://www.postgresql.org/) は、信頼性、豊富な機能、標準準拠で知られる強力なオープンソースの RDBMS です。Web アプリケーションで最も人気のあるデータベースの一つです。本ワークショップでは、次のステップから PostgreSQL を使用します。
+
+**Amazon RDS とは？**
+
+[Amazon RDS（Relational Database Service）](https://aws.amazon.com/rds/) は、セットアップ、パッチ適用、バックアップ、スケーリングを自動的に処理するマネージドデータベースサービスです。自分でサーバーに PostgreSQL をインストール・保守する代わりに、RDS がクラウド上ですぐに使えるデータベースインスタンスを提供します。
+
+**ORM とは？**
+
+ORM（オブジェクトリレーショナルマッピング）は、生の SQL を書く代わりにプログラミング言語のオブジェクトを使ってデータベースとやり取りできるライブラリです。データベーステーブルをクラス/型にマッピングすることで、データベース操作を型安全でエラーの少ないものにします。
+
+**Prisma とは？**
+
+[Prisma](https://www.prisma.io/) は、TypeScript/JavaScript 向けのモダンで型安全な ORM です。`.prisma` スキーマファイルにデータモデルを定義すると、Prisma がデータベース照会用の完全に型付けされたクライアントを生成します。AI エージェントがスキーマを変更すると型安全なコードが自動的に得られるため、AI 駆動開発に特に適しています。
+
+</details>
 
 ## 完了後の期待される出力
 

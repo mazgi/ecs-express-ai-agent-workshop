@@ -2,15 +2,6 @@
 
 Next.js フロントエンドと、ヘルスチェック（Git SHA）および Items CRUD（PostgreSQL + Prisma）を備えた NestJS バックエンドを、AWS ECS Express Mode にデプロイします。
 
-<details>
-<summary><strong>用語解説：JWT（クリックで展開）</strong></summary>
-
-**JWT とは？**
-
-JWT（JSON Web Token）は、認証に使用されるコンパクトで URL セーフなトークン形式です。ユーザーがサインインすると、サーバーはユーザーの識別情報（ユーザー ID やメールなど）を含む署名付きトークンを作成します。クライアントはこのトークンを保存し、各リクエストの `Authorization: Bearer <token>` ヘッダーに含めて送信します。サーバーはデータベースでセッションを検索することなく署名を検証できるため、ステートレスでスケーラブルです。本ワークショップでは、**アクセストークン**（短期間有効、API リクエスト用）と**リフレッシュトークン**（長期間有効、新しいアクセストークンの取得用）の 2 つの JWT を使用します。
-
-</details>
-
 ## サービス
 
 | サービス | 技術 | ポート |
@@ -150,6 +141,15 @@ docker push $ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/${APP_UNIQUE_ID}-web:l
 次のステップ（step-5）に進むために、AI エージェント（[Claude Code](https://claude.ai/claude-code)、[Cursor](https://www.cursor.com/)、[GitHub Copilot](https://github.com/features/copilot)、[ChatGPT](https://chatgpt.com/) など）にコードを生成させることができます。
 
 このディレクトリの [prompts.ja.md](prompts.ja.md) の内容をコピーして AI エージェントに渡してください。正しく実行されれば、手動の作業なしで step-5 と同等の環境が構築されます。
+
+<details>
+<summary><strong>用語解説：JWT（クリックで展開）</strong></summary>
+
+**JWT とは？**
+
+JWT（JSON Web Token）は、認証に使用されるコンパクトで URL セーフなトークン形式です。ユーザーがサインインすると、サーバーはユーザーの識別情報（ユーザー ID やメールなど）を含む署名付きトークンを作成します。クライアントはこのトークンを保存し、各リクエストの `Authorization: Bearer <token>` ヘッダーに含めて送信します。サーバーはデータベースでセッションを検索することなく署名を検証できるため、ステートレスでスケーラブルです。本ワークショップでは、**アクセストークン**（短期間有効、API リクエスト用）と**リフレッシュトークン**（長期間有効、新しいアクセストークンの取得用）の 2 つの JWT を使用します。
+
+</details>
 
 ## 完了後の期待される出力
 

@@ -2,15 +2,6 @@
 
 Next.js frontend and a NestJS backend with health check (Git SHA) and Items CRUD (PostgreSQL + Prisma), deployed to AWS ECS Express Mode.
 
-<details>
-<summary><strong>Glossary: JWT (Click to expand)</strong></summary>
-
-**What is JWT?**
-
-JWT (JSON Web Token) is a compact, URL-safe token format used for authentication. When a user signs in, the server creates a signed token containing the user's identity (e.g., user ID and email). The client stores this token and sends it with each request in the `Authorization: Bearer <token>` header. The server verifies the signature without needing to look up a session in the database, making it stateless and scalable. In this workshop, we use two JWTs: an **access token** (short-lived, for API requests) and a **refresh token** (longer-lived, for obtaining new access tokens).
-
-</details>
-
 ## Services
 
 | Service | Technology | Port |
@@ -150,6 +141,15 @@ In this step, the only secret is `DATABASE_URL`, which is **automatically popula
 To prepare for the next step (step-5), you can have an AI agent (such as [Claude Code](https://claude.ai/claude-code), [Cursor](https://www.cursor.com/), [GitHub Copilot](https://github.com/features/copilot), or [ChatGPT](https://chatgpt.com/)) generate the code for you.
 
 Copy the contents of [prompts.md](prompts.md) in this directory and provide them to your AI agent. If executed correctly, you will have an environment equivalent to step-5 without manual intervention.
+
+<details>
+<summary><strong>Glossary: JWT (Click to expand)</strong></summary>
+
+**What is JWT?**
+
+JWT (JSON Web Token) is a compact, URL-safe token format used for authentication. When a user signs in, the server creates a signed token containing the user's identity (e.g., user ID and email). The client stores this token and sends it with each request in the `Authorization: Bearer <token>` header. The server verifies the signature without needing to look up a session in the database, making it stateless and scalable. In this workshop, we use two JWTs: an **access token** (short-lived, for API requests) and a **refresh token** (longer-lived, for obtaining new access tokens).
+
+</details>
 
 ## Expected Output After Completion
 

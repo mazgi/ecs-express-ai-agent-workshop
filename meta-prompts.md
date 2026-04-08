@@ -116,3 +116,5 @@ All user prompts from this session.
 111. could you write glossaries about rdbms, postgresql, rds, orm, prisma in step-3?
 112. could you write glossary about jwt in step-4?
 113. could you write glossaries about oauth2 and mfa in step-5?
+114. I think glossaries are placed after 'Implementation via AI Agent' in each step is easier to understand. could you move these?
+115. there is 'Get Started' in step-0. could you move the glossary part?

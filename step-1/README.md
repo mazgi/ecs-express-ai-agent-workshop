@@ -2,23 +2,6 @@
 
 Starting point: an empty Next.js App Router project with Playwright E2E tests.
 
-<details>
-<summary><strong>Glossary: ECS, IaC, CI/CD (Click to expand)</strong></summary>
-
-**What is Amazon ECS?**
-
-[Amazon ECS (Elastic Container Service)](https://aws.amazon.com/ecs/) is AWS's managed service for running containers in the cloud. [ECS Express Mode](https://aws.amazon.com/blogs/containers/introducing-amazon-ecs-express/) simplifies deployment further by automatically provisioning load balancers, networking, and auto-scaling — letting you go from a Docker image to a production URL with minimal configuration.
-
-**What is IaC (Infrastructure as Code)?**
-
-IaC is the practice of managing infrastructure (servers, networks, databases) through code files rather than manual configuration. [Terraform](https://www.terraform.io/) is one of the most popular IaC tools — you write `.tf` files describing the desired state, and Terraform creates, updates, or deletes cloud resources to match. This makes infrastructure reproducible, version-controlled, and easy for AI agents to generate.
-
-**What is CI/CD?**
-
-CI/CD (Continuous Integration / Continuous Deployment) automates the process of testing and deploying code. [GitHub Actions](https://github.com/features/actions) is a CI/CD platform built into GitHub — when you push code, it automatically runs tests, builds Docker images, and deploys to the cloud. In this workshop, the AI agent generates these workflow files for you.
-
-</details>
-
 ## Architecture at Start
 
 The following diagram shows what you **already have** when you begin this step — not the final goal. See [Expected Output After Completion](#expected-output-after-completion) for what you will build.
@@ -74,6 +57,23 @@ Copy the contents of [prompts.md](prompts.md) in this directory and provide them
 > **Note:** The prompts will create Terraform IaC with ECR repositories and ECS Express Gateway, plus GitHub Actions workflows for CI/CD. To use GitHub Actions for cloud deployment, you will need to:
 > - Set up OIDC authentication between GitHub and AWS — see [step-2 docs/oidc-setup.md](../step-2/docs/oidc-setup.md)
 > - Configure GitHub Actions variables and secrets — see [step-2 docs/ci.md](../step-2/docs/ci.md)
+
+<details>
+<summary><strong>Glossary: ECS, IaC, CI/CD (Click to expand)</strong></summary>
+
+**What is Amazon ECS?**
+
+[Amazon ECS (Elastic Container Service)](https://aws.amazon.com/ecs/) is AWS's managed service for running containers in the cloud. [ECS Express Mode](https://aws.amazon.com/blogs/containers/introducing-amazon-ecs-express/) simplifies deployment further by automatically provisioning load balancers, networking, and auto-scaling — letting you go from a Docker image to a production URL with minimal configuration.
+
+**What is IaC (Infrastructure as Code)?**
+
+IaC is the practice of managing infrastructure (servers, networks, databases) through code files rather than manual configuration. [Terraform](https://www.terraform.io/) is one of the most popular IaC tools — you write `.tf` files describing the desired state, and Terraform creates, updates, or deletes cloud resources to match. This makes infrastructure reproducible, version-controlled, and easy for AI agents to generate.
+
+**What is CI/CD?**
+
+CI/CD (Continuous Integration / Continuous Deployment) automates the process of testing and deploying code. [GitHub Actions](https://github.com/features/actions) is a CI/CD platform built into GitHub — when you push code, it automatically runs tests, builds Docker images, and deploys to the cloud. In this workshop, the AI agent generates these workflow files for you.
+
+</details>
 
 ## Expected Output After Completion
 
