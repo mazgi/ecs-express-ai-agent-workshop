@@ -119,3 +119,7 @@ All user prompts from this session.
 114. I think glossaries are placed after 'Implementation via AI Agent' in each step is easier to understand. could you move these?
 115. there is 'Get Started' in step-0. could you move the glossary part?
 116. could you insert about container registry and ecr before ecs into step-1 glossary part?
+117. could you create a skill to maintain pkgs such npm?
+118. could update maintain-pkg that runs e2e tests after packages updateing for each step?
+119. hmm... step-3 docker compose --profile=e2e-tests run web-e2e-tests is failed. why?
+120. no need memo when I run slash commands
