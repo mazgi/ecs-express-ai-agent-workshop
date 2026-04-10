@@ -123,3 +123,9 @@ All user prompts from this session.
 118. could update maintain-pkg that runs e2e tests after packages updateing for each step?
 119. hmm... step-3 docker compose --profile=e2e-tests run web-e2e-tests is failed. why?
 120. no need memo when I run slash commands
+121. could you update the step-final readme with congrats texts
+122. could you update also ja version?
+123. could you insert a link to this repo in before half in readme
+124. could you rewrite the text to recommend clone this repo
+125. could you reorder sentences in the en readme intro more naturally?
+126. could you also do it in ja version?

@@ -1,10 +1,18 @@
-# ECS Express AI Agent ワークショップ
+# AWS ECS Express AI Agent Workshop
 
-Next.js、NestJS、Prisma アプリケーションを AI エージェント（[Claude Code](https://claude.ai/claude-code) など）を使って AWS ECS 上で開発するハンズオンワークショップです。
+> **🚀 ハンズオン用マテリアル (Hands-on Material)**
+> 本リポジトリは、AIエージェントを活用したモダンな開発フローを学ぶためのワークショップ教材 [mazgi/ecs-express-ai-agent-workshop](https://github.com/mazgi/ecs-express-ai-agent-workshop) です。
 
-単なるチュートリアルにとどまらず、最終的に構築するアプリケーションは、堅牢なユーザー認証の実装や OAuth2 Identity Provider（IdP）とのシームレスな連携が可能な、本番環境にも対応できる基盤となります。
+AI（Claude Code 等）と対話しながら、Next.js、NestJS、Prisma、そして AWS ECS (Express Mode) を組み合わせたフルスタックアプリを構築してみましょう。単なるチュートリアルにとどまらず、最終的に構築するアプリケーションは、堅牢なユーザー認証の実装や OAuth2 Identity Provider（IdP）とのシームレスな連携が可能な、本番環境にも対応できる基盤となります。
 
 各 `step-*` ディレクトリはプロジェクトの自己完結型スナップショットです。各ステップの `prompts.ja.md` に従って AI エージェントにコードの記述、インフラのプロビジョニング、プロジェクトの進化を指示し、モダンな AI 駆動の開発ワークフローを体験しましょう。
+
+実際に手を動かして体験するために、まずは以下のコマンドで本リポジトリを `clone` して学習をスタートしてください！
+
+```bash
+git clone https://github.com/mazgi/ecs-express-ai-agent-workshop.git
+cd ecs-express-ai-agent-workshop
+```
 
 ## 技術スタックと選定理由
 

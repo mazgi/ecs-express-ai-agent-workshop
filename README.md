@@ -1,10 +1,18 @@
-# ECS Express AI Agent Workshop
+# AWS ECS Express AI Agent Workshop
 
-A hands-on workshop for developing a Next.js, NestJS, and Prisma application on AWS ECS using an AI agent (such as [Claude Code](https://claude.ai/claude-code)).
+> **🚀 Hands-on Material**
+> This repository is a workshop material [mazgi/ecs-express-ai-agent-workshop](https://github.com/mazgi/ecs-express-ai-agent-workshop) for learning modern development workflows powered by AI agents.
 
-Beyond a simple tutorial, the final application you build serves as a production-ready foundation, fully capable of implementing robust user authentication and seamlessly linking with OAuth2 Identity Providers (IdPs).
+Collaborate with AI (Claude Code, etc.) to build a full-stack application combining Next.js, NestJS, Prisma, and AWS ECS (Express Mode). Beyond a simple tutorial, the final application serves as a production-ready foundation with robust user authentication and seamless OAuth2 Identity Provider (IdP) integration.
 
-Each `step-*` directory is a self-contained project snapshot. Use the `prompts.md` in each step to guide the AI agent to write code, provision infrastructure, and evolve the project to the next level — allowing you to experience a modern, AI-driven development workflow firsthand.
+Each `step-*` directory is a self-contained project snapshot. Use the `prompts.md` in each step to guide the AI agent to write code, provision infrastructure, and evolve the project to the next level — experiencing a modern, AI-driven development workflow firsthand.
+
+To get started, clone this repository and begin:
+
+```bash
+git clone https://github.com/mazgi/ecs-express-ai-agent-workshop.git
+cd ecs-express-ai-agent-workshop
+```
 
 ## Tech Stack & Why We Chose Them
 

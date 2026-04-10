@@ -1,6 +1,14 @@
-# template-containerized-oauth2-project
+# 🎉 Congratulations on completing the workshop!
 
-An example project for developing a Next.js, NestJS, and Prisma app on ECS Express Mode using the AI agent.
+You have successfully built a modern full-stack environment combining Next.js, NestJS, Prisma, and AWS ECS (Express Mode) through collaboration with an AI agent.
+
+This `step-final` directory is not just the end of a tutorial—it is a **powerful, production-ready starting point (template) for your own applications.**
+
+With built-in secure OAuth2 IdP integration and a robust, cost-effective infrastructure design (Persistent vs. Ephemeral layers), the foundation is fully laid out for you. Now it's time to use this environment to bring your own ideas to life.
+
+Happy coding, and enjoy the future of AI-driven development! 🚀
+
+---
 
 ## Services
 
