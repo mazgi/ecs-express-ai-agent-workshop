@@ -1,18 +1,19 @@
 # AWS ECS Express AI Agent Workshop
 
-> **🚀 Hands-on Material**
-> This repository is a workshop material [mazgi/ecs-express-ai-agent-workshop](https://github.com/mazgi/ecs-express-ai-agent-workshop) for learning modern development workflows powered by AI agents.
+A hands-on workshop where you collaborate with AI (Claude Code, etc.) to build a production-ready full-stack application combining Next.js, NestJS, Prisma, and AWS ECS (Express Mode).
 
-Collaborate with AI (Claude Code, etc.) to build a full-stack application combining Next.js, NestJS, Prisma, and AWS ECS (Express Mode). Beyond a simple tutorial, the final application serves as a production-ready foundation with robust user authentication and seamless OAuth2 Identity Provider (IdP) integration.
-
-Each `step-*` directory is a self-contained project snapshot. Use the `prompts.md` in each step to guide the AI agent to write code, provision infrastructure, and evolve the project to the next level — experiencing a modern, AI-driven development workflow firsthand.
-
-To get started, clone this repository and begin:
+**Getting Started**
+In this workshop, you'll evolve the project by having an AI agent generate code for you. To keep your own change history, start by clicking the **"Fork"** button at the top right to copy this repository to your GitHub account, then `clone` it locally.
 
 ```bash
-git clone https://github.com/mazgi/ecs-express-ai-agent-workshop.git
+# Replace YOUR_USERNAME with your GitHub account name
+git clone https://github.com/YOUR_USERNAME/ecs-express-ai-agent-workshop.git
 cd ecs-express-ai-agent-workshop
 ```
+
+Beyond a simple tutorial, the final application serves as a production-ready foundation with robust user authentication and seamless OAuth2 Identity Provider (IdP) integration.
+
+Each `step-*` directory is a self-contained project snapshot. Use the `prompts.md` in each step to guide the AI agent to write code, provision infrastructure, and evolve the project to the next level — experiencing a modern, AI-driven development workflow firsthand.
 
 ## Tech Stack & Why We Chose Them
 

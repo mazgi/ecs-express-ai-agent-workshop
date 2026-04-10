@@ -129,3 +129,4 @@ All user prompts from this session.
 124. could you rewrite the text to recommend clone this repo
 125. could you reorder sentences in the en readme intro more naturally?
 126. could you also do it in ja version?
+127. could you update and rewrite the texts to recommend fork then clone
