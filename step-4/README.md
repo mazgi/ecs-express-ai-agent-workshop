@@ -1,6 +1,6 @@
 # Step 4 — Next.js + NestJS with Items CRUD on ECS Express Mode
 
-Next.js frontend and a NestJS backend with health check (Git SHA) and Items CRUD (PostgreSQL + Prisma), deployed to AWS ECS Express Mode.
+Next.js frontend and a NestJS backend with health check (Git SHA) and Items CRUD (PostgreSQL + Prisma), deployed to Amazon ECS Express Mode.
 
 ## Services
 

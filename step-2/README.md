@@ -1,6 +1,6 @@
 # Step 2 — Next.js on ECS Express Mode
 
-Next.js app with IaC (Terraform) for deploying to AWS ECS Express Mode, plus CI/CD via GitHub Actions.
+Next.js app with IaC (Terraform) for deploying to Amazon ECS Express Mode, plus CI/CD via GitHub Actions.
 
 ## Services
 

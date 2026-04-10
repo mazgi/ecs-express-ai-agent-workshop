@@ -1,6 +1,6 @@
 # Step 5 — Next.js + NestJS with Auth + Items CRUD on ECS Express Mode
 
-Next.js frontend and a NestJS backend with email/password authentication (JWT), user-scoped Items CRUD (PostgreSQL + Prisma), deployed to AWS ECS Express Mode.
+Next.js frontend and a NestJS backend with email/password authentication (JWT), user-scoped Items CRUD (PostgreSQL + Prisma), deployed to Amazon ECS Express Mode.
 
 ## Services
 

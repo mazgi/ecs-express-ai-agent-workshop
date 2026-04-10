@@ -1,6 +1,6 @@
 # Step 3 — ECS Express Mode 上の Next.js + NestJS（ヘルスチェックのみ）
 
-Next.js フロントエンドと最小限の NestJS バックエンド（GIT_SHA 付きヘルスチェックのみ）を、Terraform IaC と GitHub Actions による CI/CD で AWS ECS Express Mode にデプロイします。
+Next.js フロントエンドと最小限の NestJS バックエンド（GIT_SHA 付きヘルスチェックのみ）を、Terraform IaC と GitHub Actions による CI/CD で Amazon ECS Express Mode にデプロイします。
 
 ## サービス
 

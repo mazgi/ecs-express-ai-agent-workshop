@@ -1,6 +1,6 @@
 # 🎉 Congratulations on completing the workshop!
 
-You have successfully built a modern full-stack environment combining Next.js, NestJS, Prisma, and AWS ECS (Express Mode) through collaboration with an AI agent.
+You have successfully built a modern full-stack environment combining Next.js, NestJS, Prisma, and Amazon ECS (Express Mode) through collaboration with an AI agent.
 
 This `step-final` directory is not just the end of a tutorial—it is a **powerful, production-ready starting point (template) for your own applications.**
 

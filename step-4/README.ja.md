@@ -1,6 +1,6 @@
 # Step 4 — ECS Express Mode 上の Next.js + NestJS（Items CRUD）
 
-Next.js フロントエンドと、ヘルスチェック（Git SHA）および Items CRUD（PostgreSQL + Prisma）を備えた NestJS バックエンドを、AWS ECS Express Mode にデプロイします。
+Next.js フロントエンドと、ヘルスチェック（Git SHA）および Items CRUD（PostgreSQL + Prisma）を備えた NestJS バックエンドを、Amazon ECS Express Mode にデプロイします。
 
 ## サービス
 

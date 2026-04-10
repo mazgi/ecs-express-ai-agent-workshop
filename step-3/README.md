@@ -1,6 +1,6 @@
 # Step 3 — Next.js + NestJS (health check only) on ECS Express Mode
 
-Next.js frontend and a minimal NestJS backend (health check with GIT_SHA only), both deployed to AWS ECS Express Mode with Terraform IaC and CI/CD via GitHub Actions.
+Next.js frontend and a minimal NestJS backend (health check with GIT_SHA only), both deployed to Amazon ECS Express Mode with Terraform IaC and CI/CD via GitHub Actions.
 
 ## Services
 

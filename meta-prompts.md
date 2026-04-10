@@ -130,3 +130,4 @@ All user prompts from this session.
 125. could you reorder sentences in the en readme intro more naturally?
 126. could you also do it in ja version?
 127. could you update and rewrite the texts to recommend fork then clone
+128. oops. AWS ECS isn't correct the name. it's Amazon ECS. right?

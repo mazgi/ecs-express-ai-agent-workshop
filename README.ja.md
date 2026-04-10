@@ -1,6 +1,6 @@
-# AWS ECS Express AI Agent Workshop
+# Amazon ECS Express AI Agent Workshop
 
-AI（Claude Code 等）と対話しながら、Next.js、NestJS、Prisma、そして AWS ECS (Express Mode) を組み合わせたプロダクションレディなフルスタックアプリを構築する、実践的なワークショップです。
+AI（Claude Code 等）と対話しながら、Next.js、NestJS、Prisma、そして Amazon ECS (Express Mode) を組み合わせたプロダクションレディなフルスタックアプリを構築する、実践的なワークショップです。
 
 **【学習の始め方】**
 本ワークショップでは、AIエージェントにコードを生成させながらプロジェクトを進化させていきます。あなた自身の変更履歴を残すため、まずは右上の **"Fork"** ボタンからこのリポジトリを自分の GitHub アカウントへコピーし、それをローカルに `clone` してスタートしてください。
@@ -114,7 +114,7 @@ cd ecs-express-ai-agent-workshop
 
 ### [step-2](step-2/README.ja.md) — ECS Express Mode 上の Next.js
 
-Next.js アプリに、AWS ECS Express Mode へデプロイするための Terraform IaC と GitHub Actions による CI/CD が含まれています。フロントエンドのみで、バックエンドやデータベースはありません。
+Next.js アプリに、Amazon ECS Express Mode へデプロイするための Terraform IaC と GitHub Actions による CI/CD が含まれています。フロントエンドのみで、バックエンドやデータベースはありません。
 
 **step-1 からの追加内容:**
 - Terraform IaC（永続: VPC、ECR、IAM；エフェメラル: ECS Express Gateway）
@@ -126,7 +126,7 @@ Next.js アプリに、AWS ECS Express Mode へデプロイするための Terra
 
 ### [step-3](step-3/README.ja.md) — ECS Express Mode 上の Next.js + NestJS（ヘルスチェック）
 
-Next.js フロントエンドと最小限の NestJS バックエンド（GIT_SHA 付きヘルスチェックと Swagger）を、AWS ECS Express Mode にデプロイします。
+Next.js フロントエンドと最小限の NestJS バックエンド（GIT_SHA 付きヘルスチェックと Swagger）を、Amazon ECS Express Mode にデプロイします。
 
 **step-2 からの追加内容:**
 - NestJS 11 バックエンド（`GET /health` エンドポイント、Git SHA を返す）
@@ -139,7 +139,7 @@ Next.js フロントエンドと最小限の NestJS バックエンド（GIT_SHA
 
 ### [step-4](step-4/README.ja.md) — ECS Express Mode 上の Next.js + NestJS（Items CRUD）
 
-Next.js フロントエンドと、ヘルスチェックおよび Items CRUD（PostgreSQL + Prisma）を備えた NestJS バックエンドを、AWS ECS Express Mode にデプロイします。
+Next.js フロントエンドと、ヘルスチェックおよび Items CRUD（PostgreSQL + Prisma）を備えた NestJS バックエンドを、Amazon ECS Express Mode にデプロイします。
 
 **step-3 からの追加内容:**
 - PostgreSQL 17 データベース
@@ -154,7 +154,7 @@ Next.js フロントエンドと、ヘルスチェックおよび Items CRUD（P
 
 ### [step-5](step-5/README.ja.md) — ECS Express Mode 上の Next.js + NestJS（認証 + Items CRUD）
 
-Next.js フロントエンドと、メール/パスワード認証（JWT）およびユーザースコープの Items CRUD（PostgreSQL + Prisma）を備えた NestJS バックエンドを、AWS ECS Express Mode にデプロイします。
+Next.js フロントエンドと、メール/パスワード認証（JWT）およびユーザースコープの Items CRUD（PostgreSQL + Prisma）を備えた NestJS バックエンドを、Amazon ECS Express Mode にデプロイします。
 
 **step-4 からの追加内容:**
 - メール/パスワードによるサインアップ・サインイン（JWT トークン）

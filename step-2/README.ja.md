@@ -1,6 +1,6 @@
 # Step 2 — ECS Express Mode 上の Next.js
 
-AWS ECS Express Mode へデプロイするための IaC（Terraform）と GitHub Actions による CI/CD を備えた Next.js アプリです。
+Amazon ECS Express Mode へデプロイするための IaC（Terraform）と GitHub Actions による CI/CD を備えた Next.js アプリです。
 
 ## サービス
 

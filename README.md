@@ -1,6 +1,6 @@
-# AWS ECS Express AI Agent Workshop
+# Amazon ECS Express AI Agent Workshop
 
-A hands-on workshop where you collaborate with AI (Claude Code, etc.) to build a production-ready full-stack application combining Next.js, NestJS, Prisma, and AWS ECS (Express Mode).
+A hands-on workshop where you collaborate with AI (Claude Code, etc.) to build a production-ready full-stack application combining Next.js, NestJS, Prisma, and Amazon ECS (Express Mode).
 
 **Getting Started**
 In this workshop, you'll evolve the project by having an AI agent generate code for you. To keep your own change history, start by clicking the **"Fork"** button at the top right to copy this repository to your GitHub account, then `clone` it locally.
@@ -114,7 +114,7 @@ An empty Next.js App Router project with Docker Compose for local development an
 
 ### [step-2](step-2/) — Next.js on ECS Express Mode
 
-The Next.js app with Terraform IaC for deploying to AWS ECS Express Mode, plus CI/CD via GitHub Actions. Frontend only — no backend or database.
+The Next.js app with Terraform IaC for deploying to Amazon ECS Express Mode, plus CI/CD via GitHub Actions. Frontend only — no backend or database.
 
 **What's added from step-1:**
 - Terraform IaC (persistent: VPC, ECR, IAM; ephemeral: ECS Express Gateway)
@@ -126,7 +126,7 @@ The Next.js app with Terraform IaC for deploying to AWS ECS Express Mode, plus C
 
 ### [step-3](step-3/) — Next.js + NestJS (health check) on ECS Express Mode
 
-Next.js frontend and a minimal NestJS backend (health check with GIT_SHA and Swagger), both deployed to AWS ECS Express Mode.
+Next.js frontend and a minimal NestJS backend (health check with GIT_SHA and Swagger), both deployed to Amazon ECS Express Mode.
 
 **What's added from step-2:**
 - NestJS 11 backend with `GET /health` endpoint (returns Git SHA)
@@ -139,7 +139,7 @@ Next.js frontend and a minimal NestJS backend (health check with GIT_SHA and Swa
 
 ### [step-4](step-4/) — Next.js + NestJS with Items CRUD on ECS Express Mode
 
-Next.js frontend and a NestJS backend with health check and Items CRUD (PostgreSQL + Prisma), deployed to AWS ECS Express Mode.
+Next.js frontend and a NestJS backend with health check and Items CRUD (PostgreSQL + Prisma), deployed to Amazon ECS Express Mode.
 
 **What's added from step-3:**
 - PostgreSQL 17 database
@@ -154,7 +154,7 @@ Next.js frontend and a NestJS backend with health check and Items CRUD (PostgreS
 
 ### [step-5](step-5/) — Next.js + NestJS with Auth + Items CRUD on ECS Express Mode
 
-Next.js frontend and a NestJS backend with email/password authentication (JWT) and user-scoped Items CRUD (PostgreSQL + Prisma), deployed to AWS ECS Express Mode.
+Next.js frontend and a NestJS backend with email/password authentication (JWT) and user-scoped Items CRUD (PostgreSQL + Prisma), deployed to Amazon ECS Express Mode.
 
 **What's added from step-4:**
 - Email/password sign-up and sign-in with JWT tokens
