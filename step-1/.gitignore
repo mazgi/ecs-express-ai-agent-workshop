@@ -4,13 +4,12 @@
 
 # macOS
 .DS_Store
+.AppleDouble
+.LSOverride
 
 # Node.js / pnpm
 node_modules/
 .pnpm-store/
-
-# Next.js
-.next/
 
 # VSCode
 .vscode/

@@ -131,3 +131,9 @@ All user prompts from this session.
 126. could you also do it in ja version?
 127. could you update and rewrite the texts to recommend fork then clone
 128. oops. AWS ECS isn't correct the name. it's Amazon ECS. right?
+129. I've updated about UID/GID in https://github.com/mazgi/template-containerized-oauth2-project/blob/main/docs/local-development.md. could you reflect it in this repo?
+130. I've also updated Dockerfiles and others in the template repo. could you import and apply to each step?: https://github.com/mazgi/template-containerized-oauth2-project
+131. no these aren't needed (Azure/GCP volume mounts in compose.yaml)
+132. those are wanted (compose.yaml command changes: git SHA reordering, exec, NEXT_PUBLIC_GIT_SHA)
+133. no, it's not needed. because it doesn't have implementations for apple or android (apple/app/BuildConfig.generated.swift in .gitignore)
+134. could you align that? it's related file system. (.AppleDouble/.LSOverride in step-1 .gitignore)

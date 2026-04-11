@@ -28,7 +28,7 @@ Could you add a `web-e2e-tests` service to `compose.yaml` that depends on the `w
 
 ## 7. Create environment and git configuration
 
-Could you create `.env` and `.example.env` with container UID/GID settings (Linux only), and a `.gitignore` that ignores `*.env` (except `.example.*`), `node_modules/`, `.pnpm-store/`, `.next/`, `.DS_Store`, and `.vscode/`?
+Could you create `.env` and `.example.env` with container UID/GID settings (Docker Engine only, not Docker Desktop), and a `.gitignore` that ignores `*.env` (except `.example.*`), `node_modules/`, `.pnpm-store/`, `.next/`, `.DS_Store`, and `.vscode/`?
 
 ## 8. Create a README
 

@@ -28,7 +28,7 @@
 
 ## 7. 環境設定と git 設定を作成
 
-`.env` と `.example.env` をコンテナの UID/GID 設定（Linux のみ）で作成し、`.gitignore` で `*.env`（`.example.*` を除く）、`node_modules/`、`.pnpm-store/`、`.next/`、`.DS_Store`、`.vscode/` を無視するようにしてください。
+`.env` と `.example.env` をコンテナの UID/GID 設定（Docker Engine のみ、Docker Desktop は不要）で作成し、`.gitignore` で `*.env`（`.example.*` を除く）、`node_modules/`、`.pnpm-store/`、`.next/`、`.DS_Store`、`.vscode/` を無視するようにしてください。
 
 ## 8. README を作成
 
