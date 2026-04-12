@@ -75,6 +75,7 @@ graph TB
 ## クイックスタート
 
 ```sh
+cp .example.env .env               # 必要に応じて編集 — ファイル内のコメントを参照
 cp .example.secrets.env .secrets.env   # シークレットを記入 — docs/local-development.md を参照
 docker compose up
 ```

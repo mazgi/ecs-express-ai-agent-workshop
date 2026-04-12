@@ -55,6 +55,7 @@ graph TB
 ## Quick Start
 
 ```sh
+cp .example.env .env               # Edit if needed — see comments inside
 cp .example.secrets.env .secrets.env
 docker compose up
 ```

@@ -24,6 +24,7 @@ graph LR
 ## クイックスタート
 
 ```sh
+cp .example.env .env   # 必要に応じて編集 — ファイル内のコメントを参照
 docker compose up
 ```
 

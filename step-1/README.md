@@ -24,6 +24,7 @@ graph LR
 ## Quick Start
 
 ```sh
+cp .example.env .env   # Edit if needed — see comments inside
 docker compose up
 ```
 
