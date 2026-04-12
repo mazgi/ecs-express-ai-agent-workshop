@@ -53,7 +53,7 @@ graph TB
 - Docker Engine + Docker Compose (e.g. [Docker Desktop](https://www.docker.com/products/docker-desktop/), [Podman](https://podman.io/), [Colima](https://github.com/abiosoft/colima))
 - A GitHub repository (optional — needed only if you want to use the GitHub Actions CI/CD workflows in `.github/`)
 
-## Quick Start
+## Run This Step
 
 ```sh
 cp .example.env .env               # Edit if needed — see comments inside

@@ -72,7 +72,7 @@ graph TB
 - Docker Engine + Docker Compose（例: [Docker Desktop](https://www.docker.com/products/docker-desktop/)、[Podman](https://podman.io/)、[Colima](https://github.com/abiosoft/colima)）
 - GitHub リポジトリ（オプション — `.github/` の GitHub Actions CI/CD ワークフローを使用する場合のみ必要）
 
-## クイックスタート
+## このステップを実行する
 
 ```sh
 cp .example.env .env               # 必要に応じて編集 — ファイル内のコメントを参照

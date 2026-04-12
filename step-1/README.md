@@ -21,7 +21,7 @@ graph LR
 
 - Docker Engine + Docker Compose (e.g. [Docker Desktop](https://www.docker.com/products/docker-desktop/), [Podman](https://podman.io/), [Colima](https://github.com/abiosoft/colima))
 
-## Quick Start
+## Run This Step
 
 ```sh
 cp .example.env .env   # Edit if needed — see comments inside

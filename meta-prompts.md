@@ -151,3 +151,5 @@ All user prompts from this session.
 146. in step-4 readme, it says 'the only secret is `DATABASE_URL`,', but after running prompts JWT secrets are also needed. could you correct it?
 147. could you describe what secrets management is and why we should use secrets management system such as secrets manager in readme in step-4?
 148. hmm... we already have step-1/.example.env
+149. the section name '## Quick Start' is ok. however, it's bit complecated to understand each step. may I have more useful section name such as dive right in, your first run in the step, and others?
+150. 'Run This Step'

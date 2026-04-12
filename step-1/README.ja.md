@@ -21,7 +21,7 @@ graph LR
 
 - Docker Engine + Docker Compose（例: [Docker Desktop](https://www.docker.com/products/docker-desktop/)、[Podman](https://podman.io/)、[Colima](https://github.com/abiosoft/colima)）
 
-## クイックスタート
+## このステップを実行する
 
 ```sh
 cp .example.env .env   # 必要に応じて編集 — ファイル内のコメントを参照
