@@ -139,3 +139,5 @@ All user prompts from this session.
 134. could you align that? it's related file system. (.AppleDouble/.LSOverride in step-1 .gitignore)
 135. I've placed the recording. Could you insert it in README?: docs/images/screen-recording.gif
 136. could you tag this repo as v2026.4.0?
+137. could you place .gitignore based on https://github.com/mazgi/ecs-express-ai-agent-workshop/blob/main/.gitignore on repository root?
+138. ah... I see. could you update .gitignore based on the template?: https://github.com/mazgi/template-containerized-oauth2-project/blob/main/.gitignore. because audiences create some files and dirs that are should be ignored such as pnpm-store.
