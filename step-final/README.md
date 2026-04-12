@@ -81,6 +81,8 @@ cp .example.secrets.env .secrets.env   # then fill in secrets — see docs/local
 docker compose up
 ```
 
+> **Security note:** This workshop places secrets in `.secrets.env` for simplicity. In production, use a secrets manager (e.g. AWS Secrets Manager) instead of local files. Be aware that AI coding agents can read files in your working directory — never place production credentials in `.secrets.env`. The example defaults are safe for local development. `.secrets.env` is excluded from Git via `*.env` in `.gitignore`.
+
 | URL | Description |
 |-----|-------------|
 | http://localhost:4000 | backend API |

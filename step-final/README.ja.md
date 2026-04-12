@@ -81,6 +81,8 @@ cp .example.secrets.env .secrets.env   # シークレットを記入 — docs/lo
 docker compose up
 ```
 
+> **セキュリティに関する注意:** 本ワークショップでは学習しやすさのためにシークレットを `.secrets.env` ファイルに配置しています。本番環境ではローカルファイルではなくシークレットマネージャー（例：AWS Secrets Manager）を使用してください。AI コーディングエージェントは作業ディレクトリ内のファイルを読み取れるため、`.secrets.env` に本番用の認証情報を絶対に入れないでください。サンプルのデフォルト値はローカル開発用で安全です。`.secrets.env` は `.gitignore` の `*.env` により Git から除外されています。
+
 | URL | 説明 |
 |-----|------|
 | http://localhost:4000 | バックエンド API |
