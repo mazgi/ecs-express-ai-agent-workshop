@@ -6,6 +6,8 @@ Beyond a simple tutorial, the final application serves as a production-ready fou
 
 Each `step-*` directory is a self-contained project snapshot. Use the `prompts.md` in each step to guide the AI agent to write code, provision infrastructure, and evolve the project to the next level — experiencing a modern, AI-driven development workflow firsthand.
 
+![Screen Recording](docs/images/screen-recording.gif)
+
 ## Tech Stack & Why We Chose Them
 
 This workshop utilizes a modern, production-ready technology stack. These tools were chosen not only for their robust features but also because **their structured nature makes them highly predictable and optimal for AI agents (LLMs) to generate and refactor code.**

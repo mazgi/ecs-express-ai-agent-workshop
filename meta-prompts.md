@@ -137,3 +137,4 @@ All user prompts from this session.
 132. those are wanted (compose.yaml command changes: git SHA reordering, exec, NEXT_PUBLIC_GIT_SHA)
 133. no, it's not needed. because it doesn't have implementations for apple or android (apple/app/BuildConfig.generated.swift in .gitignore)
 134. could you align that? it's related file system. (.AppleDouble/.LSOverride in step-1 .gitignore)
+135. I've placed the recording. Could you insert it in README?: docs/images/screen-recording.gif
