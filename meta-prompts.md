@@ -157,3 +157,4 @@ All user prompts from this session.
 152. ah... wait. could you apply it for only backend?
 153. is incremental set true in backend in each step?
 154. yes. remove please
+155. instead Prisma v7 in all steps
