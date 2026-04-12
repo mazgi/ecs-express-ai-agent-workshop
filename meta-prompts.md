@@ -153,3 +153,7 @@ All user prompts from this session.
 148. hmm... we already have step-1/.example.env
 149. the section name '## Quick Start' is ok. however, it's bit complecated to understand each step. may I have more useful section name such as dive right in, your first run in the step, and others?
 150. 'Run This Step'
+151. could you improve and fix prompts and tsconfig and other files in each step to adjust TypeScript 6?
+152. ah... wait. could you apply it for only backend?
+153. is incremental set true in backend in each step?
+154. yes. remove please
