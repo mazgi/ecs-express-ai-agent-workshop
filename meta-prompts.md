@@ -141,3 +141,6 @@ All user prompts from this session.
 136. could you tag this repo as v2026.4.0?
 137. could you place .gitignore based on https://github.com/mazgi/ecs-express-ai-agent-workshop/blob/main/.gitignore on repository root?
 138. ah... I see. could you update .gitignore based on the template?: https://github.com/mazgi/template-containerized-oauth2-project/blob/main/.gitignore. because audiences create some files and dirs that are should be ignored such as pnpm-store.
+139. could you advice should run `docker compose down` in each verification step? moreover, `docker compose down --remove-orphans` is more useful some steps.
+140. yes, please. in addition, could you write tips about docker and docker compose such as `up`, `down`, `down --remove-orphans`, `down -v`, `docker ps`, `docker compose ps`, and port conflicts?
+141. this workshop a bit hard because it should concentrate about 2 or 3 hours. so, could you write text about 'to rest, relax, and take break' in repo top readme?

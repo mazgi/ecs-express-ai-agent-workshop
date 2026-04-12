@@ -223,6 +223,12 @@ See [docs/secrets.md](docs/secrets.md) for detailed instructions on obtaining ea
 - [Environment Variables](.example.secrets.env) — backend config and secrets
 - [GitHub Actions Variables](.example.env) — CI/CD and cloud deployment variables
 
+**Cleanup:**
+
+```bash
+docker compose down --remove-orphans -v
+```
+
 ---
 
 [Prev: step-5 — Next.js + NestJS with Auth + Items CRUD](../step-5/README.md)

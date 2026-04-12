@@ -145,6 +145,12 @@ After completing the prompts, you should have a project equivalent to step-3 wit
 - **http://localhost:3000** — Web page showing **"ECS Express Workshop"** title and backend Git SHA
 - E2E tests verify the Git SHA is displayed
 
+**Cleanup before moving to the next step:**
+
+```bash
+docker compose down --remove-orphans
+```
+
 ---
 
 [Prev: step-1 — Empty Next.js App](../step-1/README.md) | [Next: step-3 — Next.js + NestJS (health check)](../step-3/README.md)

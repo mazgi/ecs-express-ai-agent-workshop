@@ -164,6 +164,14 @@ JWT（JSON Web Token）は、認証に使用されるコンパクトで URL セ�
 - アイテムは認証ユーザーにスコープ（削除時に所有権チェック）
 - E2E テストでサインアップフローと認証済みアイテム管理を検証
 
+**次のステップに進む前のクリーンアップ：**
+
+```bash
+docker compose down --remove-orphans
+```
+
+> このステップはデータベースボリュームを使用します。データベースをリセットしたい場合は、代わりに `docker compose down --remove-orphans -v` を使用してください。
+
 ---
 
 [前へ: step-3 — Next.js + NestJS（ヘルスチェック）](../step-3/README.ja.md) | [次へ: step-5 — Next.js + NestJS（認証 + Items CRUD）](../step-5/README.ja.md)

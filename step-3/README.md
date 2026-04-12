@@ -175,6 +175,14 @@ After completing the prompts, you should have a project equivalent to step-4 wit
   - `DELETE /items/:id` — Delete item → `204 No Content`
 - E2E tests verify creating and deleting items
 
+**Cleanup before moving to the next step:**
+
+```bash
+docker compose down --remove-orphans
+```
+
+> This step uses a database volume. If you want to reset the database, use `docker compose down --remove-orphans -v` instead.
+
 ---
 
 [Prev: step-2 — Next.js on ECS Express Mode](../step-2/README.md) | [Next: step-4 — Next.js + NestJS with Items CRUD](../step-4/README.md)

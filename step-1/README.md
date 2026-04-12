@@ -93,6 +93,12 @@ After completing the prompts, you should have a project equivalent to step-2 wit
 - Cloud deployment documentation under `docs/`
 - Local development still works: `docker compose up` → http://localhost:3000
 
+**Cleanup before moving to the next step:**
+
+```bash
+docker compose down --remove-orphans
+```
+
 ---
 
 [Prev: step-0 — Starting from Scratch](../step-0/README.md) | [Next: step-2 — Next.js on ECS Express Mode](../step-2/README.md)

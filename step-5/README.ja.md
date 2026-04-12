@@ -195,6 +195,14 @@ MFA（多要素認証）は、パスワードだけでなく第二のセキュ�
 - 国際化（英語 + 日本語）
 - Auth、Items、TOTP、テーマの完全な E2E テストスイート
 
+**次のステップに進む前のクリーンアップ：**
+
+```bash
+docker compose down --remove-orphans
+```
+
+> このステップはデータベースボリュームを使用します。データベースをリセットしたい場合は、代わりに `docker compose down --remove-orphans -v` を使用してください。
+
 ---
 
 [前へ: step-4 — Next.js + NestJS（Items CRUD）](../step-4/README.ja.md) | [次へ: step-final — フルスタックアプリ](../step-final/README.ja.md)

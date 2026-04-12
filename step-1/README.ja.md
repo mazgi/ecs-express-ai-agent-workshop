@@ -93,6 +93,12 @@ CI/CD（継続的インテグレーション / 継続的デプロイ）は、コ
 - `docs/` 配下にクラウドデプロイドキュメント
 - ローカル開発は引き続き動作：`docker compose up` → http://localhost:3000
 
+**次のステップに進む前のクリーンアップ：**
+
+```bash
+docker compose down --remove-orphans
+```
+
 ---
 
 [前へ: step-0 — ゼロからスタート](../step-0/README.ja.md) | [次へ: step-2 — ECS Express Mode 上の Next.js](../step-2/README.ja.md)

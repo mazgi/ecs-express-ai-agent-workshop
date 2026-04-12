@@ -36,6 +36,45 @@ Containers are lightweight, portable packages that bundle your application code 
 
 </details>
 
+<details>
+<summary><strong>Tips: Useful Docker Compose Commands (Click to expand)</strong></summary>
+
+**Starting services**
+
+```bash
+docker compose up          # Start all services (foreground, shows logs)
+docker compose up -d       # Start all services in the background (detached)
+```
+
+**Stopping services**
+
+```bash
+docker compose down                  # Stop and remove containers
+docker compose down --remove-orphans # Also remove containers for services no longer in compose.yaml
+docker compose down -v               # Also remove volumes (e.g., database data)
+```
+
+> `--remove-orphans` is especially useful when moving between steps, as each step has different services. Without it, containers from a previous step may keep running.
+
+> `-v` removes named volumes such as database data. Use it when you want a clean slate, but be aware it **deletes all stored data**.
+
+**Checking running containers**
+
+```bash
+docker compose ps   # Show containers for the current compose project
+docker ps           # Show all running containers on the system
+```
+
+**Port conflicts**
+
+If you see an error like `port is already allocated` or `address already in use`, a container from a previous step (or another application) is still using that port. Fix it by:
+
+1. Check what is using the port: `docker ps` or `lsof -i :3000`
+2. Stop the previous step's containers: `docker compose down --remove-orphans`
+3. If a non-Docker process holds the port, stop that process first
+
+</details>
+
 ## Expected Output After Completion
 
 After completing the prompts, you should have a working Next.js project equivalent to step-1:
@@ -43,6 +82,12 @@ After completing the prompts, you should have a working Next.js project equivale
 - `docker compose up` starts the Next.js dev server
 - **http://localhost:3000** — Default Next.js "Create Next App" landing page
 - `docker compose --profile=e2e-tests run --rm web-e2e-tests` — Playwright E2E tests pass
+
+**Cleanup before moving to the next step:**
+
+```bash
+docker compose down --remove-orphans
+```
 
 ---
 

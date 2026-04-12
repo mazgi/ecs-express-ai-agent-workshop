@@ -175,6 +175,14 @@ ORM（オブジェクトリレーショナルマッピング）は、生の SQL 
   - `DELETE /items/:id` — アイテム削除 → `204 No Content`
 - E2E テストでアイテムの作成と削除を検証
 
+**次のステップに進む前のクリーンアップ：**
+
+```bash
+docker compose down --remove-orphans
+```
+
+> このステップはデータベースボリュームを使用します。データベースをリセットしたい場合は、代わりに `docker compose down --remove-orphans -v` を使用してください。
+
 ---
 
 [前へ: step-2 — ECS Express Mode 上の Next.js](../step-2/README.ja.md) | [次へ: step-4 — Next.js + NestJS（Items CRUD）](../step-4/README.ja.md)

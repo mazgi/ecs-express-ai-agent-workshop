@@ -52,6 +52,8 @@ By the end of this workshop, you will be able to:
 * **Estimated Time:** 2 - 3 hours
 * **Estimated AWS Cost:** Less than $5 (Assuming you destroy the ephemeral layer immediately after the workshop. **Note:** RDS and ECS will incur hourly charges while running.)
 
+> **Take breaks!** This workshop is intensive and covers a lot of ground. Don't try to rush through everything in one sitting. Take a break between steps to rest, stretch, and recharge. You can always stop at any step and resume later — each step directory is a self-contained snapshot, so you won't lose progress. A fresh mind leads to better learning outcomes.
+
 ## Prerequisites
 
 * **Knowledge:** Basic understanding of TypeScript and Docker. No deep AWS or Terraform expertise is required (the AI will help you!).

@@ -195,6 +195,14 @@ After completing the prompts, you should have a project equivalent to step-final
 - Internationalization (English + Japanese)
 - Full E2E test suites for auth, items, TOTP, and theme
 
+**Cleanup before moving to the next step:**
+
+```bash
+docker compose down --remove-orphans
+```
+
+> This step uses a database volume. If you want to reset the database, use `docker compose down --remove-orphans -v` instead.
+
 ---
 
 [Prev: step-4 — Next.js + NestJS with Items CRUD](../step-4/README.md) | [Next: step-final — Full-Stack App](../step-final/README.md)

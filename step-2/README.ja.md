@@ -145,6 +145,12 @@ docker push $ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/${APP_UNIQUE_ID}-web:l
 - **http://localhost:3000** — **「ECS Express Workshop」** タイトルとバックエンドの Git SHA を表示する Web ページ
 - E2E テストで Git SHA の表示を検証
 
+**次のステップに進む前のクリーンアップ：**
+
+```bash
+docker compose down --remove-orphans
+```
+
 ---
 
 [前へ: step-1 — 空の Next.js アプリ](../step-1/README.ja.md) | [次へ: step-3 — Next.js + NestJS（ヘルスチェック）](../step-3/README.ja.md)

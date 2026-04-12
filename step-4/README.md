@@ -164,6 +164,14 @@ After completing the prompts, you should have a project equivalent to step-5 wit
 - Items are now scoped to the authenticated user (ownership check on delete)
 - E2E tests verify sign-up flow and authenticated items management
 
+**Cleanup before moving to the next step:**
+
+```bash
+docker compose down --remove-orphans
+```
+
+> This step uses a database volume. If you want to reset the database, use `docker compose down --remove-orphans -v` instead.
+
 ---
 
 [Prev: step-3 — Next.js + NestJS (health check)](../step-3/README.md) | [Next: step-5 — Next.js + NestJS with Auth + Items CRUD](../step-5/README.md)
