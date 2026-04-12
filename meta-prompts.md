@@ -159,3 +159,5 @@ All user prompts from this session.
 154. yes. remove please
 155. instead Prisma v7 in all steps
 156. in readme '## How to Use' section, could you rewrite '2. Open it in your AI agent' to read content, try it, and use AI agent?
+157. in step-2 '## Cloud Deployment (Terraform)' section, could you add texts that helps the audience to easy to understand 'should run terraform via docker compose when you want to deploy it'?
+158. hmm... the main of texts is 'should run it if you want deploy it on cloud'

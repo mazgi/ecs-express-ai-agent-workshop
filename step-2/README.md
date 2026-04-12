@@ -78,6 +78,8 @@ docker compose --profile=e2e-tests run --rm web-e2e-tests
 
 ## Cloud Deployment (Terraform)
 
+Cloud deployment is **optional** — you can complete this workshop using only local Docker containers. If you want to deploy your application to AWS, run the Terraform commands below via `docker compose` (no local Terraform installation required).
+
 See [docs/cloud-deployment-aws.md](docs/cloud-deployment-aws.md) for full details. To use GitHub Actions for CI/CD, you will need to set up [OIDC authentication](docs/oidc-setup.md) and configure [GitHub Actions variables and secrets](docs/ci.md). Quick summary:
 
 ```sh
