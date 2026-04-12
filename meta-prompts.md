@@ -147,3 +147,4 @@ All user prompts from this session.
 142. In step-2 '## Cloud Deployment (Terraform)', the audience should run '# 1. Configure variables' -> '# 2. Deploy persistent infrastructure (VPC, ECR, IAM)' -> '### Build and Push Images' -> '# 3. Build and push Docker images to ECR, then deploy ephemeral infrastructure (ECS Express Gateway)'. could you reorder it easier to read?
 143. could you place the empty .github/workflows/ dir in step-1? because when I try the prompts, the claude agent creates the dir on top of repo.
 144. In step-0 prompts, '## 8. Create a README' overwrites original README. is it needed?
+145. In step-0 '## 1. Create a Next.js App Router project' prompt, the AI tried using pnpm directly, but it failed because I don't installing node or pnpm locally, I use it via docker. could you reorder the prompts that create Dockerfile and compose.yaml before create the app?
