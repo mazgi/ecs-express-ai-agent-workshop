@@ -138,3 +138,4 @@ All user prompts from this session.
 133. no, it's not needed. because it doesn't have implementations for apple or android (apple/app/BuildConfig.generated.swift in .gitignore)
 134. could you align that? it's related file system. (.AppleDouble/.LSOverride in step-1 .gitignore)
 135. I've placed the recording. Could you insert it in README?: docs/images/screen-recording.gif
+136. could you tag this repo as v2026.4.0?
