@@ -2,15 +2,6 @@
 
 A hands-on workshop where you collaborate with AI (Claude Code, etc.) to build a production-ready full-stack application combining Next.js, NestJS, Prisma, and Amazon ECS (Express Mode).
 
-**Getting Started**
-In this workshop, you'll evolve the project by having an AI agent generate code for you. To keep your own change history, start by clicking the **"Fork"** button at the top right to copy this repository to your GitHub account, then `clone` it locally.
-
-```bash
-# Replace YOUR_USERNAME with your GitHub account name
-git clone https://github.com/YOUR_USERNAME/ecs-express-ai-agent-workshop.git
-cd ecs-express-ai-agent-workshop
-```
-
 Beyond a simple tutorial, the final application serves as a production-ready foundation with robust user authentication and seamless OAuth2 Identity Provider (IdP) integration.
 
 Each `step-*` directory is a self-contained project snapshot. Use the `prompts.md` in each step to guide the AI agent to write code, provision infrastructure, and evolve the project to the next level — experiencing a modern, AI-driven development workflow firsthand.
@@ -68,6 +59,14 @@ By the end of this workshop, you will be able to:
   * An AI agent tool (e.g. [Claude Code](https://claude.ai/claude-code), [Cursor](https://www.cursor.com/), or [GitHub Copilot](https://github.com/features/copilot))
 
 ## How to Use
+
+In this workshop, you'll evolve the project by having an AI agent generate code for you. To keep your own change history, start by clicking the **"Fork"** button at the top right to copy this repository to your GitHub account, then `clone` it locally.
+
+```bash
+# Replace YOUR_USERNAME with your GitHub account name
+git clone https://github.com/YOUR_USERNAME/ecs-express-ai-agent-workshop.git
+cd ecs-express-ai-agent-workshop
+```
 
 1. Pick a step directory (start with `step-0/`)
 2. Open it in your AI agent

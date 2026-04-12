@@ -2,15 +2,6 @@
 
 AI（Claude Code 等）と対話しながら、Next.js、NestJS、Prisma、そして Amazon ECS (Express Mode) を組み合わせたプロダクションレディなフルスタックアプリを構築する、実践的なワークショップです。
 
-**【学習の始め方】**
-本ワークショップでは、AIエージェントにコードを生成させながらプロジェクトを進化させていきます。あなた自身の変更履歴を残すため、まずは右上の **"Fork"** ボタンからこのリポジトリを自分の GitHub アカウントへコピーし、それをローカルに `clone` してスタートしてください。
-
-```bash
-# YOUR_USERNAME をご自身の GitHub アカウント名に置き換えて実行してください
-git clone https://github.com/YOUR_USERNAME/ecs-express-ai-agent-workshop.git
-cd ecs-express-ai-agent-workshop
-```
-
 単なるチュートリアルにとどまらず、最終的に構築するアプリケーションは、堅牢なユーザー認証の実装や OAuth2 Identity Provider（IdP）とのシームレスな連携が可能な、本番環境にも対応できる基盤となります。
 
 各 `step-*` ディレクトリはプロジェクトの自己完結型スナップショットです。各ステップの `prompts.ja.md` に従って AI エージェントにコードの記述、インフラのプロビジョニング、プロジェクトの進化を指示し、モダンな AI 駆動の開発ワークフローを体験しましょう。
@@ -68,6 +59,14 @@ cd ecs-express-ai-agent-workshop
   * AI エージェントツール（例: [Claude Code](https://claude.ai/claude-code)、[Cursor](https://www.cursor.com/)、[GitHub Copilot](https://github.com/features/copilot)）
 
 ## 使い方
+
+本ワークショップでは、AIエージェントにコードを生成させながらプロジェクトを進化させていきます。あなた自身の変更履歴を残すため、まずは右上の **"Fork"** ボタンからこのリポジトリを自分の GitHub アカウントへコピーし、それをローカルに `clone` してスタートしてください。
+
+```bash
+# YOUR_USERNAME をご自身の GitHub アカウント名に置き換えて実行してください
+git clone https://github.com/YOUR_USERNAME/ecs-express-ai-agent-workshop.git
+cd ecs-express-ai-agent-workshop
+```
 
 1. ステップディレクトリを選択（`step-0/` から開始）
 2. AI エージェントで開く
