@@ -124,7 +124,18 @@ docker compose --profile=iac run --rm iac terraform -chdir=aws/ephemeral apply -
 
 ### シークレット
 
-このステップでは、唯一のシークレットである `DATABASE_URL` はエフェメラルレイヤーの Terraform が RDS エンドポイントから**自動的に設定**します。手動でのシークレット設定は不要です。
+プロンプト実行前は、唯一のシークレットである `DATABASE_URL` はエフェメラルレイヤーの Terraform が RDS エンドポイントから**自動的に設定**します。
+
+プロンプト実行後、AI エージェントが `AUTH_JWT_SECRET` と `AUTH_JWT_REFRESH_SECRET` を Secrets Manager に追加します。手動で値を設定する必要があります：
+
+```sh
+aws secretsmanager put-secret-value \
+  --secret-id "${APP_UNIQUE_ID}/backend/AUTH_JWT_SECRET" \
+  --secret-string "$(openssl rand -base64 32)"
+aws secretsmanager put-secret-value \
+  --secret-id "${APP_UNIQUE_ID}/backend/AUTH_JWT_REFRESH_SECRET" \
+  --secret-string "$(openssl rand -base64 32)"
+```
 
 ## AI エージェントによる実装
 

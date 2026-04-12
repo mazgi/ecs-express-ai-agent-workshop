@@ -148,3 +148,4 @@ All user prompts from this session.
 143. could you place the empty .github/workflows/ dir in step-1? because when I try the prompts, the claude agent creates the dir on top of repo.
 144. In step-0 prompts, '## 8. Create a README' overwrites original README. is it needed?
 145. In step-0 '## 1. Create a Next.js App Router project' prompt, the AI tried using pnpm directly, but it failed because I don't installing node or pnpm locally, I use it via docker. could you reorder the prompts that create Dockerfile and compose.yaml before create the app?
+146. in step-4 readme, it says 'the only secret is `DATABASE_URL`,', but after running prompts JWT secrets are also needed. could you correct it?

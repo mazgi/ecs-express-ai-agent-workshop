@@ -124,7 +124,18 @@ docker compose --profile=iac run --rm iac terraform -chdir=aws/ephemeral apply -
 
 ### Secrets
 
-In this step, the only secret is `DATABASE_URL`, which is **automatically populated** by the ephemeral layer Terraform from the RDS endpoint. No manual secret setup is required.
+Before running the prompts, the only secret is `DATABASE_URL`, which is **automatically populated** by the ephemeral layer Terraform from the RDS endpoint.
+
+After completing the prompts, the AI agent will add `AUTH_JWT_SECRET` and `AUTH_JWT_REFRESH_SECRET` to Secrets Manager. You must populate them manually:
+
+```sh
+aws secretsmanager put-secret-value \
+  --secret-id "${APP_UNIQUE_ID}/backend/AUTH_JWT_SECRET" \
+  --secret-string "$(openssl rand -base64 32)"
+aws secretsmanager put-secret-value \
+  --secret-id "${APP_UNIQUE_ID}/backend/AUTH_JWT_REFRESH_SECRET" \
+  --secret-string "$(openssl rand -base64 32)"
+```
 
 ## Implementation via AI Agent
 
