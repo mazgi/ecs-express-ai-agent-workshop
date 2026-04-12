@@ -30,10 +30,6 @@ Could you add a `web-e2e-tests` service to `compose.yaml` that depends on the `w
 
 Could you create `.env` and `.example.env` with container UID/GID settings (Docker Engine only, not Docker Desktop), and a `.gitignore` that ignores `*.env` (except `.example.*`), `node_modules/`, `.pnpm-store/`, `.next/`, `.DS_Store`, and `.vscode/`?
 
-## 8. Create a README
-
-Could you create a `README.md` that describes the project as an empty Next.js app, with quick start instructions (`docker compose up`), E2E test instructions (`docker compose --profile=e2e-tests run --rm web-e2e-tests`), and a project structure diagram?
-
-## 9. Verify the setup
+## 8. Verify the setup
 
 Could you run `docker compose --profile=e2e-tests run --rm web-e2e-tests` to verify the E2E tests pass?

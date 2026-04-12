@@ -30,10 +30,6 @@
 
 `.env` と `.example.env` をコンテナの UID/GID 設定（Docker Engine のみ、Docker Desktop は不要）で作成し、`.gitignore` で `*.env`（`.example.*` を除く）、`node_modules/`、`.pnpm-store/`、`.next/`、`.DS_Store`、`.vscode/` を無視するようにしてください。
 
-## 8. README を作成
-
-`README.md` を作成し、空の Next.js アプリとしてプロジェクトを説明してください。クイックスタート手順（`docker compose up`）、E2E テスト手順（`docker compose --profile=e2e-tests run --rm web-e2e-tests`）、プロジェクト構成図を含めてください。
-
-## 9. セットアップを検証
+## 8. セットアップを検証
 
 `docker compose --profile=e2e-tests run --rm web-e2e-tests` を実行して E2E テストがパスすることを確認してください。
