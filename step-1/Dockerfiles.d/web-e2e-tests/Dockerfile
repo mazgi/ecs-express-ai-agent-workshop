@@ -38,8 +38,8 @@ ARG GID=1000
 # Re-map it to the host user's UID/GID so that files written to bind-mounted
 # volumes are owned by the correct user, and Node.js os.userInfo() resolves
 # the user natively without /etc/passwd workarounds.
-RUN groupmod --gid ${GID} node \
-    && usermod --uid ${UID} --gid ${GID} node \
+RUN groupmod --non-unique --gid ${GID} node \
+    && usermod --non-unique --uid ${UID} --gid ${GID} node \
     && chown -R node:node /home/node
 
 USER node
