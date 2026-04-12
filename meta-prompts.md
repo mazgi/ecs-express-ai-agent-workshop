@@ -144,3 +144,4 @@ All user prompts from this session.
 139. could you advice should run `docker compose down` in each verification step? moreover, `docker compose down --remove-orphans` is more useful some steps.
 140. yes, please. in addition, could you write tips about docker and docker compose such as `up`, `down`, `down --remove-orphans`, `down -v`, `docker ps`, `docker compose ps`, and port conflicts?
 141. this workshop a bit hard because it should concentrate about 2 or 3 hours. so, could you write text about 'to rest, relax, and take break' in repo top readme?
+142. In step-2 '## Cloud Deployment (Terraform)', the audience should run '# 1. Configure variables' -> '# 2. Deploy persistent infrastructure (VPC, ECR, IAM)' -> '### Build and Push Images' -> '# 3. Build and push Docker images to ECR, then deploy ephemeral infrastructure (ECS Express Gateway)'. could you reorder it easier to read?

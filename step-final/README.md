@@ -140,33 +140,23 @@ docker compose --profile=iac run --rm iac terraform -chdir=aws init \
   -backend-config="region=$AWS_TF_STATE_REGION"
 docker compose --profile=iac run --rm iac terraform -chdir=aws apply -var-file=terraform.tfvars
 
-# 3. Build and push Docker images to ECR, then deploy ephemeral infrastructure (ECS Express Gateway, RDS)
-docker compose --profile=iac run --rm iac terraform -chdir=aws/ephemeral init \
-  -backend-config="bucket=$AWS_TF_STATE_BUCKET" \
-  -backend-config="region=$AWS_TF_STATE_REGION"
-docker compose --profile=iac run --rm iac terraform -chdir=aws/ephemeral apply -var-file=terraform.tfvars
-```
-
-### Build and Push Images
-
-After deploying the persistent layer, build and push the production images before deploying the ephemeral layer:
-
-```sh
-# Authenticate Docker with ECR
+# 3. Build and push Docker images to ECR
 aws ecr get-login-password --region $AWS_REGION | \
   docker login --username AWS --password-stdin $ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com
-
-# Build and push backend
 docker build -f Dockerfiles.d/backend-build/Dockerfile \
   -t $ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/${APP_UNIQUE_ID}-backend:latest \
   backend
 docker push $ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/${APP_UNIQUE_ID}-backend:latest
-
-# Build and push web
 docker build -f Dockerfiles.d/web-build/Dockerfile \
   -t $ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/${APP_UNIQUE_ID}-web:latest \
   web/app
 docker push $ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/${APP_UNIQUE_ID}-web:latest
+
+# 4. Deploy ephemeral infrastructure (ECS Express Gateway, RDS)
+docker compose --profile=iac run --rm iac terraform -chdir=aws/ephemeral init \
+  -backend-config="bucket=$AWS_TF_STATE_BUCKET" \
+  -backend-config="region=$AWS_TF_STATE_REGION"
+docker compose --profile=iac run --rm iac terraform -chdir=aws/ephemeral apply -var-file=terraform.tfvars
 ```
 
 ### Populate Secrets

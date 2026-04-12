@@ -95,33 +95,23 @@ docker compose --profile=iac run --rm iac terraform -chdir=aws init \
   -backend-config="region=$AWS_TF_STATE_REGION"
 docker compose --profile=iac run --rm iac terraform -chdir=aws apply -var-file=terraform.tfvars
 
-# 3. Docker イメージをビルドして ECR にプッシュ後、エフェメラルインフラをデプロイ（ECS Express Gateway）
-docker compose --profile=iac run --rm iac terraform -chdir=aws/ephemeral init \
-  -backend-config="bucket=$AWS_TF_STATE_BUCKET" \
-  -backend-config="region=$AWS_TF_STATE_REGION"
-docker compose --profile=iac run --rm iac terraform -chdir=aws/ephemeral apply -var-file=terraform.tfvars
-```
-
-### イメージのビルドとプッシュ
-
-永続レイヤーのデプロイ後、エフェメラルレイヤーのデプロイ前に本番イメージをビルドしてプッシュします：
-
-```sh
-# Docker を ECR に認証
+# 3. Docker イメージをビルドして ECR にプッシュ
 aws ecr get-login-password --region $AWS_REGION | \
   docker login --username AWS --password-stdin $ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com
-
-# Backend をビルドしてプッシュ
 docker build -f Dockerfiles.d/backend-build/Dockerfile \
   -t $ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/${APP_UNIQUE_ID}-backend:latest \
   backend
 docker push $ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/${APP_UNIQUE_ID}-backend:latest
-
-# Web をビルドしてプッシュ
 docker build -f Dockerfiles.d/web-build/Dockerfile \
   -t $ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/${APP_UNIQUE_ID}-web:latest \
   web/app
 docker push $ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/${APP_UNIQUE_ID}-web:latest
+
+# 4. エフェメラルインフラをデプロイ（ECS Express Gateway）
+docker compose --profile=iac run --rm iac terraform -chdir=aws/ephemeral init \
+  -backend-config="bucket=$AWS_TF_STATE_BUCKET" \
+  -backend-config="region=$AWS_TF_STATE_REGION"
+docker compose --profile=iac run --rm iac terraform -chdir=aws/ephemeral apply -var-file=terraform.tfvars
 ```
 
 > 詳細は [docs/cloud-deployment-aws.md](docs/cloud-deployment-aws.md) を参照してください。
