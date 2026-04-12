@@ -1,14 +1,4 @@
-# 🎉 Congratulations on completing the workshop!
-
-You have successfully built a modern full-stack environment combining Next.js, NestJS, Prisma, and Amazon ECS (Express Mode) through collaboration with an AI agent.
-
-This `step-final` directory is not just the end of a tutorial—it is a **powerful, production-ready starting point (template) for your own applications.**
-
-With built-in secure OAuth2 IdP integration and a robust, cost-effective infrastructure design (Persistent vs. Ephemeral layers), the foundation is fully laid out for you. Now it's time to use this environment to bring your own ideas to life.
-
-Happy coding, and enjoy the future of AI-driven development! 🚀
-
----
+# step-final — Full-Stack Application
 
 ## Services
 
@@ -118,6 +108,16 @@ After running `docker compose up`:
 - OAuth provider linking/unlinking
 - Theme toggle (System / Light / Dark)
 - Account deletion
+
+## 🎉 Congratulations on completing the workshop!
+
+You have successfully built a modern full-stack environment combining Next.js, NestJS, Prisma, and Amazon ECS (Express Mode) through collaboration with an AI agent.
+
+This `step-final` directory is not just the end of a tutorial—it is a **powerful, production-ready starting point (template) for your own applications.**
+
+With built-in secure OAuth2 IdP integration and a robust, cost-effective infrastructure design (Persistent vs. Ephemeral layers), the foundation is fully laid out for you. Now it's time to use this environment to bring your own ideas to life.
+
+Happy coding, and enjoy the future of AI-driven development! 🚀
 
 ## Use This Template
 

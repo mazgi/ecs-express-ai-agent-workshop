@@ -168,3 +168,4 @@ All user prompts from this session.
 163. in '## Cloud Deployment (Terraform)' section, it says 'Cloud deployment is **optional**'. hmm, but I recommend all audiences because this is 'ECS-express-ai-agent-workshop'. could you update texts?
 164. from step-4, we placed .secrets.env in the working dir. it has risk such as AI agents can read it. could you write note about it?
 165. good. moreover, could you update with disclaimer to easy to learn in this workshop?
+166. in final step, I think Congratulations section is placed after Expected Output section is more appropriate. how do you think?
