@@ -73,9 +73,11 @@ cd ecs-express-ai-agent-workshop
 ```
 
 1. Pick a step directory (start with `step-0/`)
-2. Open it in your AI agent
-3. Follow the prompts in `prompts.md` to build toward the next step
-4. Compare your result with the next step directory
+2. Read the step's `README.md` and `prompts.md` to understand the goal
+3. Try running the step yourself with `docker compose up`
+4. Open it in your AI agent
+5. Follow the prompts in `prompts.md` to build toward the next step
+6. Compare your result with the next step directory
 
 ## Optional Learning Path: Build from Scratch in Your Own Repository
 

@@ -158,3 +158,4 @@ All user prompts from this session.
 153. is incremental set true in backend in each step?
 154. yes. remove please
 155. instead Prisma v7 in all steps
+156. in readme '## How to Use' section, could you rewrite '2. Open it in your AI agent' to read content, try it, and use AI agent?
