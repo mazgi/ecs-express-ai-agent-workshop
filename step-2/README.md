@@ -141,6 +141,14 @@ After completing the prompts, you should have a project equivalent to step-3 wit
 - **http://localhost:3000** — Web page showing **"ECS Express Workshop"** title and backend Git SHA
 - E2E tests verify the Git SHA is displayed
 
+If you deployed to AWS, you can also access the same Web page from Amazon ECS. Run the following command to get the URL:
+
+```sh
+docker compose --profile=iac run --rm iac terraform -chdir=aws/ephemeral output web_url
+```
+
+Open the output URL in your browser to confirm it works.
+
 **Cleanup before moving to the next step:**
 
 ```bash

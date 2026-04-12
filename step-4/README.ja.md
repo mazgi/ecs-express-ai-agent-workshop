@@ -180,6 +180,14 @@ JWT（JSON Web Token）は、認証に使用されるコンパクトで URL セ�
 - アイテムは認証ユーザーにスコープ（削除時に所有権チェック）
 - E2E テストでサインアップフローと認証済みアイテム管理を検証
 
+AWS にデプロイした場合は、Amazon ECS からも同じアプリケーションにアクセスできます。以下のコマンドで URL を取得してください：
+
+```sh
+docker compose --profile=iac run --rm iac terraform -chdir=aws/ephemeral output web_url
+```
+
+出力された URL をブラウザで開いて動作を確認してください。
+
 **次のステップに進む前のクリーンアップ：**
 
 ```bash

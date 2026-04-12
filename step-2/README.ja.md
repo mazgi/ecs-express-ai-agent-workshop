@@ -141,6 +141,14 @@ docker compose --profile=iac run --rm iac terraform -chdir=aws/ephemeral apply -
 - **http://localhost:3000** — **「ECS Express Workshop」** タイトルとバックエンドの Git SHA を表示する Web ページ
 - E2E テストで Git SHA の表示を検証
 
+AWS にデプロイした場合は、Amazon ECS からも同じ Web ページにアクセスできます。以下のコマンドで URL を取得してください：
+
+```sh
+docker compose --profile=iac run --rm iac terraform -chdir=aws/ephemeral output web_url
+```
+
+出力された URL をブラウザで開いて動作を確認してください。
+
 **次のステップに進む前のクリーンアップ：**
 
 ```bash

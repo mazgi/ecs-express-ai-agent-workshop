@@ -180,6 +180,14 @@ After completing the prompts, you should have a project equivalent to step-5 wit
 - Items are now scoped to the authenticated user (ownership check on delete)
 - E2E tests verify sign-up flow and authenticated items management
 
+If you deployed to AWS, you can also access the same application from Amazon ECS. Run the following command to get the URL:
+
+```sh
+docker compose --profile=iac run --rm iac terraform -chdir=aws/ephemeral output web_url
+```
+
+Open the output URL in your browser to confirm it works.
+
 **Cleanup before moving to the next step:**
 
 ```bash

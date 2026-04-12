@@ -162,3 +162,6 @@ All user prompts from this session.
 157. in step-2 '## Cloud Deployment (Terraform)' section, could you add texts that helps the audience to easy to understand 'should run terraform via docker compose when you want to deploy it'?
 158. hmm... the main of texts is 'should run it if you want deploy it on cloud'
 159. in step-2 Prerequisites, is it needed AWS account and administrator role? isn't it?
+160. in step-2, the audience is able to get a response from ecs not only local. could you add it expected output section?
+161. the audience can get the url from terraform outputs. could you add it?
+162. are these same web_url and your-ecs-gateway-url? could you update text more easy to understand?

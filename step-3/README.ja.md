@@ -167,6 +167,14 @@ ORM（オブジェクトリレーショナルマッピング）は、生の SQL 
   - `DELETE /items/:id` — アイテム削除 → `204 No Content`
 - E2E テストでアイテムの作成と削除を検証
 
+AWS にデプロイした場合は、Amazon ECS からも同じアプリケーションにアクセスできます。以下のコマンドで URL を取得してください：
+
+```sh
+docker compose --profile=iac run --rm iac terraform -chdir=aws/ephemeral output web_url
+```
+
+出力された URL をブラウザで開いて動作を確認してください。
+
 **次のステップに進む前のクリーンアップ：**
 
 ```bash

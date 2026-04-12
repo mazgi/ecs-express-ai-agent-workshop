@@ -187,6 +187,14 @@ MFA（多要素認証）は、パスワードだけでなく第二のセキュ�
 - 国際化（英語 + 日本語）
 - Auth、Items、TOTP、テーマの完全な E2E テストスイート
 
+AWS にデプロイした場合は、Amazon ECS からも同じアプリケーションにアクセスできます。以下のコマンドで URL を取得してください：
+
+```sh
+docker compose --profile=iac run --rm iac terraform -chdir=aws/ephemeral output web_url
+```
+
+出力された URL をブラウザで開いて動作を確認してください。
+
 **次のステップに進む前のクリーンアップ：**
 
 ```bash
