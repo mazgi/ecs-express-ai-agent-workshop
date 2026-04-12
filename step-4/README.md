@@ -144,6 +144,19 @@ To prepare for the next step (step-5), you can have an AI agent (such as [Claude
 Copy the contents of [prompts.md](prompts.md) in this directory and provide them to your AI agent. If executed correctly, you will have an environment equivalent to step-5 without manual intervention.
 
 <details>
+<summary><strong>Glossary: Secrets Management & AWS Secrets Manager (Click to expand)</strong></summary>
+
+**What is secrets management?**
+
+Secrets management is the practice of securely storing, accessing, and rotating sensitive values — such as database passwords, API keys, and JWT signing keys — outside of your application code and configuration files. Hardcoding secrets in source code or environment files is risky: they can be accidentally committed to version control, leaked in logs, or exposed through CI/CD artifacts. A secrets management system solves this by providing a centralized, encrypted store where secrets are kept at rest and delivered to applications at runtime.
+
+**Why use AWS Secrets Manager?**
+
+[AWS Secrets Manager](https://aws.amazon.com/secrets-manager/) is a managed service that encrypts secrets at rest, controls access via IAM policies, and integrates directly with AWS services like ECS. In this workshop, ECS tasks retrieve secrets from Secrets Manager at startup — the container never sees plaintext secrets in its task definition or environment files. This means you can rotate a secret in one place without redeploying your application code.
+
+</details>
+
+<details>
 <summary><strong>Glossary: JWT (Click to expand)</strong></summary>
 
 **What is JWT?**
