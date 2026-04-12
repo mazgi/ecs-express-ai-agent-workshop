@@ -50,6 +50,7 @@ graph TB
 ## 前提条件
 
 - Docker Engine + Docker Compose（例: [Docker Desktop](https://www.docker.com/products/docker-desktop/)、[Podman](https://podman.io/)、[Colima](https://github.com/abiosoft/colima)）
+- 管理者権限を持つ AWS アカウント（オプション — クラウドにデプロイする場合のみ必要）
 - GitHub リポジトリ（オプション — `.github/` の GitHub Actions CI/CD ワークフローを使用する場合のみ必要）
 
 ## このステップを実行する

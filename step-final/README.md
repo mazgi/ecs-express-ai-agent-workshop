@@ -70,6 +70,7 @@ graph TB
 ## Prerequisites
 
 - Docker Engine + Docker Compose (e.g. [Docker Desktop](https://www.docker.com/products/docker-desktop/), [Podman](https://podman.io/), [Colima](https://github.com/abiosoft/colima))
+- An AWS account with administrator access (optional — needed only if you want to deploy to the cloud)
 - A GitHub repository (optional — needed only if you want to use the GitHub Actions CI/CD workflows in `.github/`)
 
 ## Run This Step
