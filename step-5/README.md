@@ -97,6 +97,8 @@ docker compose up
 
 ## Cloud Deployment (Terraform)
 
+This is an ECS workshop, so we **recommend deploying to AWS** to get the full experience. All Terraform commands run via `docker compose`, so no local Terraform installation is required. If you don't have an AWS account yet, you can still proceed with local development and deploy later.
+
 See [docs/cloud-deployment-aws.md](docs/cloud-deployment-aws.md) for full details. Quick summary:
 
 ```sh

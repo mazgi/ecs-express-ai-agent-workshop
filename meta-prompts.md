@@ -165,3 +165,4 @@ All user prompts from this session.
 160. in step-2, the audience is able to get a response from ecs not only local. could you add it expected output section?
 161. the audience can get the url from terraform outputs. could you add it?
 162. are these same web_url and your-ecs-gateway-url? could you update text more easy to understand?
+163. in '## Cloud Deployment (Terraform)' section, it says 'Cloud deployment is **optional**'. hmm, but I recommend all audiences because this is 'ECS-express-ai-agent-workshop'. could you update texts?

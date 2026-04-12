@@ -79,7 +79,7 @@ docker compose --profile=e2e-tests run --rm web-e2e-tests
 
 ## クラウドデプロイ（Terraform）
 
-クラウドデプロイは**オプション**です。ローカルの Docker コンテナだけでワークショップを進めることができます。AWS にデプロイしたい場合は、以下の Terraform コマンドを `docker compose` 経由で実行してください（ホストに Terraform をインストールする必要はありません）。
+ECS ワークショップですので、フル体験のために **AWS へのデプロイを推奨します**。Terraform コマンドはすべて `docker compose` 経由で実行するため、ホストに Terraform をインストールする必要はありません。AWS アカウントをまだお持ちでない場合は、ローカル開発で先に進めて後からデプロイすることもできます。
 
 詳細は [docs/cloud-deployment-aws.md](docs/cloud-deployment-aws.md) を参照してください。GitHub Actions で CI/CD を行うには、[OIDC 認証](docs/oidc-setup.md)の設定と [GitHub Actions の変数とシークレット](docs/ci.md)の設定が必要です。概要：
 
