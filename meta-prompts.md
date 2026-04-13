@@ -189,4 +189,5 @@ All user prompts from this session.
 184. could you add a text to motivate audiences in first half of top readme like following?: Do you have a specific app idea you want to bring to life? Or are you simply eager to level up your skills in Next.js and AWS cloud infrastructure?
 185. and also, could you add texts about next step after the final step in readme in final step
 186. oops... ECS also support massive scale. could you rewrite the text as appropriative?
+187. add a text to maximize the effort in this workshop into top readme
 171. i've tagged as v2026.4.0 yesterday. could you write release note and release it?

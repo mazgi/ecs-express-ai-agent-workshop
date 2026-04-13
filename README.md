@@ -56,6 +56,8 @@ By the end of this workshop, you will be able to:
 
 > **Take breaks!** This workshop is intensive and covers a lot of ground. Don't try to rush through everything in one sitting. Take a break between steps to rest, stretch, and recharge. You can always stop at any step and resume later — each step directory is a self-contained snapshot, so you won't lose progress. A fresh mind leads to better learning outcomes.
 
+> **Maximize your learning!** To get the most out of this workshop, we highly recommend reading through the `prompts.md` and the generated code while you wait for the AI to finish processing. Understanding *what* the AI is building and *why* is just as valuable as the final result. You don't have to complete everything in one sitting — take your time and proceed at your own pace.
+
 ## Prerequisites
 
 * **Knowledge:** Basic understanding of TypeScript and Docker. No deep AWS or Terraform expertise is required (the AI will help you!).
