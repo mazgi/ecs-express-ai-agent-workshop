@@ -98,7 +98,7 @@ For a more hands-on experience, you can create your own GitHub repository and bu
 
 Because Large Language Models (LLMs) are non-deterministic, the code they generate may vary slightly between runs, and you might occasionally encounter errors. This is a natural and expected part of AI-driven development. If you get stuck, try the following steps:
 
-1. **Feed the Error Back to the AI (Self-Healing)** — Don't panic if you encounter a bug or error. Simply copy the error log or terminal output and paste it back to your AI agent, asking it to "fix this error." Prompting the AI to understand the context and troubleshoot its own mistakes is a highly valuable skill and a core part of this learning experience.
+1. **Feed the Error Back to the AI (Self-Healing)** — Don't panic if you encounter a bug or error. Simply copy the error log or terminal output and paste it back to your AI agent, asking it to "fix this error." You can also paste a screenshot of the error — most modern AI agents understand images too. Prompting the AI to understand the context and troubleshoot its own mistakes is a highly valuable skill and a core part of this learning experience.
 
 2. **Resume from the Working Snapshot (Escape Hatch)** — If the AI gets stuck in a loop, or if the code becomes too broken to easily fix, you have a built-in escape hatch. You can discard your local changes (e.g., using `git checkout .`), or simply move directly to the next `step-*` directory. Because each step directory is a self-contained snapshot of the correctly implemented project, you can always safely resume the workshop from a known working state.
 

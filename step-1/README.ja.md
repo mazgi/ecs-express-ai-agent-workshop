@@ -60,7 +60,7 @@ docker compose --profile=e2e-tests run --rm web-e2e-tests
 > - GitHub Actions の変数とシークレットを設定 — [step-2 docs/ci.md](../step-2/docs/ci.md) を参照
 
 <details>
-<summary><strong>用語解説：コンテナレジストリ、ECR、ECS、IaC、CI/CD（クリックで展開）</strong></summary>
+<summary><strong>用語解説：コンテナレジストリ、ECR、ECS（クリックで展開）</strong></summary>
 
 **コンテナレジストリとは？**
 
@@ -73,6 +73,11 @@ docker compose --profile=e2e-tests run --rm web-e2e-tests
 **Amazon ECS とは？**
 
 [Amazon ECS（Elastic Container Service）](https://aws.amazon.com/ecs/) は、クラウドでコンテナを実行するための AWS のマネージドサービスです。[ECS Express Mode](https://aws.amazon.com/blogs/containers/introducing-amazon-ecs-express/) は、ロードバランサー、ネットワーキング、オートスケーリングを自動的にプロビジョニングすることでデプロイをさらに簡素化し、最小限の設定で Docker イメージから本番 URL まで構築できます。
+
+</details>
+
+<details>
+<summary><strong>用語解説：IaC、CI/CD（クリックで展開）</strong></summary>
 
 **IaC（Infrastructure as Code）とは？**
 

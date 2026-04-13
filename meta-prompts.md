@@ -190,4 +190,6 @@ All user prompts from this session.
 185. and also, could you add texts about next step after the final step in readme in final step
 186. oops... ECS also support massive scale. could you rewrite the text as appropriative?
 187. add a text to maximize the effort in this workshop into top readme
+188. in sentence, 'Simply copy the error log or terminal output and paste it back to your AI agent, asking it to "fix this error."', could you include wording like 'you can paste a screenshot'.
+189. in step 1, the glossaries 'Glossary: Container Registry, ECR, ECS, IaC, CI/CD (Click to expand)' is in one block, but I think it separate about containers and IaC+CI/CD blocks. how do you think?
 171. i've tagged as v2026.4.0 yesterday. could you write release note and release it?

@@ -60,7 +60,7 @@ Copy the contents of [prompts.md](prompts.md) in this directory and provide them
 > - Configure GitHub Actions variables and secrets — see [step-2 docs/ci.md](../step-2/docs/ci.md)
 
 <details>
-<summary><strong>Glossary: Container Registry, ECR, ECS, IaC, CI/CD (Click to expand)</strong></summary>
+<summary><strong>Glossary: Container Registry, ECR, ECS (Click to expand)</strong></summary>
 
 **What is a Container Registry?**
 
@@ -73,6 +73,11 @@ A container registry is a storage service for container images. After you build 
 **What is Amazon ECS?**
 
 [Amazon ECS (Elastic Container Service)](https://aws.amazon.com/ecs/) is AWS's managed service for running containers in the cloud. [ECS Express Mode](https://aws.amazon.com/blogs/containers/introducing-amazon-ecs-express/) simplifies deployment further by automatically provisioning load balancers, networking, and auto-scaling — letting you go from a Docker image to a production URL with minimal configuration.
+
+</details>
+
+<details>
+<summary><strong>Glossary: IaC, CI/CD (Click to expand)</strong></summary>
 
 **What is IaC (Infrastructure as Code)?**
 
