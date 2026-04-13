@@ -89,6 +89,8 @@ docker compose up
 
 > **セキュリティに関する注意:** 本ワークショップでは学習しやすさのためにシークレットを `.secrets.env` ファイルに配置しています。本番環境ではローカルファイルではなくシークレットマネージャー（例：AWS Secrets Manager）を使用してください。AI コーディングエージェントは作業ディレクトリ内のファイルを読み取れるため、`.secrets.env` に本番用の認証情報を絶対に入れないでください。サンプルのデフォルト値はローカル開発用で安全です。`.secrets.env` は `.gitignore` の `*.env` により Git から除外されています。
 
+> **ヒント:** OAuth2 プロバイダー（Apple、Discord、GitHub、Google、X）の設定は、このステップを試すだけなら不要です。`.example.secrets.env` のデフォルトのダミー値のままでアプリは動作します。OAuth2 サインインボタンは機能しませんが、メール/パスワードでのサインアップとサインインは OAuth2 の設定なしで利用できます。
+
 | URL | 説明 |
 |-----|------|
 | http://localhost:4000 | バックエンド API |
@@ -188,6 +190,14 @@ aws secretsmanager put-secret-value \
 - OAuth プロバイダーのリンク/リンク解除
 - テーマ切り替え（システム / ライト / ダーク）
 - アカウント削除
+
+AWS にデプロイした場合は、Amazon ECS からも同じアプリケーションにアクセスできます。以下のコマンドで URL を取得してください：
+
+```sh
+docker compose --profile=iac run --rm iac terraform -chdir=aws/ephemeral output web_url
+```
+
+出力された URL をブラウザで開いて動作を確認してください。
 
 ## 🎉 ワークショップ完了おめでとうございます！
 

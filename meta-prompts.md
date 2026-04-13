@@ -173,4 +173,7 @@ All user prompts from this session.
 168. yes, remove it
 169. could you reorder '## Cloud Deployment (Terraform)' and '## Project Structure' in final step as follow as previous steps?
 170. hmm... I think '## Project Structure' section should placed between ## Architecture at Start and ## Prerequisites sections. how do you think?
+171. in final step, I think '## Cloud Deployment (Terraform)' should be placed before '## Expected Output' section. How do you think?
+172. in final step '## Expected Output', could you write how the audience verify the app on cloud as same as previous steps?
+173. if an audience try final step, OAuth2 IdP configuration is hard. So, the vars and secrets accept dummy values such as AUTH_APPLE_PRIVATE_KEY. could you write it as tips or hint?
 171. i've tagged as v2026.4.0 yesterday. could you write release note and release it?

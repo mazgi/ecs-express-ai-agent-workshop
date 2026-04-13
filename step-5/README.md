@@ -80,6 +80,8 @@ docker compose up
 
 > **Security note:** This workshop places secrets in `.secrets.env` for simplicity. In production, use a secrets manager (e.g. AWS Secrets Manager) instead of local files. Be aware that AI coding agents can read files in your working directory — never place production credentials in `.secrets.env`. The example defaults are safe for local development. `.secrets.env` is excluded from Git via `*.env` in `.gitignore`.
 
+> **Tip:** OAuth2 provider setup (Apple, Discord, GitHub, Google, X) is optional for trying this step. The app works with the default dummy values in `.example.secrets.env` — OAuth2 sign-in buttons will simply not work. You can sign up and sign in with email/password without any OAuth2 configuration.
+
 | URL | Description |
 |-----|-------------|
 | http://localhost:4000/health | Backend health check |
