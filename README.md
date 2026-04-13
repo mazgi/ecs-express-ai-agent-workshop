@@ -98,6 +98,11 @@ Because Large Language Models (LLMs) are non-deterministic, the code they genera
 
 2. **Resume from the Working Snapshot (Escape Hatch)** — If the AI gets stuck in a loop, or if the code becomes too broken to easily fix, you have a built-in escape hatch. You can discard your local changes (e.g., using `git checkout .`), or simply move directly to the next `step-*` directory. Because each step directory is a self-contained snapshot of the correctly implemented project, you can always safely resume the workshop from a known working state.
 
+3. **Running Out of AI Tokens?** — This workshop involves significant code generation and may consume a large number of tokens, especially in later steps. If you hit your plan's usage limit:
+   - **[Claude Max plan](https://claude.ai/upgrade)** — Provides significantly higher usage limits for Claude Code.
+   - **[Claude Code with Amazon Bedrock](https://docs.anthropic.com/en/docs/claude-code/bedrock)** — Use your AWS account to call Claude directly via Bedrock with pay-as-you-go pricing and no token caps. This is a great option if you already have an AWS account for this workshop.
+   - **Use step snapshots** — You can always skip to the next `step-*` directory and continue from a working state.
+
 ## Steps
 
 ### [step-0](step-0/) — Starting from Scratch
