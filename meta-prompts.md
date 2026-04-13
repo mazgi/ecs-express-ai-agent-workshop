@@ -179,4 +179,5 @@ All user prompts from this session.
 174. could you write what APP_UNIQUE_ID is in somewhere?
 175. in after IaC steps, could you write note about cloud cost?
 176. could you update text with actual destroy commands?
+177. moreover, could you add how to destroy all infrastructure in each step for the audiences who stop the workshop. I think near '**Cleanup before moving to the next step:**' is suite stop.
 171. i've tagged as v2026.4.0 yesterday. could you write release note and release it?

@@ -163,6 +163,22 @@ docker compose --profile=iac run --rm iac terraform -chdir=aws/ephemeral output 
 docker compose down --remove-orphans
 ```
 
+<details>
+<summary><strong>ワークショップを中断しますか？クラウドインフラも破棄してください（クリックで展開）</strong></summary>
+
+AWS にデプロイした場合は、継続的な課金を避けるためにクラウドリソースを破棄してください：
+
+```sh
+# 1. エフェメラルレイヤーを破棄（ECS など）
+source .env
+docker compose --profile=iac run --rm iac terraform -chdir=aws/ephemeral destroy -var-file=terraform.tfvars
+
+# 2. 永続レイヤーを破棄（VPC、ECR、IAM）
+docker compose --profile=iac run --rm iac terraform -chdir=aws destroy -var-file=terraform.tfvars
+```
+
+</details>
+
 ---
 
 [前へ: step-1 — 空の Next.js アプリ](../step-1/README.ja.md) | [次へ: step-3 — Next.js + NestJS（ヘルスチェック）](../step-3/README.ja.md)

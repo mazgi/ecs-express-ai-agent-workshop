@@ -234,6 +234,22 @@ Happy coding、AI 駆動開発の未来を楽しんでください！ 🚀
 docker compose down --remove-orphans -v
 ```
 
+<details>
+<summary><strong>ワークショップ終了？クラウドインフラを破棄してください（クリックで展開）</strong></summary>
+
+AWS にデプロイした場合は、継続的な課金を避けるためにクラウドリソースを破棄してください：
+
+```sh
+# 1. エフェメラルレイヤーを破棄（ECS、RDS など）
+source .env
+docker compose --profile=iac run --rm iac terraform -chdir=aws/ephemeral destroy -var-file=terraform.tfvars
+
+# 2. 永続レイヤーを破棄（VPC、ECR、IAM、Secrets Manager）
+docker compose --profile=iac run --rm iac terraform -chdir=aws destroy -var-file=terraform.tfvars
+```
+
+</details>
+
 ---
 
 [前へ: step-5 — Next.js + NestJS（認証 + Items CRUD）](../step-5/README.ja.md)

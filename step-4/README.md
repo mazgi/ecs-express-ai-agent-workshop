@@ -208,6 +208,22 @@ docker compose down --remove-orphans
 
 > This step uses a database volume. If you want to reset the database, use `docker compose down --remove-orphans -v` instead.
 
+<details>
+<summary><strong>Stopping the workshop? Destroy your cloud infrastructure too (Click to expand)</strong></summary>
+
+If you deployed to AWS and want to stop the workshop, destroy your cloud resources to avoid ongoing charges:
+
+```sh
+# 1. Destroy ephemeral layer (ECS, RDS, etc.)
+source .env
+docker compose --profile=iac run --rm iac terraform -chdir=aws/ephemeral destroy -var-file=terraform.tfvars
+
+# 2. Destroy persistent layer (VPC, ECR, IAM, Secrets Manager)
+docker compose --profile=iac run --rm iac terraform -chdir=aws destroy -var-file=terraform.tfvars
+```
+
+</details>
+
 ---
 
 [Prev: step-3 — Next.js + NestJS (health check)](../step-3/README.md) | [Next: step-5 — Next.js + NestJS with Auth + Items CRUD](../step-5/README.md)

@@ -234,6 +234,22 @@ Happy coding, and enjoy the future of AI-driven development! 🚀
 docker compose down --remove-orphans -v
 ```
 
+<details>
+<summary><strong>Finished the workshop? Destroy your cloud infrastructure (Click to expand)</strong></summary>
+
+If you deployed to AWS, destroy your cloud resources to avoid ongoing charges:
+
+```sh
+# 1. Destroy ephemeral layer (ECS, RDS, etc.)
+source .env
+docker compose --profile=iac run --rm iac terraform -chdir=aws/ephemeral destroy -var-file=terraform.tfvars
+
+# 2. Destroy persistent layer (VPC, ECR, IAM, Secrets Manager)
+docker compose --profile=iac run --rm iac terraform -chdir=aws destroy -var-file=terraform.tfvars
+```
+
+</details>
+
 ---
 
 [Prev: step-5 — Next.js + NestJS with Auth + Items CRUD](../step-5/README.md)

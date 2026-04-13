@@ -163,6 +163,22 @@ Open the output URL in your browser to confirm it works.
 docker compose down --remove-orphans
 ```
 
+<details>
+<summary><strong>Stopping the workshop? Destroy your cloud infrastructure too (Click to expand)</strong></summary>
+
+If you deployed to AWS and want to stop the workshop, destroy your cloud resources to avoid ongoing charges:
+
+```sh
+# 1. Destroy ephemeral layer (ECS, etc.)
+source .env
+docker compose --profile=iac run --rm iac terraform -chdir=aws/ephemeral destroy -var-file=terraform.tfvars
+
+# 2. Destroy persistent layer (VPC, ECR, IAM)
+docker compose --profile=iac run --rm iac terraform -chdir=aws destroy -var-file=terraform.tfvars
+```
+
+</details>
+
 ---
 
 [Prev: step-1 — Empty Next.js App](../step-1/README.md) | [Next: step-3 — Next.js + NestJS (health check)](../step-3/README.md)

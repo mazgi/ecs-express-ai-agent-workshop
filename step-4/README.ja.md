@@ -208,6 +208,22 @@ docker compose down --remove-orphans
 
 > このステップはデータベースボリュームを使用します。データベースをリセットしたい場合は、代わりに `docker compose down --remove-orphans -v` を使用してください。
 
+<details>
+<summary><strong>ワークショップを中断しますか？クラウドインフラも破棄してください（クリックで展開）</strong></summary>
+
+AWS にデプロイした場合は、継続的な課金を避けるためにクラウドリソースを破棄してください：
+
+```sh
+# 1. エフェメラルレイヤーを破棄（ECS、RDS など）
+source .env
+docker compose --profile=iac run --rm iac terraform -chdir=aws/ephemeral destroy -var-file=terraform.tfvars
+
+# 2. 永続レイヤーを破棄（VPC、ECR、IAM、Secrets Manager）
+docker compose --profile=iac run --rm iac terraform -chdir=aws destroy -var-file=terraform.tfvars
+```
+
+</details>
+
 ---
 
 [前へ: step-3 — Next.js + NestJS（ヘルスチェック）](../step-3/README.ja.md) | [次へ: step-5 — Next.js + NestJS（認証 + Items CRUD）](../step-5/README.ja.md)
