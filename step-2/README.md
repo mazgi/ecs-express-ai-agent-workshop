@@ -120,6 +120,56 @@ docker compose --profile=iac run --rm iac terraform -chdir=aws/ephemeral apply -
 
 > The ECR repository URL can be found in the persistent layer Terraform output. See [docs/cloud-deployment-aws.md](docs/cloud-deployment-aws.md) for full details.
 
+<details>
+<summary><strong>Tips: Useful Terraform Commands via Docker Compose (Click to expand)</strong></summary>
+
+All Terraform commands in this workshop run inside a Docker container via `docker compose --profile=iac run --rm iac terraform ...`.
+
+**Checking current state**
+
+```bash
+# Show deployed resources in the persistent layer
+docker compose --profile=iac run --rm iac terraform -chdir=aws show
+
+# Show deployed resources in the ephemeral layer
+docker compose --profile=iac run --rm iac terraform -chdir=aws/ephemeral show
+```
+
+**Viewing outputs (e.g., URLs, resource IDs)**
+
+```bash
+# Show all outputs from the persistent layer
+docker compose --profile=iac run --rm iac terraform -chdir=aws output
+
+# Show all outputs from the ephemeral layer
+docker compose --profile=iac run --rm iac terraform -chdir=aws/ephemeral output
+
+# Show a specific output value
+docker compose --profile=iac run --rm iac terraform -chdir=aws/ephemeral output web_url
+```
+
+**Previewing changes before applying**
+
+```bash
+# See what Terraform will create/change/destroy without actually doing it
+docker compose --profile=iac run --rm iac terraform -chdir=aws plan -var-file=terraform.tfvars
+docker compose --profile=iac run --rm iac terraform -chdir=aws/ephemeral plan -var-file=terraform.tfvars
+```
+
+**Destroying resources**
+
+```bash
+# Destroy only the ephemeral layer (ECS, etc.) — safe to re-create anytime
+docker compose --profile=iac run --rm iac terraform -chdir=aws/ephemeral destroy -var-file=terraform.tfvars
+
+# Destroy the persistent layer (VPC, ECR, IAM) — only when fully done
+docker compose --profile=iac run --rm iac terraform -chdir=aws destroy -var-file=terraform.tfvars
+```
+
+> Always destroy the **ephemeral layer first**, then the persistent layer. The ephemeral layer depends on resources in the persistent layer.
+
+</details>
+
 ## Implementation via AI Agent
 
 To prepare for the next step (step-3), you can have an AI agent (such as [Claude Code](https://claude.ai/claude-code), [Cursor](https://www.cursor.com/), [GitHub Copilot](https://github.com/features/copilot), or [ChatGPT](https://chatgpt.com/)) generate the code for you.

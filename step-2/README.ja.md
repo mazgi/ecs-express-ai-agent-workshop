@@ -120,6 +120,56 @@ docker compose --profile=iac run --rm iac terraform -chdir=aws/ephemeral apply -
 
 > ECR リポジトリの URL は永続レイヤーの Terraform 出力から確認できます。詳細は [docs/cloud-deployment-aws.md](docs/cloud-deployment-aws.md) を参照してください。
 
+<details>
+<summary><strong>Tips: Docker Compose 経由の Terraform コマンド（クリックで展開）</strong></summary>
+
+本ワークショップの Terraform コマンドはすべて `docker compose --profile=iac run --rm iac terraform ...` で Docker コンテナ内で実行します。
+
+**現在の状態を確認する**
+
+```bash
+# 永続レイヤーのデプロイ済みリソースを表示
+docker compose --profile=iac run --rm iac terraform -chdir=aws show
+
+# エフェメラルレイヤーのデプロイ済みリソースを表示
+docker compose --profile=iac run --rm iac terraform -chdir=aws/ephemeral show
+```
+
+**出力を確認する（URL、リソース ID など）**
+
+```bash
+# 永続レイヤーのすべての出力を表示
+docker compose --profile=iac run --rm iac terraform -chdir=aws output
+
+# エフェメラルレイヤーのすべての出力を表示
+docker compose --profile=iac run --rm iac terraform -chdir=aws/ephemeral output
+
+# 特定の出力値を表示
+docker compose --profile=iac run --rm iac terraform -chdir=aws/ephemeral output web_url
+```
+
+**適用前に変更をプレビューする**
+
+```bash
+# 実際に実行せずに Terraform が何を作成/変更/破棄するか確認
+docker compose --profile=iac run --rm iac terraform -chdir=aws plan -var-file=terraform.tfvars
+docker compose --profile=iac run --rm iac terraform -chdir=aws/ephemeral plan -var-file=terraform.tfvars
+```
+
+**リソースを破棄する**
+
+```bash
+# エフェメラルレイヤーのみ破棄（ECS など）— いつでも再作成可能
+docker compose --profile=iac run --rm iac terraform -chdir=aws/ephemeral destroy -var-file=terraform.tfvars
+
+# 永続レイヤーを破棄（VPC、ECR、IAM）— 完全に終了する場合のみ
+docker compose --profile=iac run --rm iac terraform -chdir=aws destroy -var-file=terraform.tfvars
+```
+
+> 破棄する際は必ず**エフェメラルレイヤーを先に**、次に永続レイヤーの順で実行してください。エフェメラルレイヤーは永続レイヤーのリソースに依存しています。
+
+</details>
+
 ## AI エージェントによる実装
 
 次のステップ（step-3）に進むために、AI エージェント（[Claude Code](https://claude.ai/claude-code)、[Cursor](https://www.cursor.com/)、[GitHub Copilot](https://github.com/features/copilot)、[ChatGPT](https://chatgpt.com/) など）にコードを生成させることができます。
