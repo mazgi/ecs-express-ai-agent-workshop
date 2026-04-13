@@ -4,6 +4,8 @@ A hands-on workshop where you collaborate with AI (Claude Code, etc.) to build a
 
 Beyond a simple tutorial, the final application serves as a production-ready foundation with robust user authentication and seamless OAuth2 Identity Provider (IdP) integration.
 
+Do you have a specific app idea you want to bring to life? Or are you simply eager to level up your skills in Next.js and AWS cloud infrastructure? Either way, this workshop gives you a production-ready foundation and the AI-driven workflow to get there fast.
+
 Each `step-*` directory is a self-contained project snapshot. Use the `prompts.md` in each step to guide the AI agent to write code, provision infrastructure, and evolve the project to the next level — experiencing a modern, AI-driven development workflow firsthand.
 
 ![Screen Recording](docs/images/screen-recording.gif)
