@@ -97,44 +97,6 @@ docker compose up
 
 See [Local Development](docs/local-development.md) for detailed setup instructions (OAuth provider configuration, E2E tests, etc.).
 
-## Expected Output
-
-After running `docker compose up`:
-
-| URL | Description |
-|-----|-------------|
-| http://localhost:3000 | Web — redirects to `/signin` or `/dashboard` |
-| http://localhost:3000/signup | Registration with email verification |
-| http://localhost:3000/items | Authenticated items CRUD (user-scoped) |
-| http://localhost:3000/settings | Email, password, TOTP MFA, OAuth linking, theme |
-| http://localhost:4000/api | Swagger UI (Auth, Users, Items endpoints) |
-| http://localhost:4000/health | `{ "status": "ok", "gitSha": "..." }` |
-| http://localhost:8025 | Mailpit UI (local email testing) |
-
-**Sign-in page features:**
-- Email/password fields
-- OAuth2 buttons (Apple, Discord, GitHub, Google, X)
-- "Forgot password?" link and language switcher
-- TOTP MFA challenge (if enabled for the user)
-
-**Settings page features:**
-- Email management (change, verify, resend)
-- Password reset
-- TOTP MFA setup/disable with QR code and recovery codes
-- OAuth provider linking/unlinking
-- Theme toggle (System / Light / Dark)
-- Account deletion
-
-## 🎉 Congratulations on completing the workshop!
-
-You have successfully built a modern full-stack environment combining Next.js, NestJS, Prisma, and Amazon ECS (Express Mode) through collaboration with an AI agent.
-
-This `step-final` directory is not just the end of a tutorial—it is a **powerful, production-ready starting point (template) for your own applications.**
-
-With built-in secure OAuth2 IdP integration and a robust, cost-effective infrastructure design (Persistent vs. Ephemeral layers), the foundation is fully laid out for you. Now it's time to use this environment to bring your own ideas to life.
-
-Happy coding, and enjoy the future of AI-driven development! 🚀
-
 ## Cloud Deployment (Terraform)
 
 This is an ECS workshop, so we **recommend deploying to AWS** to get the full experience. All Terraform commands run via `docker compose`, so no local Terraform installation is required. If you don't have an AWS account yet, you can still proceed with local development and deploy later.
@@ -198,6 +160,44 @@ aws secretsmanager put-secret-value \
 > `APP_UNIQUE_ID` is the value of `app_unique_id` in your `terraform.tfvars`.
 
 See [docs/secrets.md](docs/secrets.md) for detailed instructions on obtaining each secret.
+
+## Expected Output
+
+After running `docker compose up`:
+
+| URL | Description |
+|-----|-------------|
+| http://localhost:3000 | Web — redirects to `/signin` or `/dashboard` |
+| http://localhost:3000/signup | Registration with email verification |
+| http://localhost:3000/items | Authenticated items CRUD (user-scoped) |
+| http://localhost:3000/settings | Email, password, TOTP MFA, OAuth linking, theme |
+| http://localhost:4000/api | Swagger UI (Auth, Users, Items endpoints) |
+| http://localhost:4000/health | `{ "status": "ok", "gitSha": "..." }` |
+| http://localhost:8025 | Mailpit UI (local email testing) |
+
+**Sign-in page features:**
+- Email/password fields
+- OAuth2 buttons (Apple, Discord, GitHub, Google, X)
+- "Forgot password?" link and language switcher
+- TOTP MFA challenge (if enabled for the user)
+
+**Settings page features:**
+- Email management (change, verify, resend)
+- Password reset
+- TOTP MFA setup/disable with QR code and recovery codes
+- OAuth provider linking/unlinking
+- Theme toggle (System / Light / Dark)
+- Account deletion
+
+## 🎉 Congratulations on completing the workshop!
+
+You have successfully built a modern full-stack environment combining Next.js, NestJS, Prisma, and Amazon ECS (Express Mode) through collaboration with an AI agent.
+
+This `step-final` directory is not just the end of a tutorial—it is a **powerful, production-ready starting point (template) for your own applications.**
+
+With built-in secure OAuth2 IdP integration and a robust, cost-effective infrastructure design (Persistent vs. Ephemeral layers), the foundation is fully laid out for you. Now it's time to use this environment to bring your own ideas to life.
+
+Happy coding, and enjoy the future of AI-driven development! 🚀
 
 ## Documentation
 

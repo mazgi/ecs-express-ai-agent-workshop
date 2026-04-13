@@ -97,44 +97,6 @@ docker compose up
 
 詳細なセットアップ手順（OAuth プロバイダーの設定、E2E テストなど）は [Local Development](docs/local-development.md) を参照してください。
 
-## 期待される出力
-
-`docker compose up` 実行後：
-
-| URL | 説明 |
-|-----|------|
-| http://localhost:3000 | Web — `/signin` または `/dashboard` にリダイレクト |
-| http://localhost:3000/signup | メール認証付き登録 |
-| http://localhost:3000/items | 認証済み Items CRUD（ユーザースコープ） |
-| http://localhost:3000/settings | メール、パスワード、TOTP MFA、OAuth リンク、テーマ |
-| http://localhost:4000/api | Swagger UI（Auth、Users、Items エンドポイント） |
-| http://localhost:4000/health | `{ "status": "ok", "gitSha": "..." }` |
-| http://localhost:8025 | Mailpit UI（ローカルメールテスト） |
-
-**サインインページの機能：**
-- メール/パスワードフィールド
-- OAuth2 ボタン（Apple、Discord、GitHub、Google、X）
-- 「パスワードを忘れた場合」リンクと言語切り替え
-- TOTP MFA チャレンジ（ユーザーが有効にしている場合）
-
-**設定ページの機能：**
-- メール管理（変更、認証、再送信）
-- パスワードリセット
-- TOTP MFA 設定/無効化（QR コードとリカバリーコード）
-- OAuth プロバイダーのリンク/リンク解除
-- テーマ切り替え（システム / ライト / ダーク）
-- アカウント削除
-
-## 🎉 ワークショップ完了おめでとうございます！
-
-Next.js、NestJS、Prisma、Amazon ECS（Express Mode）を組み合わせたモダンなフルスタック環境を、AI エージェントとの協働で構築することに成功しました。
-
-この `step-final` ディレクトリは単なるチュートリアルの終着点ではなく、**あなた自身のアプリケーションのための、本番環境に対応した強力な出発点（テンプレート）です。**
-
-安全な OAuth2 IdP 統合と堅牢でコスト効率の高いインフラ設計（永続レイヤーとエフェメラルレイヤー）が組み込まれており、基盤はすべて整っています。あとはこの環境を使って、あなた自身のアイデアを形にしましょう。
-
-Happy coding、AI 駆動開発の未来を楽しんでください！ 🚀
-
 ## クラウドデプロイ（Terraform）
 
 ECS ワークショップですので、フル体験のために **AWS へのデプロイを推奨します**。Terraform コマンドはすべて `docker compose` 経由で実行するため、ホストに Terraform をインストールする必要はありません。AWS アカウントをまだお持ちでない場合は、ローカル開発で先に進めて後からデプロイすることもできます。
@@ -198,6 +160,44 @@ aws secretsmanager put-secret-value \
 > `APP_UNIQUE_ID` は `terraform.tfvars` の `app_unique_id` の値です。
 
 詳細な手順は [docs/secrets.md](docs/secrets.md) を参照してください。
+
+## 期待される出力
+
+`docker compose up` 実行後：
+
+| URL | 説明 |
+|-----|------|
+| http://localhost:3000 | Web — `/signin` または `/dashboard` にリダイレクト |
+| http://localhost:3000/signup | メール認証付き登録 |
+| http://localhost:3000/items | 認証済み Items CRUD（ユーザースコープ） |
+| http://localhost:3000/settings | メール、パスワード、TOTP MFA、OAuth リンク、テーマ |
+| http://localhost:4000/api | Swagger UI（Auth、Users、Items エンドポイント） |
+| http://localhost:4000/health | `{ "status": "ok", "gitSha": "..." }` |
+| http://localhost:8025 | Mailpit UI（ローカルメールテスト） |
+
+**サインインページの機能：**
+- メール/パスワードフィールド
+- OAuth2 ボタン（Apple、Discord、GitHub、Google、X）
+- 「パスワードを忘れた場合」リンクと言語切り替え
+- TOTP MFA チャレンジ（ユーザーが有効にしている場合）
+
+**設定ページの機能：**
+- メール管理（変更、認証、再送信）
+- パスワードリセット
+- TOTP MFA 設定/無効化（QR コードとリカバリーコード）
+- OAuth プロバイダーのリンク/リンク解除
+- テーマ切り替え（システム / ライト / ダーク）
+- アカウント削除
+
+## 🎉 ワークショップ完了おめでとうございます！
+
+Next.js、NestJS、Prisma、Amazon ECS（Express Mode）を組み合わせたモダンなフルスタック環境を、AI エージェントとの協働で構築することに成功しました。
+
+この `step-final` ディレクトリは単なるチュートリアルの終着点ではなく、**あなた自身のアプリケーションのための、本番環境に対応した強力な出発点（テンプレート）です。**
+
+安全な OAuth2 IdP 統合と堅牢でコスト効率の高いインフラ設計（永続レイヤーとエフェメラルレイヤー）が組み込まれており、基盤はすべて整っています。あとはこの環境を使って、あなた自身のアイデアを形にしましょう。
+
+Happy coding、AI 駆動開発の未来を楽しんでください！ 🚀
 
 ## ドキュメント
 
