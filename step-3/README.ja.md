@@ -194,7 +194,7 @@ docker compose down --remove-orphans
 > このステップはデータベースボリュームを使用します。データベースをリセットしたい場合は、代わりに `docker compose down --remove-orphans -v` を使用してください。
 
 <details>
-<summary><strong>ワークショップを中断しますか？クラウドインフラも破棄してください（クリックで展開）</strong></summary>
+<summary><strong>ワークショップから離れますか？クラウドインフラも破棄してください（クリックで展開）</strong></summary>
 
 AWS にデプロイした場合は、継続的な課金を避けるためにクラウドリソースを破棄してください：
 

@@ -214,7 +214,7 @@ docker compose down --remove-orphans
 ```
 
 <details>
-<summary><strong>Stopping the workshop? Destroy your cloud infrastructure too (Click to expand)</strong></summary>
+<summary><strong>Leaving the workshop? Destroy your cloud infrastructure too (Click to expand)</strong></summary>
 
 If you deployed to AWS and want to stop the workshop, destroy your cloud resources to avoid ongoing charges:
 

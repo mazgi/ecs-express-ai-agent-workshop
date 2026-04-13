@@ -235,7 +235,7 @@ docker compose down --remove-orphans -v
 ```
 
 <details>
-<summary><strong>ワークショップ終了？クラウドインフラを破棄してください（クリックで展開）</strong></summary>
+<summary><strong>ワークショップから離れますか？クラウドインフラも破棄してください（クリックで展開）</strong></summary>
 
 AWS にデプロイした場合は、継続的な課金を避けるためにクラウドリソースを破棄してください：
 
