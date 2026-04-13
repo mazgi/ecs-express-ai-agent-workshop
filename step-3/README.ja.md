@@ -42,6 +42,21 @@ graph TB
     ECR -->|イメージ pull| ECS_Backend
 ```
 
+## プロジェクト構成
+
+```
+.
+├── compose.yaml
+├── backend/               # NestJS API（ヘルスチェックのみ）
+├── web/
+│   ├── app/               # Next.js App Router
+│   └── e2e-tests/         # Playwright E2E テスト
+├── iac/                   # Terraform IaC（AWS）
+├── Dockerfiles.d/
+├── .github/               # GitHub Actions ワークフロー + カスタムアクション
+└── docs/
+```
+
 ## 前提条件
 
 - Docker Engine + Docker Compose（例: [Docker Desktop](https://www.docker.com/products/docker-desktop/)、[Podman](https://podman.io/)、[Colima](https://github.com/abiosoft/colima)）
@@ -64,21 +79,6 @@ docker compose up
 
 ```sh
 docker compose --profile=e2e-tests run --rm web-e2e-tests
-```
-
-## プロジェクト構成
-
-```
-.
-├── compose.yaml
-├── backend/               # NestJS API（ヘルスチェックのみ）
-├── web/
-│   ├── app/               # Next.js App Router
-│   └── e2e-tests/         # Playwright E2E テスト
-├── iac/                   # Terraform IaC（AWS）
-├── Dockerfiles.d/
-├── .github/               # GitHub Actions ワークフロー + カスタムアクション
-└── docs/
 ```
 
 ## クラウドデプロイ（Terraform）

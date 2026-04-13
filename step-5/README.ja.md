@@ -48,6 +48,22 @@ graph TB
     SM -.->|注入| ECS_Backend
 ```
 
+## プロジェクト構成
+
+```
+.
+├── compose.yaml
+├── backend/               # NestJS API（認証 + アイテム）
+│   └── prisma/            # Prisma スキーマ（User + Item モデル）
+├── web/
+│   ├── app/               # Next.js App Router
+│   └── e2e-tests/         # Playwright E2E テスト
+├── iac/                   # Terraform IaC（AWS）
+├── Dockerfiles.d/
+├── .github/               # GitHub Actions ワークフロー + カスタムアクション
+└── docs/
+```
+
 ## 前提条件
 
 - Docker Engine + Docker Compose（例: [Docker Desktop](https://www.docker.com/products/docker-desktop/)、[Podman](https://podman.io/)、[Colima](https://github.com/abiosoft/colima)）
@@ -80,22 +96,6 @@ docker compose up
 - `POST /items` — アイテム作成（JWT 必須）
 - `GET /items` — ユーザーのアイテム一覧（JWT 必須）
 - `DELETE /items/:id` — アイテム削除（JWT 必須、所有権チェック）
-
-## プロジェクト構成
-
-```
-.
-├── compose.yaml
-├── backend/               # NestJS API（認証 + アイテム）
-│   └── prisma/            # Prisma スキーマ（User + Item モデル）
-├── web/
-│   ├── app/               # Next.js App Router
-│   └── e2e-tests/         # Playwright E2E テスト
-├── iac/                   # Terraform IaC（AWS）
-├── Dockerfiles.d/
-├── .github/               # GitHub Actions ワークフロー + カスタムアクション
-└── docs/
-```
 
 ## クラウドデプロイ（Terraform）
 

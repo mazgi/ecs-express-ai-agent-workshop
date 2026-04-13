@@ -17,6 +17,19 @@ graph LR
     E2E -.->|テスト| Web
 ```
 
+## プロジェクト構成
+
+```
+.
+├── compose.yaml
+├── Dockerfiles.d/
+│   ├── web/               # Next.js 開発用 Dockerfile
+│   └── web-e2e-tests/     # Playwright 用 Dockerfile
+└── web/
+    ├── app/               # Next.js App Router
+    └── e2e-tests/         # Playwright E2E テスト
+```
+
 ## 前提条件
 
 - Docker Engine + Docker Compose（例: [Docker Desktop](https://www.docker.com/products/docker-desktop/)、[Podman](https://podman.io/)、[Colima](https://github.com/abiosoft/colima)）
@@ -34,19 +47,6 @@ http://localhost:3000 を開くと、デフォルトの Next.js ページが表�
 
 ```sh
 docker compose --profile=e2e-tests run --rm web-e2e-tests
-```
-
-## プロジェクト構成
-
-```
-.
-├── compose.yaml
-├── Dockerfiles.d/
-│   ├── web/               # Next.js 開発用 Dockerfile
-│   └── web-e2e-tests/     # Playwright 用 Dockerfile
-└── web/
-    ├── app/               # Next.js App Router
-    └── e2e-tests/         # Playwright E2E テスト
 ```
 
 ## AI エージェントによる実装

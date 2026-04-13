@@ -48,6 +48,22 @@ graph TB
     SM -.->|inject| ECS_Backend
 ```
 
+## Project Structure
+
+```
+.
+├── compose.yaml
+├── backend/               # NestJS API (auth + items)
+│   └── prisma/            # Prisma schema (User + Item models)
+├── web/
+│   ├── app/               # Next.js App Router
+│   └── e2e-tests/         # Playwright E2E tests
+├── iac/                   # Terraform IaC (AWS)
+├── Dockerfiles.d/
+├── .github/               # GitHub Actions workflows + custom actions
+└── docs/
+```
+
 ## Prerequisites
 
 - Docker Engine + Docker Compose (e.g. [Docker Desktop](https://www.docker.com/products/docker-desktop/), [Podman](https://podman.io/), [Colima](https://github.com/abiosoft/colima))
@@ -80,22 +96,6 @@ docker compose up
 - `POST /items` — Create item (requires JWT)
 - `GET /items` — List user's items (requires JWT)
 - `DELETE /items/:id` — Delete item (requires JWT, ownership check)
-
-## Project Structure
-
-```
-.
-├── compose.yaml
-├── backend/               # NestJS API (auth + items)
-│   └── prisma/            # Prisma schema (User + Item models)
-├── web/
-│   ├── app/               # Next.js App Router
-│   └── e2e-tests/         # Playwright E2E tests
-├── iac/                   # Terraform IaC (AWS)
-├── Dockerfiles.d/
-├── .github/               # GitHub Actions workflows + custom actions
-└── docs/
-```
 
 ## Cloud Deployment (Terraform)
 

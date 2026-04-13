@@ -17,6 +17,19 @@ graph LR
     E2E -.->|tests| Web
 ```
 
+## Project Structure
+
+```
+.
+├── compose.yaml
+├── Dockerfiles.d/
+│   ├── web/               # Dockerfile for Next.js dev
+│   └── web-e2e-tests/     # Dockerfile for Playwright
+└── web/
+    ├── app/               # Next.js App Router
+    └── e2e-tests/         # Playwright E2E tests
+```
+
 ## Prerequisites
 
 - Docker Engine + Docker Compose (e.g. [Docker Desktop](https://www.docker.com/products/docker-desktop/), [Podman](https://podman.io/), [Colima](https://github.com/abiosoft/colima))
@@ -34,19 +47,6 @@ Open http://localhost:3000 to see the default Next.js page.
 
 ```sh
 docker compose --profile=e2e-tests run --rm web-e2e-tests
-```
-
-## Project Structure
-
-```
-.
-├── compose.yaml
-├── Dockerfiles.d/
-│   ├── web/               # Dockerfile for Next.js dev
-│   └── web-e2e-tests/     # Dockerfile for Playwright
-└── web/
-    ├── app/               # Next.js App Router
-    └── e2e-tests/         # Playwright E2E tests
 ```
 
 ## Implementation via AI Agent

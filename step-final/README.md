@@ -57,6 +57,22 @@ graph TB
     SM -.->|inject| ECS_Backend
 ```
 
+## Project Structure
+
+```
+.
+├── compose.yaml
+├── .example.secrets.env
+├── backend/               # NestJS API
+├── web/
+│   ├── app/               # Next.js SPA
+│   └── e2e-tests/         # Playwright E2E tests
+├── iac/                   # Terraform IaC (AWS)
+├── Dockerfiles.d/
+├── .github/               # GitHub Actions workflows + custom actions
+└── docs/
+```
+
 ## Prerequisites
 
 - Docker Engine + Docker Compose (e.g. [Docker Desktop](https://www.docker.com/products/docker-desktop/), [Podman](https://podman.io/), [Colima](https://github.com/abiosoft/colima))
@@ -118,15 +134,6 @@ This `step-final` directory is not just the end of a tutorial—it is a **powerf
 With built-in secure OAuth2 IdP integration and a robust, cost-effective infrastructure design (Persistent vs. Ephemeral layers), the foundation is fully laid out for you. Now it's time to use this environment to bring your own ideas to life.
 
 Happy coding, and enjoy the future of AI-driven development! 🚀
-
-## Use This Template
-
-After creating a repository from this template, follow these steps. Only step 1 is required — the rest are optional depending on your needs.
-
-1. **Local development** — Copy `.example.secrets.env` → `.secrets.env`, fill in secrets, and run `docker compose up`. See [Local Development](docs/local-development.md).
-2. **E2E tests on CI** — Add GitHub Actions secrets for JWT and OAuth2 providers. See [CI — Setup for E2E tests](docs/ci.md#for-e2e-tests-only).
-3. **Cloud deployment via CI** — Set up OIDC authentication, configure GitHub Actions variables, and run IaC workflows. See [CI — Setup for cloud deployment](docs/ci.md#for-cloud-deployment-e2e-tests--production-builds--iac).
-4. **Manual cloud deployment** — Deploy directly with Terraform. See [Cloud Deployment](docs/cloud-deployment.md).
 
 ## Cloud Deployment (Terraform)
 
@@ -191,22 +198,6 @@ aws secretsmanager put-secret-value \
 > `APP_UNIQUE_ID` is the value of `app_unique_id` in your `terraform.tfvars`.
 
 See [docs/secrets.md](docs/secrets.md) for detailed instructions on obtaining each secret.
-
-## Project Structure
-
-```
-.
-├── compose.yaml
-├── .example.secrets.env
-├── backend/               # NestJS API
-├── web/
-│   ├── app/               # Next.js SPA
-│   └── e2e-tests/         # Playwright E2E tests
-├── iac/                   # Terraform IaC (AWS)
-├── Dockerfiles.d/
-├── .github/               # GitHub Actions workflows + custom actions
-└── docs/
-```
 
 ## Documentation
 

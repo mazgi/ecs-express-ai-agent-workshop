@@ -57,6 +57,22 @@ graph TB
     SM -.->|注入| ECS_Backend
 ```
 
+## プロジェクト構成
+
+```
+.
+├── compose.yaml
+├── .example.secrets.env
+├── backend/               # NestJS API
+├── web/
+│   ├── app/               # Next.js SPA
+│   └── e2e-tests/         # Playwright E2E テスト
+├── iac/                   # Terraform IaC（AWS）
+├── Dockerfiles.d/
+├── .github/               # GitHub Actions ワークフロー + カスタムアクション
+└── docs/
+```
+
 ## 前提条件
 
 - Docker Engine + Docker Compose（例: [Docker Desktop](https://www.docker.com/products/docker-desktop/)、[Podman](https://podman.io/)、[Colima](https://github.com/abiosoft/colima)）
@@ -118,15 +134,6 @@ Next.js、NestJS、Prisma、Amazon ECS（Express Mode）を組み合わせたモ
 安全な OAuth2 IdP 統合と堅牢でコスト効率の高いインフラ設計（永続レイヤーとエフェメラルレイヤー）が組み込まれており、基盤はすべて整っています。あとはこの環境を使って、あなた自身のアイデアを形にしましょう。
 
 Happy coding、AI 駆動開発の未来を楽しんでください！ 🚀
-
-## このテンプレートの使い方
-
-このテンプレートからリポジトリを作成した後、以下の手順に従ってください。ステップ 1 のみ必須で、残りは必要に応じて実施してください。
-
-1. **ローカル開発** — `.example.secrets.env` を `.secrets.env` にコピーし、シークレットを記入して `docker compose up` を実行。[Local Development](docs/local-development.md) を参照。
-2. **CI での E2E テスト** — JWT と OAuth2 プロバイダーの GitHub Actions シークレットを追加。[CI — E2E テストのセットアップ](docs/ci.md#for-e2e-tests-only) を参照。
-3. **CI でのクラウドデプロイ** — OIDC 認証を設定し、GitHub Actions 変数を構成して IaC ワークフローを実行。[CI — クラウドデプロイのセットアップ](docs/ci.md#for-cloud-deployment-e2e-tests--production-builds--iac) を参照。
-4. **手動クラウドデプロイ** — Terraform で直接デプロイ。[Cloud Deployment](docs/cloud-deployment.md) を参照。
 
 ## クラウドデプロイ（Terraform）
 
@@ -191,22 +198,6 @@ aws secretsmanager put-secret-value \
 > `APP_UNIQUE_ID` は `terraform.tfvars` の `app_unique_id` の値です。
 
 詳細な手順は [docs/secrets.md](docs/secrets.md) を参照してください。
-
-## プロジェクト構成
-
-```
-.
-├── compose.yaml
-├── .example.secrets.env
-├── backend/               # NestJS API
-├── web/
-│   ├── app/               # Next.js SPA
-│   └── e2e-tests/         # Playwright E2E テスト
-├── iac/                   # Terraform IaC（AWS）
-├── Dockerfiles.d/
-├── .github/               # GitHub Actions ワークフロー + カスタムアクション
-└── docs/
-```
 
 ## ドキュメント
 

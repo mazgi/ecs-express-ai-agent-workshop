@@ -169,3 +169,8 @@ All user prompts from this session.
 164. from step-4, we placed .secrets.env in the working dir. it has risk such as AI agents can read it. could you write note about it?
 165. good. moreover, could you update with disclaimer to easy to learn in this workshop?
 166. in final step, I think Congratulations section is placed after Expected Output section is more appropriate. how do you think?
+167. it seems the '## Use This Template' section in final step is based on the template. is it still needed?
+168. yes, remove it
+169. could you reorder '## Cloud Deployment (Terraform)' and '## Project Structure' in final step as follow as previous steps?
+170. hmm... I think '## Project Structure' section should placed between ## Architecture at Start and ## Prerequisites sections. how do you think?
+171. i've tagged as v2026.4.0 yesterday. could you write release note and release it?
