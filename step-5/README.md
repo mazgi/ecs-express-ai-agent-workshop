@@ -180,6 +180,33 @@ MFA (Multi-Factor Authentication) adds a second layer of security beyond just a 
 
 </details>
 
+<details>
+<summary><strong>Glossary: Why store sessions in a database? (Click to expand)</strong></summary>
+
+**Why not store sessions in memory or local files?**
+
+In-memory sessions (e.g., a simple JavaScript `Map`) are lost whenever the server restarts, logging out every user. Local file-based sessions have the same problem — they are tied to a single server instance. In a containerized environment like ECS, containers are ephemeral: they can be replaced, scaled, or restarted at any time.
+
+**Why use a database (PostgreSQL) for sessions?**
+
+Storing sessions in the database means that:
+
+- **Sessions survive restarts** — redeploying a container does not log users out
+- **Multiple instances share sessions** — if you scale to 2+ containers, any instance can serve any user's request
+- **Sessions can be managed** — you can list, revoke, or expire sessions with a database query (e.g., "log out all devices")
+
+**Common session store choices:**
+
+| Store | Pros | Cons |
+|-------|------|------|
+| **PostgreSQL** (this workshop) | Already available, no extra infrastructure, supports queries | Slightly slower than in-memory stores |
+| **Redis / ElastiCache** | Very fast reads/writes, built-in TTL expiry | Additional infrastructure to manage |
+| **DynamoDB** | Serverless, auto-scaling, managed by AWS | AWS-specific, eventual consistency |
+
+In this workshop, we use PostgreSQL (via Prisma) to store sessions since it is already part of the stack — no additional services needed. For high-traffic production applications, Redis is a popular choice for its speed.
+
+</details>
+
 ## Expected Output After Completion
 
 After completing the prompts, you should have a project equivalent to step-final with:
