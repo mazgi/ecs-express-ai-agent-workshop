@@ -158,15 +158,18 @@ To prepare for the next step (step-5), you can have an AI agent (such as [Claude
 Copy the contents of [prompts.md](prompts.md) in this directory and provide them to your AI agent. If executed correctly, you will have an environment equivalent to step-5 without manual intervention.
 
 <details>
-<summary><strong>Glossary: Secrets Management & AWS Secrets Manager (Click to expand)</strong></summary>
+<summary><strong>Glossary: CRUD (Click to expand)</strong></summary>
 
-**What is secrets management?**
+**What is CRUD?**
 
-Secrets management is the practice of securely storing, accessing, and rotating sensitive values — such as database passwords, API keys, and JWT signing keys — outside of your application code and configuration files. Hardcoding secrets in source code or environment files is risky: they can be accidentally committed to version control, leaked in logs, or exposed through CI/CD artifacts. A secrets management system solves this by providing a centralized, encrypted store where secrets are kept at rest and delivered to applications at runtime.
+CRUD stands for **C**reate, **R**ead, **U**pdate, **D**elete — the four basic operations for managing data. Almost every application with a database implements these operations. For example, in this workshop's Items feature:
 
-**Why use AWS Secrets Manager?**
+- **Create** — `POST /items` adds a new item
+- **Read** — `GET /items` lists items
+- **Update** — (not used in this step, but would modify an existing item)
+- **Delete** — `DELETE /items/:id` removes an item
 
-[AWS Secrets Manager](https://aws.amazon.com/secrets-manager/) is a managed service that encrypts secrets at rest, controls access via IAM policies, and integrates directly with AWS services like ECS. In this workshop, ECS tasks retrieve secrets from Secrets Manager at startup — the container never sees plaintext secrets in its task definition or environment files. This means you can rotate a secret in one place without redeploying your application code.
+When someone says "Items CRUD," they mean a complete set of API endpoints and UI for managing items. Understanding CRUD is fundamental because most web applications are built around these operations on different resources (users, posts, orders, etc.).
 
 </details>
 
@@ -176,6 +179,19 @@ Secrets management is the practice of securely storing, accessing, and rotating 
 **What is JWT?**
 
 JWT (JSON Web Token) is a compact, URL-safe token format used for authentication. When a user signs in, the server creates a signed token containing the user's identity (e.g., user ID and email). The client stores this token and sends it with each request in the `Authorization: Bearer <token>` header. The server verifies the signature without needing to look up a session in the database, making it stateless and scalable. In this workshop, we use two JWTs: an **access token** (short-lived, for API requests) and a **refresh token** (longer-lived, for obtaining new access tokens).
+
+</details>
+
+<details>
+<summary><strong>Glossary: Secrets Management & AWS Secrets Manager (Click to expand)</strong></summary>
+
+**What is secrets management?**
+
+Secrets management is the practice of securely storing, accessing, and rotating sensitive values — such as database passwords, API keys, and JWT signing keys — outside of your application code and configuration files. Hardcoding secrets in source code or environment files is risky: they can be accidentally committed to version control, leaked in logs, or exposed through CI/CD artifacts. A secrets management system solves this by providing a centralized, encrypted store where secrets are kept at rest and delivered to applications at runtime.
+
+**Why use AWS Secrets Manager?**
+
+[AWS Secrets Manager](https://aws.amazon.com/secrets-manager/) is a managed service that encrypts secrets at rest, controls access via IAM policies, and integrates directly with AWS services like ECS. In this workshop, ECS tasks retrieve secrets from Secrets Manager at startup — the container never sees plaintext secrets in its task definition or environment files. This means you can rotate a secret in one place without redeploying your application code.
 
 </details>
 
