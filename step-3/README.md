@@ -91,6 +91,8 @@ See [docs/cloud-deployment-aws.md](docs/cloud-deployment-aws.md) for full detail
 # 1. Configure variables
 cp iac/aws/terraform.tfvars.example iac/aws/terraform.tfvars
 cp iac/aws/ephemeral/terraform.tfvars.example iac/aws/ephemeral/terraform.tfvars
+# Edit terraform.tfvars and set app_unique_id (e.g. "my-workshop")
+# APP_UNIQUE_ID is a unique prefix used for all AWS resource names (ECR repos, Secrets Manager keys, etc.)
 
 # 2. Deploy persistent infrastructure (VPC, ECR, IAM)
 source .env

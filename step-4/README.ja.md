@@ -101,6 +101,8 @@ ECS ワークショップですので、フル体験のために **AWS へのデ
 # 1. 変数の設定
 cp iac/aws/terraform.tfvars.example iac/aws/terraform.tfvars
 cp iac/aws/ephemeral/terraform.tfvars.example iac/aws/ephemeral/terraform.tfvars
+# terraform.tfvars を編集し、app_unique_id を設定（例: "my-workshop"）
+# APP_UNIQUE_ID は AWS リソース名（ECR リポジトリ、Secrets Manager キーなど）の一意なプレフィックスです
 
 # 2. 永続インフラのデプロイ（VPC、ECR、IAM、Secrets Manager）
 source .env
