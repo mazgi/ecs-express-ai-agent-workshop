@@ -85,6 +85,12 @@ docker compose --profile=e2e-tests run --rm web-e2e-tests
 
 This is an ECS workshop, so we **recommend deploying to AWS** to get the full experience. All Terraform commands run via `docker compose`, so no local Terraform installation is required. If you don't have an AWS account yet, you can still proceed with local development and deploy later.
 
+> **Cost note:** ECS and related resources incur hourly charges while running. When you're done for the day, destroy the ephemeral layer to avoid unexpected costs:
+> ```sh
+> docker compose --profile=iac run --rm iac terraform -chdir=aws/ephemeral destroy -var-file=terraform.tfvars
+> ```
+> You can re-create it anytime with `terraform apply`. See the top-level [README](../README.md#time--cost-estimate) for cost estimates.
+
 See [docs/cloud-deployment-aws.md](docs/cloud-deployment-aws.md) for full details. Quick summary:
 
 ```sh

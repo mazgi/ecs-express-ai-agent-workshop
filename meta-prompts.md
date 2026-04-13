@@ -177,4 +177,6 @@ All user prompts from this session.
 172. in final step '## Expected Output', could you write how the audience verify the app on cloud as same as previous steps?
 173. if an audience try final step, OAuth2 IdP configuration is hard. So, the vars and secrets accept dummy values such as AUTH_APPLE_PRIVATE_KEY. could you write it as tips or hint?
 174. could you write what APP_UNIQUE_ID is in somewhere?
+175. in after IaC steps, could you write note about cloud cost?
+176. could you update text with actual destroy commands?
 171. i've tagged as v2026.4.0 yesterday. could you write release note and release it?
