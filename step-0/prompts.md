@@ -20,11 +20,11 @@ Could you create an empty Next.js App Router project under `web/app/` using `cre
 
 ## 5. Create a Dockerfile for Playwright E2E tests
 
-Could you create `Dockerfiles.d/web-e2e-tests/Dockerfile` based on a Playwright image with pnpm support for running E2E tests?
+Could you create `Dockerfiles.d/web-e2e-tests/Dockerfile` based on `mcr.microsoft.com/playwright:v1.59.1` with pnpm (via corepack), npm-check-updates, and sort-package-json installed? Create a non-root `developer` user matching the host UID/GID.
 
 ## 6. Set up Playwright E2E tests
 
-Could you create `web/e2e-tests/` with a `playwright.config.ts` (Chromium, baseURL from `BASE_URL` env var), `package.json` with Playwright as a dependency, and a smoke test that verifies the homepage loads?
+Could you create `web/e2e-tests/` with a `playwright.config.ts` (Chromium, baseURL from `BASE_URL` env var), `package.json` with `@playwright/test` pinned to `1.59.1` (matching the Docker image version), and a smoke test that verifies the homepage loads?
 
 ## 7. Add web-e2e-tests service to Docker Compose
 

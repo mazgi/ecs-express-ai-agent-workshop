@@ -193,3 +193,5 @@ All user prompts from this session.
 188. in sentence, 'Simply copy the error log or terminal output and paste it back to your AI agent, asking it to "fix this error."', could you include wording like 'you can paste a screenshot'.
 189. in step 1, the glossaries 'Glossary: Container Registry, ECR, ECS, IaC, CI/CD (Click to expand)' is in one block, but I think it separate about containers and IaC+CI/CD blocks. how do you think?
 171. i've tagged as v2026.4.0 yesterday. could you write release note and release it?
+172. I've update the template e2e tests container image to based on playwright official image and fix the playwright versions in both dokerfile and package.json, and reflect it to this repo. could you update prompts to create the same dockerfiles and package.json file?
+173. could you set npm-check-update ignores playwrite and /maintain-pkgs checks and updates playwright version?

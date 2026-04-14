@@ -21,4 +21,19 @@ After updating each step, run E2E tests to verify the project still works:
 
 Process each step sequentially (update packages, then run E2E tests) before moving to the next step.
 
-Report a summary of what was updated (major version bumps, security fixes, etc.) and E2E test results for each step.
+## Playwright Version Update
+
+After updating regular packages, check for the latest Playwright version and update it across all files if a new version is available:
+
+1. Check the latest Playwright version: `npm view @playwright/test version` (via docker compose)
+2. If a newer version is available, update **both** files together in each step:
+   - `Dockerfiles.d/web-e2e-tests/Dockerfile` — update the base image tag (e.g., `mcr.microsoft.com/playwright:v<version>`)
+   - `web/e2e-tests/package.json` — update `@playwright/test` to the matching exact version
+3. The Dockerfile image version and package.json version **must always match**
+4. After updating, rebuild the e2e container: `docker compose build web-e2e-tests`
+5. Run E2E tests to verify the new Playwright version works
+6. Also update the version in `step-0/prompts.md` (prompts 5 and 6) to match
+
+Note: `@playwright/test` is excluded from `npm-check-updates` via `.ncurc.json` because the version must stay in sync with the Docker base image. This skill handles Playwright updates separately.
+
+Report a summary of what was updated (major version bumps, security fixes, Playwright version changes, etc.) and E2E test results for each step.
