@@ -196,3 +196,6 @@ All user prompts from this session.
 172. I've update the template e2e tests container image to based on playwright official image and fix the playwright versions in both dokerfile and package.json, and reflect it to this repo. could you update prompts to create the same dockerfiles and package.json file?
 173. could you set npm-check-update ignores playwrite and /maintain-pkgs checks and updates playwright version?
 174. no need memo any slash commands.
+175. could you link and introduce https://github.com/aws-samples/sample-ecs-express-ai-agent-workshop in readme?
+176. hmm... could you place the introduction on top of readme?
+177. could you plate the text on top of readme?

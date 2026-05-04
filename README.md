@@ -1,5 +1,7 @@
 # Amazon ECS Express AI Agent Workshop
 
+> **Also available on AWS Samples:** This workshop is published as an official AWS Samples repository at [aws-samples/sample-ecs-express-ai-agent-workshop](https://github.com/aws-samples/sample-ecs-express-ai-agent-workshop). The content is the same — feel free to use whichever you prefer.
+
 A hands-on workshop where you collaborate with AI (Claude Code, etc.) to build a production-ready full-stack application combining Next.js, NestJS, Prisma, and Amazon ECS (Express Mode).
 
 Beyond a simple tutorial, the final application serves as a production-ready foundation with robust user authentication and seamless OAuth2 Identity Provider (IdP) integration.
