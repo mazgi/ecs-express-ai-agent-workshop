@@ -199,3 +199,6 @@ All user prompts from this session.
 175. could you link and introduce https://github.com/aws-samples/sample-ecs-express-ai-agent-workshop in readme?
 176. hmm... could you place the introduction on top of readme?
 177. could you plate the text on top of readme?
+178. in readme, following text is ok but i'll update only aws-samples repo. could you improve the text?: > **Also available on AWS Samples:** This workshop is published as an official AWS Samples repository at [aws-samples/sample-ecs-express-ai-agent-workshop](https://github.com/aws-samples/sample-ecs-express-ai-agent-workshop). The content is the same — feel free to use whichever you prefer.
+179. could you udpate it?
+180. could you also update ja version?
